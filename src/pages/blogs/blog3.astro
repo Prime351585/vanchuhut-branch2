@@ -1,0 +1,115 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const blogData = {
+    title: "How to Order Chinese Food in Ghaziabad Without Any Hassle",
+    metaTitle: "Guide to Ordering Chinese Food in Ghaziabad | Vanchu Hut",
+    metaDescription: "Learn how to order Chinese food in Ghaziabad easily. Tips, tricks, and recommendations for the best ordering experience.",
+    image: "/blogImages/blog3.webp",
+    publishDate: "2024-12-12",
+    sections: [
+        {
+            title: "Why Ordering Chinese Food is Popular in Ghaziabad",
+            content: "Ghaziabad's food scene is buzzing with restaurants that offer Chinese cuisine, making it a hub for foodies who love bold flavours..."
+        },
+        {
+            title: "Simplifying Your Chinese Food Ordering Experience",
+            subsections: [
+                {
+                    title: "Use Food Delivery Apps for Convenience",
+                    content: "Apps like Zomato and Swiggy provide a wide range of options..."
+                },
+                {
+                    title: "Know Your Favourite Dishes",
+                    content: "Chinese menus are filled with tempting options..."
+                },
+                {
+                    title: "Customize Your Order",
+                    content: "Many restaurants offer customization options..."
+                },
+                {
+                    title: "Call the Restaurant Directly",
+                    content: "For a more personalized experience, contact the restaurant..."
+                }
+            ]
+        }
+    ],
+    tips: [
+        "Choose Trusted Restaurants",
+        "Check Offers and Discounts",
+        "Plan for Takeaway or Dine-In"
+    ]
+};
+---
+
+<Layout title={blogData.metaTitle} >
+    <meta name="description" content={blogData.metaDescription} />
+    <section class=" font-agdasima ">
+        <img src="/hero4.jpg" class="scale-100 w-screen h-[168px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+</section>  
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <div class="relative h-[400px] mb-8 rounded-lg overflow-hidden">
+            <img 
+                src={blogData.image} 
+                alt="Delicious Chinese dishes at Vanchu Hut"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+    <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-primary mb-8">{blogData.title}</h1>
+
+        <!-- Table of Contents -->
+        <div class="bg-gray-50 p-6 rounded-lg mb-8">
+            <h2 class="text-xl font-semibold mb-4">Table of Contents</h2>
+            <ol class="list-decimal pl-4">
+                <li>Why Ordering Chinese Food is Popular in Ghaziabad</li>
+                <li>Simplifying Your Chinese Food Ordering Experience</li>
+                <li>Tips for a Hassle-Free Dining Experience</li>
+                <li>Why Choose Vanchu Hut for Chinese Food in Ghaziabad</li>
+            </ol>
+        </div>
+
+        <!-- Main Content -->
+        {blogData.sections.map(section => (
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-secondary mb-4">
+                    {section.title}
+                </h2>
+                <p class="text-gray-700 mb-4">{section.content}</p>
+                
+                {section.subsections && (
+                    <div class="space-y-6 pl-4">
+                        {section.subsections.map(sub => (
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">{sub.title}</h3>
+                                <p class="text-gray-700">{sub.content}</p>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </section>
+        ))}
+
+        <!-- Tips Section -->
+        <section class="bg-primary/10 p-6 rounded-lg mb-12">
+            <h2 class="text-2xl font-semibold mb-4">Tips for a Hassle-Free Dining Experience</h2>
+            <ul class="list-disc pl-6 space-y-2">
+                {blogData.tips.map(tip => (
+                    <li class="text-gray-700">{tip}</li>
+                ))}
+            </ul>
+        </section>
+
+        <!-- Call to Action -->
+        <div class="flex justify-center gap-6 mt-12">
+            <a href="/menu" class="bg-secondary text-white px-8 py-3 rounded-full hover:bg-secondary/90">
+                View Our Menu
+            </a>
+            <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90">
+                Contact Us
+            </a>
+        </div>
+    </article>
+</Layout>

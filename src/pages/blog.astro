@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro"
+import BlogCard from "../components/BlogCard.astro"
+const blogCardContent = [{
+    
+    metaTitle: "Discover the Best Chinese Food at Vanchu Hut – Top Dishes in Pratap Vihar",
+    metaDescription: "Vanchu Hut is the best Chinese restaurant in Ghaziabad. We offer a wide range of Chinese dishes, including dumplings, noodles, and more. Our food is made with fresh ingredients and authentic Chinese flavors. Visit us today to enjoy delicious Chinese food!",
+    image: "/blogImages/blog1.webp",
+    publishDate: "2024-03-15",
+    buttonlink: "/blogs/blog1",
+    timetoread: "5 min"
+
+},
+{
+    title: "Celebrate Your Special Moments with Authentic Chinese Cuisine at Vanchu Hut",
+    metaTitle: "Top Chinese Dishes You Can't Miss at Vanchu Hut – Best Chinese Food in Pratap Vihar",
+    metaDescription: "Explore the must-try Chinese dishes at Vanchu Hut. From Hakka Noodles to Honey Chilli Potato, discover the best Chinese food in Pratap Vihar, Ghaziabad.",
+    image: "/blogImages/blog2.webp",
+    publishDate: "2024-11-23",
+    buttonlink: "/blogs/blog2",
+    timetoread: "7 min"
+},
+{
+    title: "How to Order Chinese Food in Ghaziabad Without Any Hassle",
+    metaTitle: "Guide to Ordering Chinese Food in Ghaziabad | Vanchu Hut",
+    metaDescription: "Learn how to order Chinese food in Ghaziabad easily. Tips, tricks, and recommendations for the best ordering experience.",
+    image: "/blogImages/blog3.webp",
+    publishDate: "2024-12-12",
+    buttonlink: "/blogs/blog3",
+    timetoread: "5 min"
+},
+{
+    title: "The Secrets Behind Popular Chinese Dishes in Ghaziabad",
+    metaTitle: "Popular Chinese Dishes in Ghaziabad | Secret Recipes & Flavors",
+    metaDescription: "Discover the secrets behind popular Chinese dishes in Ghaziabad. Learn about authentic flavors and fusion cuisine at Vanchu Hut.",
+    image: "/blogImages/blog4.webp",
+    publishDate: "2024-12-24",
+    buttonlink: "/blogs/blog4",
+    timetoread: " min"
+},
+
+]
+---
+<Layout title='Menu'>
+    <meta name="Vanchu Hut Menu - Best Chinese Restaurant Menu in Ghaziabad" content="Explore Vanchu Hut's menu for the best Chinese food in Ghaziabad! Enjoy delicious takeout, an exquisite buffet, mouth-watering dumplings, and flavorful noodles in Pratap Vihar." />
+    <section class=" bg-gray-100 min-h-screen font-agdasima ">
+      <img src="/hero4.jpg" class="scale-100 w-screen h-[168px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+      <h1 class="text-primary text-5xl font-bold text-center ">
+        Vanchu Hut Blog
+    </h1>
+    <h2 class="text-center text-lg text-gray-500 mt-4 pb-10">
+    Discover our culinary stories, recipes, and restaurant updates
+    </h2>
+    <div class="px-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+
+        {blogCardContent.map((card,index)=>(
+            <BlogCard title={card.metaTitle} date={card.publishDate} description={card.metaDescription} image={card.image} buttonLink={card.buttonlink}, timetoRead={card.timetoread}/>
+        ))}
+    </div>
+</section>
+      
+</Layout>  

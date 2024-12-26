@@ -1,0 +1,60 @@
+---
+// import {Icon} from 'astro-icon/components';
+---
+
+<section class="bg-primary text-black py-16 overflow-hidden">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-8 opacity-100" id="findUsTitle">Visit Our Restaurant </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="flex flex-col items-center text-center opacity-100" id="addressColumn">
+        <!-- <Icon name="tabler:map-pin" class="w-12 h-12 mb-4 text-secondary" /> -->
+        <h3 class="text-xl font-semibold mb-2">Address</h3>
+        <p>Santosh Medical Intersection, Block H Pratap Vihar</p>
+        <p> Ghaziabad Uttar Pradesh 201009</p>
+      </div>
+      <div class="flex flex-col items-center text-center opacity-100" id="contactColumn">
+        <!-- <Icon name="mdi:phone" class="w-12 h-12 mb-4 text-secondary" /> -->
+        <h3 class="text-xl font-semibold mb-2">Contact</h3>
+        <p class="tel:+919971135534">Phone:  +919971135534</p>
+        <p class="mailto:vanchuhut@gmail.com">Email: vanchuhut@gmail.com</p>
+      </div>
+      <div class="flex flex-col items-center text-center opacity-100" id="hoursColumn">
+        <!-- <Icon name="mdi:clock" class="w-12 h-12 mb-4 text-secondary" /> -->
+        <h3 class="text-xl font-semibold mb-2">Hours</h3>
+        <p>Mon-Fri: 11:00 AM - 10:00 PM</p>
+        <p>Sat-Sun: 12:00 PM - 11:00 PM</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from("#findUsTitle", {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#findUsTitle",
+      start: "top 80%",
+    }
+  });
+
+  const columns = ["#addressColumn", "#contactColumn", "#hoursColumn"];
+  columns.forEach((column, index) => {
+    gsap.from(column, {
+      opacity: 0,
+      x: index % 2 === 0 ? -50 : 50,
+      duration: 1,
+      delay: 0.2 * (index + 1),
+      scrollTrigger: {
+        trigger: column,
+        start: "top 80%",
+      }
+    });
+  });
+</script>

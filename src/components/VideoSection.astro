@@ -1,0 +1,29 @@
+---
+import Button from './Button.astro'
+---
+<section class="bg-primary relative">
+    <div class="absolute inset-0 bg-black opacity-50 z-10 flex items-center justify-center">
+        <h1 class="text-white text-3xl md:text-4xl font-bold text-center ">A Perfect Spot for Your Family and Friends</h1>
+    </div>
+    <video class="w-screen md:h-[400px] object-cover md:object-none z-0" autoplay loop muted>
+      <source src="/vid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+</section>
+
+<div class="text-center px-8 mt-4 text-xl">
+<div>
+  <h3 >
+    Ready to enjoy a meal that hits the spot? Visit us at Vanchu Hut in Pratap Vihar or place an order for delivery straight to your door. We’re here to make sure every bite is memorable, whether you’re dining in or enjoying our Chinese food in the comfort of your home.
+  </h3>
+  
+</div>
+
+<h3 class="text-2xl font-bold mt-4">
+
+  Order or Book Your Table Today!
+</h3>
+  <div class="flex p-5 justify-center items-center">
+    <Button text={"Know More"} onClick="reservation"/>
+  </div>
+</div>

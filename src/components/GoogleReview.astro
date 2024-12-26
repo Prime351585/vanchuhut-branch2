@@ -1,0 +1,120 @@
+---
+import Button from "./Button.astro";
+// GoogleReviews.astro
+interface Review {
+  name: string;
+  rating: number;
+  date: string;
+  content: string;
+  image: string;
+}
+
+const reviews: Review[] = [
+  {
+    name: "Dev Varma",
+    rating: 4,
+    date: "a year ago",
+    content: "They offer very tasty chinese food..with ok ok price and good quantity..and specially there crispy chilly potato and Veg Noodles.😋",
+    image: "/reviewSection/dev.png"  // Replace with actual path
+  },
+  {
+    name: "Dr. Harshit Lohani",
+    rating: 4,
+    date: "a year ago",
+    content: "Good place to have spicy food🌶️ specially with friends. Their main speciality is Chinese food. It's Budget friendly. Most of the time it's filled with college students like me😂.",
+    image: "/reviewSection/harshit.png"
+  },
+  {
+    name: "Saurabh Bhatia",
+    rating: 5,
+    date: "a year ago",
+    content: " Fantastic taste. We tried Paneer chowmeen , spring roll , fried rice. Also packed for family. Taste was very good. Rate also normal.",
+    image: "/reviewSection/saurabh.png"
+  },
+  {
+    name: "Siddarth Nagpal",
+    rating: 5,
+    date: "a week ago",
+    content: "The best restaurant for family and friends in Sector-12. I have been there maybe 100 times...😍😍,Recommended dishes,Manchurian, Fried Rice, Spring Roll, Veg Momo.",
+    image: "/reviewSection/siddharth.png"
+  }
+];
+
+const renderStars = (rating: number) => {
+  return Array.from({ length: 5 }, (_, index) => index < rating);
+};
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4 max-w-7xl">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Clients Say</h2>
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <img src="/socialIcons/google.svg" alt="Google" class="h-8 w-auto" /> 
+        <div class="flex items-center">
+          <svg class="w-24 h-5" viewBox="0 0 100 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <!-- Filled Star 1 -->
+            <path class="text-yellow-400" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            
+            <!-- Filled Star 2 -->
+            <path class="text-yellow-400" d="M29.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L22.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            
+            <!-- Filled Star 3 -->
+            <path class="text-yellow-400" d="M49.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L42.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            
+            <!-- Filled Star 4 -->
+            <path class="text-yellow-400" d="M69.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L62.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            
+            <!-- Blank Star 5 -->
+            <path class="text-gray-300" d="M89.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L82.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+          
+          <span class="ml-2 text-lg font-semibold">4 Rating on Google</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {reviews.map((review) => (
+        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+          <div class="flex items-center mb-4">
+            <img 
+              src={review.image} 
+              alt={review.name}
+              class="w-12 h-12 rounded-full object-cover"
+            />
+            <div class="ml-4">
+              <h3 class="font-semibold text-gray-800">{review.name}</h3>
+              <p class="text-sm text-gray-500">{review.date}</p>
+            </div>
+          </div>
+          
+          <div class="flex mb-3">
+            {renderStars(review.rating).map((isFilled) => (
+              <svg 
+                class={`w-5 h-5 ${isFilled ? 'text-yellow-400' : 'text-gray-300'}`}
+                fill="currentColor" 
+                viewBox="0 0 20 20"
+              >
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            ))}
+          </div>
+          
+          <p class="text-gray-600 line-clamp-4">{review.content}</p>
+        </div>
+      ))}
+    </div>
+    <div class="flex items-center justify-center mt-10">
+
+      <!-- Call to Action -->
+      <Button text={"LEAVE US A REVIEW"} onClick="https://g.page/r/CU-V7RII_Vk9EBM/review"/>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Optional: Add any custom styles here */
+</style>

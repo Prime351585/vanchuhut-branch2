@@ -1,0 +1,57 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FoodSection from '../components/FoodSection.astro'
+import HeroSection from '../components/HeroSection.astro'
+import Image from 'astro/components/Image.astro';
+import DeliverySection from '../components/DeliverySection.astro';
+import MenuSection from "../components/MenuSection.astro"
+import VideoSection from "../components/VideoSection.astro"
+import FindUssection from "../components/FindUssection.astro"
+import "../global.css"
+import FoodSlider from '../components/FoodSlider.astro';
+import GoogleReview from '../components/GoogleReview.astro';
+---
+
+<Layout title="Home">
+	<HeroSection/>
+	<div class=" flex justify-center items-center h-0 w-auto ">
+		<Image id='center-image' src="/divider.webp" alt='chowmin' width={250} height={250} class='z-10 ' >
+	</div>
+	<FoodSection/>
+	<DeliverySection/>
+    <FoodSlider/>
+	<MenuSection/>
+    <VideoSection/>
+    <GoogleReview/>
+	<FindUssection/>
+</Layout>
+
+<script>
+    import gsap from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.to("#parallax-image", {
+        yPercent: 40, // Adjust this value to control the parallax effect
+        ease: "none",
+        scrollTrigger: {
+            trigger: "#parallax-image",
+            start: "top bottom", // when the top of the image hits the bottom of the viewport
+            end: "bottom top", // when the bottom of the image hits the top of the viewport
+            scrub: true, // smooth scrubbing
+        }
+    });
+
+    gsap.to("#center-image", {
+        yPercent: 20, // Adjust this value to control the animation
+        ease: "none",
+        scrollTrigger: {
+            trigger: "#center-image",
+            start: "top bottom", // when the top of the image hits the bottom of the viewport
+            end: "bottom top", // when the bottom of the image hits the top of the viewport
+            scrub: true, // smooth scrubbing
+        }
+    });
+
+</script>

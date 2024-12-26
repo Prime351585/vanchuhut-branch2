@@ -1,0 +1,85 @@
+---
+// ScrollableCards.astro
+---
+
+<div class="w-full py-2 bg-primary">
+    <div class="container mx-auto ">
+
+        
+        <div class="cards-container relative">
+            <div class="overflow-x-auto hide-scrollbar">
+                <div class="flex space-x-6 " id="cardsWrapper">
+                    <!-- Deals and Offers -->
+                    <div class="flex-none w-72 bg-primary rounded-xl shadow-lg pl-4">
+                                <img src="/banner/1.webp" alt="Momo Madness " class="w-full h-full object-cover rounded-lg"loading="lazy"/>
+                    </div>
+                    <!-- Deals and Offers -->
+                    <div class="flex-none w-72 bg-primary rounded-xl shadow-lg">
+                                <img src="/banner/2.webp" alt="A fiery Crunch, A Tasty Hunch" class="w-full h-full object-cover rounded-lg"loading="lazy"/>
+                    </div>
+                    <!-- Deals and Offers -->
+                    <div class="flex-none w-72 bg-primary rounded-xl shadow-lg">
+                                <img src="/banner/3.webp" alt="Slurp Savour Smile " class="w-full h-full object-cover rounded-lg"loading="lazy"/>
+                    </div>
+                    <!-- Deals and Offers -->
+                    <div class="flex-none w-72 bg-primary rounded-xl shadow-lg">
+                                <img src="/banner/5.webp" alt="Burger Cheesy Pleasy" class="w-full h-full object-cover rounded-lg"loading="lazy"/>
+                    </div>
+                    <!-- Deals and Offers -->
+                    <div class="flex-none w-72 bg-primary rounded-xl shadow-lg pr-4">
+                                <img src="/banner/4.webp" alt="Call Now +919971135534" class="w-full h-full object-cover rounded-lg"loading="lazy"/>
+                    </div>
+
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .hide-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+</style>
+
+<script>
+    // Initialize drag functionality
+    const cardsWrapper = document.getElementById('cardsWrapper');
+    if (cardsWrapper) {
+        let isDragging = false;
+        let startX: number;
+        let scrollLeft: number;
+
+        cardsWrapper.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        cardsWrapper.classList.add('cursor-grabbing');
+        startX = e.pageX - cardsWrapper.offsetLeft;
+        scrollLeft = cardsWrapper.parentElement ? cardsWrapper.parentElement.scrollLeft : 0;
+    });
+        cardsWrapper.addEventListener('mouseleave', () => {
+            isDragging = false;
+            cardsWrapper.classList.remove('cursor-grabbing');
+        });
+
+        cardsWrapper.addEventListener('mouseup', () => {
+            isDragging = false;
+            cardsWrapper.classList.remove('cursor-grabbing');
+        });
+
+        cardsWrapper.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const x = e.pageX - cardsWrapper.offsetLeft;
+            const walk = (x - startX) * 2;
+            if (cardsWrapper.parentElement) {
+                cardsWrapper.parentElement.scrollLeft = scrollLeft - walk;
+            }
+        });
+    }
+    
+</script>

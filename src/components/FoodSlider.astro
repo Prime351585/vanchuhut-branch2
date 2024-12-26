@@ -1,0 +1,76 @@
+<div class="w-full overflow-hidden bg-gray-100 py-10">
+    <div class="relative flex animate-scroll">
+      <div class="flex space-x-16 mx-8 logo-slide">
+        <img src="/slider_svg/1.svg" alt="Noodels" class="w-auto h-[60px]">
+            <img src="/slider_svg/2.svg" alt="ramen" class="w-auto h-[60px]">
+            <img src="/slider_svg/3.svg" alt="momos" class="w-auto h-[60px]">
+            <img src="/slider_svg/4.svg" alt="chowmin" class="w-auto h-[60px]">
+            <img src="/slider_svg/5.svg" alt="soup" class="w-auto h-[60px]">
+            <img src="/slider_svg/6.svg" alt="Omlette" class="w-auto h-[60px]">
+            <img src="/slider_svg/7.svg" alt="Burger" class="w-auto h-[60px]">
+            <img src="/slider_svg/8.svg" alt="Coffee " class="w-auto h-[60px]">
+          </div>
+          <div class="flex space-x-16 mx-8 logo-slide">
+            <img src="/slider_svg/1.svg" alt="Noodels" class="w-auto h-[60px]">
+            <img src="/slider_svg/2.svg" alt="ramen" class="w-auto h-[60px]">
+            <img src="/slider_svg/3.svg" alt="momos" class="w-auto h-[60px]">
+            <img src="/slider_svg/4.svg" alt="chowmin" class="w-auto h-[60px]">
+            <img src="/slider_svg/5.svg" alt="soup" class="w-auto h-[60px]">
+            <img src="/slider_svg/6.svg" alt="Omlette" class="w-auto h-[60px]">
+            <img src="/slider_svg/7.svg" alt="Burger" class="w-auto h-[60px]">
+            <img src="/slider_svg/8.svg" alt="Coffee " class="w-auto h-[60px]">
+            </div>
+    </div>
+  </div>
+  
+  <style>
+    .animate-scroll {
+      animation: scroll 30s linear infinite;
+    }
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-100% - 4rem));
+      }
+    }
+    .logo-slide {
+      flex: 0 0 auto;
+    }
+    @media (min-width: 800px) {
+      .animate-scroll::before,
+      .animate-scroll::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        width: 50px;
+        height: 100%;
+        z-index: 2;
+      }
+      .animate-scroll::before {
+        left: 0;
+        /* background: linear-gradient(to right, rgba(243, 244, 246, 1), rgba(243, 244, 246, 0)); */
+      }
+      .animate-scroll::after {
+        right: 0;
+        /* background: linear-gradient(to left, rgba(243, 244, 246, 1), rgba(243, 244, 246, 0)); */
+      }
+    }
+  </style>
+  
+  <script>
+      function adjustLogoSlider() {
+        const slider = document.querySelector('.animate-scroll');
+        const slides = Array.from(document.querySelectorAll('.logo-slide')) as HTMLElement[];
+        const totalWidth = slides.reduce((sum, slide) => sum + slide.offsetWidth, 0);
+      
+        if (totalWidth < window.innerWidth && slider !== null) {
+          const repeats = Math.ceil(window.innerWidth / totalWidth) + 1;
+          slider.innerHTML = slider.innerHTML.repeat(repeats);
+        }
+      }
+    
+      window.addEventListener('load', adjustLogoSlider);
+      window.addEventListener('resize', adjustLogoSlider);
+    </script>

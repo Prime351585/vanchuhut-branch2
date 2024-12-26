@@ -1,0 +1,40 @@
+---
+import Button from '../components/Button.astro'
+---
+
+<div class="bg-white">
+    <div class="text-6xl text-center p-10 flex justify-between items-center">
+        <div  class="flex-1">
+            Our Top Dishes
+            <div>
+                <h3 class="text-xl">
+                    Explore our menu and you’ll find a selection of popular Chinese dishes that locals love. From our famous dumplings to vegetarian options and the classic chowmein, each dish is made to impress. Looking for a quick meal? Try our takeout options for a delicious Chinese food experience at home!
+                </h3>
+        </div>
+        </div>
+
+    </div>
+    <div class="flex flex-col sm:flex-row justify-center items-center text-center pb-4">
+        <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <img src="./dishes/chowmin.webp" alt="Image of a Chowmin Plate,in Pratap Vihar Ghaziabad" class="rounded-lg w-full h-full object-cover"/>
+
+        </div>
+
+        <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out ">
+            <img src="./dishes/momos.webp" alt="Image of a momon ,in Pratap Vihar Ghaziabad" class="rounded-lg w-full h-full object-cover"/>
+
+        </div>
+
+        <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <img src="./dishes/pasta.webp" alt="Image of a pasta Plate,in Pratap Vihar Ghaziabad" class="rounded-lg w-full h-full object-cover"/>
+
+        </div>
+        <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <img src="./dishes/burger.webp" alt="Image of a burger Plate,in Pratap Vihar Ghaziabad" class="rounded-lg w-full h-full object-cover"/>
+
+        </div>
+    </div>
+    <div class="flex justify-center items-center pb-10">
+        <Button text={"VIEW MENU"} onClick="menu"/>
+    </div>
+</div>

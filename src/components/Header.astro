@@ -1,0 +1,116 @@
+---
+import logo from "../../public/logo.png"
+import Image from "astro/components/Image.astro"
+
+
+---
+<header class="absolute w-full backdrop-blur-md bg-black/30 text-white z-20 font-poppins">
+  <div class="container mx-auto">
+    <div class="flex items-center justify-between py-4 px-4">
+      <!-- Social Icons - Hidden on Mobile -->
+      <div class="hidden md:flex space-x-6">
+        <a href="https://www.facebook.com/vanchuhutpratapvihar" aria-label="Facebook" class="hover:text-secondary transition-colors duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+        </a>
+        <a href="https://www.instagram.com/vanchuhut/" aria-label="Instagram" class="hover:text-secondary transition-colors duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+        </a>
+      </div>
+
+      <!-- Logo -->
+       <a href="/" class="md:absolute md:left-1/2 md:-translate-x-10"> 
+         <Image src={logo} alt={"Logo"} width={80} height={80}  />
+        </a>
+
+      <!-- Contact Icons -->
+      <div class="flex items-center space-x-3">
+        <a href="tel:9971135534" aria-label="Phone" class="text-white hover:bg-secondary/80 transition-all duration-300 backdrop-blur-lg bg-white/10 p-2 rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 30 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5"><path d="m27.728 20.384-4.242-4.242a1.982 1.982 0 0 0-1.413-.586h-.002c-.534 0-1.036.209-1.413.586L17.83 18.97l-8.485-8.485 2.828-2.828c.78-.78.78-2.05-.001-2.83L7.929.585A1.986 1.986 0 0 0 6.516 0h-.001C5.98 0 5.478.209 5.101.587L.858 4.83C.729 4.958-.389 6.168.142 8.827c.626 3.129 3.246 7.019 7.787 11.56 6.499 6.499 10.598 7.937 12.953 7.937 1.63 0 2.426-.689 2.604-.867l4.242-4.242c.378-.378.587-.881.586-1.416 0-.534-.208-1.037-.586-1.415z"/></svg>
+        </a>
+        <a href="https://wa.me/919971135534" aria-label="Whatsapp" class="text-white hover:bg-secondary/80 transition-all duration-300 backdrop-blur-lg bg-white/10 p-2 rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 50 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5">
+            <path d="M 25 2 C 12.309534 2 2 12.309534 2 25 C 2 29.079097 3.1186875 32.88588 4.984375 36.208984 L 2.0371094 46.730469 A 1.0001 1.0001 0 0 0 3.2402344 47.970703 L 14.210938 45.251953 C 17.434629 46.972929 21.092591 48 25 48 C 37.690466 48 48 37.690466 48 25 C 48 12.309534 37.690466 2 25 2 z"></path>
+          </svg>
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <button id="menu-toggle" class="md:hidden text-white p-2 hover:bg-secondary/80 transition-all duration-300 backdrop-blur-lg bg-white/10 rounded-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <nav id="menu" class="hidden md:flex md:justify-center md:space-x-6 md:py-2 md:max-h-full overflow-hidden transition-all duration-300 ease-in-out text-lg">
+      <a href="/" class="block p-4 md:p-2 hover:bg-secondary/80 transition-all duration-300">HOME</a>
+      <a href="/about" class="block p-4 md:p-2 hover:bg-secondary/80 transition-all duration-300">ABOUT</a>
+      <a href="/menu" class="block p-4 md:p-2 hover:bg-secondary/80 transition-all duration-300">OUR MENU</a>
+      <a href="/404" class="block p-4 md:p-2 hover:bg-secondary/80 transition-all duration-300">SERVICE AREA</a>
+      <a href="/reservation" class="block p-4 md:p-2 hover:bg-secondary/80 transition-all duration-300">RESERVATIONS</a>
+      <a href="/blog" class="block p-4 md:p-2 hover:bg-secondary/80 transition-all duration-300">OUR BLOG</a>
+      <a href="/contact" class="block p-4 md:p-2 hover:bg-secondary/80 transition-all duration-300">CONTACT US</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+@media (max-width: 768px) {
+  #menu {
+    transition: all 0.3s ease-out;
+    opacity: 0;
+    transform: translateY(-20px);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 0.5rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+  }
+
+  #menu.active {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+
+  #menu a {
+    color: white;
+    padding: 0.5rem 1.5rem;
+    margin: 0.25rem 0;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+    display: block;
+    text-align: center;
+  }
+
+  #menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+</style>
+
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.getElementById('menu');
+
+if (menuToggle && menu) {
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    requestAnimationFrame(() => {
+      menu.classList.toggle('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!menu.contains(e.target as Node) && !menuToggle.contains(e.target as Node) && !menu.classList.contains('hidden')) {
+      menu.classList.remove('active');
+      setTimeout(() => {
+        menu.classList.add('hidden');
+      }, 300);
+    }
+  });
+}
+</script>

@@ -1,0 +1,155 @@
+---
+// src/pages/about.astro
+import Layout from '../layouts/Layout.astro';
+
+interface StorySection {
+  year: string;
+  title: string;
+  description: string;
+  img:any,
+  alt:string
+}
+
+const ourStory: StorySection[] = [
+  {
+    year: "",
+    title: "",
+    img:"/about/noodles.svg",
+    alt:"Image of a noodle bowl",
+    description: "At Vanchu Hut, we bring you the bold and unique flavors of Chinese cuisine, from savory dumplings and sizzling stir-fried noodles to popular dishes like fried rice and crispy spring rolls. We’re proud to be known for our authentic Chinese dishes, prepared with recipes that pay homage to traditional flavors"
+  },
+  {
+    year: "",
+    title: "",
+    img:"/about/celebration.svg",
+    alt:"Image of a Party Popper",
+    description: "Our restaurant is family-friendly, with a comfortable atmosphere ideal for gatherings, small celebrations, or simply enjoying a cozy meal with friends. We’re all about creating a welcoming vibe for everyone who steps through our doors."
+  },
+  {
+    year: "",
+    title: "",
+    img:"/about/quality.svg",
+    alt:"Image of a Quality Badge",
+    description: "Whether you’re a regular or trying us out for the first time, Vanchu Hut is dedicated to quality, from ingredients to service. We aim to be your top choice for Chinese food near Pratap Vihar and beyond."
+  }
+];
+
+const values = [
+  {
+    title: "Authenticity You Can Taste",
+    description: "Every dish is crafted with traditional recipes and techniques passed down through generations.",
+    icon: "🥘"
+  },
+  {
+    title: "Top-Rated & Trusted",
+    description: "We source the finest local and imported ingredients to ensure the highest quality in every meal.",
+    icon: "🌿"
+  },
+  {
+    title: "Family Values",
+    description: "We treat every guest as family, creating a warm and welcoming atmosphere for all.",
+    icon: "👨‍👩‍👧‍👦"
+  }
+];
+---
+
+<Layout title="About Us | Vanchu Hut">
+  <meta name="Vanchu Hut - Affordable Chinese Food in Pratap Vihar, Ghaziabad" content="Craving affordable Chinese food in Pratap Vihar? Discover popular Chinese dishes and delicious vegetarian options at Vanchu Hut, one of Ghaziabad's top-rated Chinese restaurants!" />  
+    <section class="py-12 bg-white-100 font-agdasima">
+      <!-- <div class="scale-100 w-screen h-[140px] transform -translate-y-12 bg-primary"> </div> -->
+      <img src="/hero4.jpg" class="scale-100 w-screen h-[140px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+      <!-- <div class="absolute inset-0 bg-black opacity-80 w-screen h-[140px]"></div> -->
+  <!-- Hero Section -->
+        
+        <!-- Welcome Section -->
+  <section class=" bg-white">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <h1 class="text-3xl md:text-4xl font-bold text-primary">
+            Discover Affordable Chinese Food at Vanchu Hut in Pratap Vihar
+          </h1>
+          <p class="text-gray-600 leading-relaxed">
+            Welcome to Vanchu Hut, your go-to destination for delicious and affordable Chinese food in Pratap Vihar. Nestled in the heart of Ghaziabad, we pride ourselves on serving a variety of popular Chinese dishes that cater to every palate. Whether you’re craving classic favorites or innovative twists on traditional recipes, our menu is designed to delight both meat lovers and vegetarians alike.          </p>
+          <p class="text-gray-600 leading-relaxed">
+            At Vanchu Hut, we understand the importance of quality and flavor. Our chefs use the freshest ingredients to create mouth-watering dishes that reflect the authentic tastes of Chinese cuisine. From savory stir-fries to delectable dim sum, we’ve got something for everyone, including a wide selection of vegetarian Chinese food that has made us a favorite in Ghaziabad.          </p>
+        </div>
+        <div class="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
+          <img 
+            src="/logo.png" 
+            alt="About Us, and our values in the resturant in Pratap Vihar Ghaziabad" 
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="py-16 bg-gray-50 ">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary text-center mb-12">
+        WHY CHOOSE US
+      </h2>
+      <div class="space-y-12">
+        {ourStory.map((story, index) => (
+          <div class={`flex flex-col md:flex-row ${index % 2 === 1 ? 'md:flex-row-reverse' : ''} gap-8 items-center`}>
+            <div class="w-full md:w-1/3 text-center">
+              <div class="text-4xl font-bold text-secondary mb-2">{story.year}</div>
+              <h3 class="text-xl font-semibold text-primary">{story.title}</h3>
+              <div class="flex items-center justify-center">
+              <img src={story.img} class="w-20 h-20">
+              </div>
+            </div>
+            <div class="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md">
+              <p class="text-gray-600">{story.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-7xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary text-center mb-12">
+        Our Values
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {values.map((value) => (
+          <div class="text-center p-6 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
+            <div class="text-4xl mb-4">{value.icon}</div>
+            <h3 class="text-xl font-semibold text-primary mb-3">{value.title}</h3>
+            <p class="text-gray-600">{value.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-16 bg-primary text-white">
+    <div class="container mx-auto px-4 max-w-7xl text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Join Us for an Authentic Chinese Dining Experience
+      </h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">
+        Come taste the difference that passion, tradition, and quality ingredients make.
+      </p>
+      <div class="flex flex-col md:flex-row gap-4 justify-center">
+        <a href="/menu" class="inline-block px-8 py-3 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors duration-300">
+          View Our Menu
+        </a>
+        <a href="/reservation" class="inline-block px-8 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition-colors duration-300">
+          Make a Reservation
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* Add any custom styles here */
+</style>

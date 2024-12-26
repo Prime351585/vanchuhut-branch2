@@ -1,0 +1,26 @@
+---
+const { type = 'button', text, onClick, className = '' } = Astro.props;
+---
+
+<button
+  type={type}
+  class={`md:flex bg-transparent hover:bg-primary border border-primary hover:text-black font-bold px-5 mx-2 py-2 rounded transition duration-300 ease-in-out transform hover:scale-105 font-sans ${className}`}
+  data-redirect={onClick}
+>
+  {text}
+</button>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('button[data-redirect]');
+    buttons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const path = button.getAttribute('data-redirect');
+        if (path) {
+          window.location.href = path;
+        }
+      });
+    });
+  });
+</script>

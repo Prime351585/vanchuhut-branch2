@@ -1,0 +1,34 @@
+---
+import Button from '../components/Button.astro'
+
+---
+<div class=" mx-auto relative flex justify-center items-center  overflow-hidden  ">
+    <img 
+    id="parallax-image" 
+    src="./hero4.jpg" 
+    alt="Home Page Image, shows picture of Various Chinese Food on a Table" 
+    class="object-cover w-screen transform scale-[1.5] -z-10
+           h-[70vh] 
+           sm:h-[80vh] 
+           md:h-screen 
+           lg:h-screen 
+           xl:h-screen"
+  >     <!-- <Image src={Hero} alt='Anime' width={500} height={500} class="object-cover h-[70vh] md:h-full sm:h-[80vh] lg:h-full transition-transform duration-300 ease-in-out  w-screen transform scale-[1.4] -z-10" /> -->
+    <div class="absolute inset-0 bg-black opacity-70"></div>
+    <div class="absolute inset-0 mt-30 flex flex-col items-center justify-center text-white sm:text-6xl text-3xl z-10 mt-10 text-center">
+        <h1>
+            <span class="whitespace-nowrap">YOUR GO-TO SPOT <br>FOR AUTHENTIC <strong class="text-primary">C</strong><strong class="text-primary">HINESE CUISINE</strong> </span>
+        </h1>
+            <!-- <span class="whitespace-nowrap">IN PRATAP VIHAR</span> -->
+        
+        <div class="text-2xl ">
+            Enjoy our Exclusive Chinese Food Collection
+        </div>
+        <div class="flex text-lg mt-10">
+            <Button text={"VIEW MENU"} onClick="menu"/>
+ 
+
+        </div>
+
+    </div>
+</div>

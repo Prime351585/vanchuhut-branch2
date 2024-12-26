@@ -1,0 +1,54 @@
+---
+interface Props {
+	title: string;
+
+}
+
+const { title } = Astro.props;
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro'
+const googleAnalyticsId = 'G-T1L95Q3ZJX';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Discover the best Chinese restaurant in Pratap Vihar, Ghaziabad, at Vanchu Hut. Enjoy authentic Chinese cuisine with family-friendly dining options. Indulge in the top-rated Chinese food in Ghaziabad, just around the corner." title="Vanchu Hut - Best Chinese Restaurant in Pratap Vihar, Ghaziabad | Authentic Chinese Cuisine" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="canonical" href="https://vanchuhut.in">
+		<meta name="generator" content={Astro.generator} />
+
+
+
+		<script async src="https://www.googletagmanager.com/gtag/js?id={googleAnalyticsId}"></script>
+    <script define:vars={{ googleAnalyticsId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', googleAnalyticsId);
+    </script>
+
+		
+ 		<!-- Open Graph / Social Media -->
+ 		<meta property="og:title" content="Your Title" />
+ 		<meta property="og:description" content="Your description" />
+ 		<meta property="og:image" content="URL to your image" />
+
+ 		<!-- Twitter -->
+ 		<meta name="twitter:card" content="summary_large_image" />
+ 		<meta name="twitter:title" content="Your Title" />
+ 		<meta name="twitter:description" content="Your description" />
+
+		<title>{title}</title>
+	</head>
+	<body class="font-agdasima">
+		<Header/>
+		<slot />
+		<Footer/>
+
+	</body>
+</html>
