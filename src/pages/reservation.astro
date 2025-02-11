@@ -1,6 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
-
+import heroImg from '../assets/LandingImage.jpg';
 // src/components/ReservationForm.astro
 interface Props {
   restaurantPhone?: string;
@@ -8,11 +9,11 @@ interface Props {
 
 const { restaurantPhone = "+919990471974" } = Astro.props;
 ---
-<Layout title='Reservations'>
+<Layout title='Reservations' description='Book a table at Vanchu Hut'>
     <section class="py-12 bg-white-100 font-agdasima">
-      <img src="/hero4.jpg" class="scale-100 w-screen h-[140px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+      <Image src={heroImg} class="scale-100 w-screen h-[140px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Decorative header - Vanchu Hut Chinese cuisine ambiance"/>
         <!-- <div class="absolute inset-0 bg-black opacity-80 w-screen h-[140px]"></div> -->
-<div class="min-h-screen px-4 sm:px-6 lg:px-8 bg-gray-50">
+<div class="min-h-screen px-4 sm:px-6 lg:px-8">
   <div class="max-w-md mx-auto">
 
 

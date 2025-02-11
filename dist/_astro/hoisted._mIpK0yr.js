@@ -1,1 +1,0 @@
-import"./hoisted.B4zqoSX_.js";document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("button[data-redirect]").forEach(t=>{t.addEventListener("click",n=>{n.preventDefault();const e=t.getAttribute("data-redirect");e&&(window.location.href=e)})})});

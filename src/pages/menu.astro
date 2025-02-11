@@ -1,9 +1,10 @@
 ---
-import menuData from '../../public/menu.json';
+import dishes from '../assets/menu';
 import Layout from '../layouts/Layout.astro';
-
+import { Image } from 'astro:assets';
+import heroImg from '../assets/LandingImage.jpg'; 
 // Get unique categories and organize dishes by category and subcategory
-const { dishes } = menuData;
+// const { dishes } = menuData;
 const categories = [...new Set(dishes.map(dish => dish.category))];
 
 const organizedDishes = categories.reduce((acc: { [key: string]: any }, category) => {
@@ -22,21 +23,21 @@ const organizedDishes = categories.reduce((acc: { [key: string]: any }, category
 }, {});
 
 // Get a sample image for each category
-const categoryImages = categories.reduce((acc: { [key: string]: string }, category) => {
-  acc[category] = dishes.find(dish => dish.category === category)?.image || '';
+const categoryImages = categories.reduce((acc: { [key: string]: any }, category) => {
+  acc[category] = dishes.find(dish => dish.category === category)?.image || heroImg;
   return acc;
 }, {});
 import Button from '../components/Button.astro';
 ---
 
-<Layout title='Menu'>
-  <meta name="Vanchu Hut Menu - Best Chinese Restaurant Menu in Ghaziabad" content="Explore Vanchu Hut's menu for the best Chinese food in Ghaziabad! Enjoy delicious takeout, an exquisite buffet, mouth-watering dumplings, and flavorful noodles in Pratap Vihar." />
+<Layout title='Vanchu Hut Menu - Best Chinese Restaurant Menu in Ghaziabad' description="Explore Vanchu Hut's menu for the best Chinese food in Ghaziabad! Enjoy delicious takeout, an exquisite buffet, mouth-watering dumplings, and flavorful noodles in Pratap Vihar." >
+  <h1 class="hidden">Vanchu Hut Menu - Best Chinese Restaurant Menu in Ghaziabad</h1>
   <section class="py-5 bg-gray-100 min-h-screen font-agdasima">
-    <img src="/hero4.jpg" class="scale-100 w-screen h-[168px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+    <Image format="avif" src={heroImg} class="scale-100 w-screen h-[140px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Decorative header - Vanchu Hut Chinese cuisine ambiance"/>
     <!-- <div class="absolute inset-0 bg-black opacity-80 h-[140px]"></div> -->
 
     <div class="container mx-auto px-4">
-      <h1 class="text-4xl font-bold text-center mb-8">Our Menu</h1>
+      <h2 class="text-4xl font-bold text-center mb-8">Our Menu</h2>
       <h2 class="pb-10 text-lg">Welcome to Vanchu Hut’s menu page, where you’ll find the finest selection of Chinese cuisine in Pratap Vihar, Ghaziabad. Our Chinese restaurant menu is thoughtfully crafted to cater to all your cravings, offering a delightful array of dishes that highlight the vibrant flavors of traditional Chinese cooking.</h2>
       <!-- Filter and Search Section -->
       <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
@@ -57,7 +58,8 @@ import Button from '../components/Button.astro';
             data-category={category}
           >
             <div class="relative h-48">
-              <img 
+              <Image
+                format="avif" 
                 src={categoryImages[category]} 
                 alt={category}
                 class="w-full h-full object-cover"

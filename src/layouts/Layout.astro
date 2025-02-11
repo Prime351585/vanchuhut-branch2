@@ -1,10 +1,11 @@
 ---
 interface Props {
 	title: string;
+	description: string;
 
 }
 
-const { title } = Astro.props;
+const { title,description } = Astro.props;
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro'
 const googleAnalyticsId = 'G-T1L95Q3ZJX';
@@ -14,12 +15,13 @@ const googleAnalyticsId = 'G-T1L95Q3ZJX';
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Discover the best Chinese restaurant in Pratap Vihar, Ghaziabad, at Vanchu Hut. Enjoy authentic Chinese cuisine with family-friendly dining options. Indulge in the top-rated Chinese food in Ghaziabad, just around the corner." title="Vanchu Hut - Best Chinese Restaurant in Pratap Vihar, Ghaziabad | Authentic Chinese Cuisine" />
+		<title>{title}</title>
+		<meta name="description" content={description}/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="canonical" href="https://vanchuhut.in">
 		<meta name="generator" content={Astro.generator} />
-
+		<link rel="sitemap" href="/sitemap-index.xml" />
 
 
 		<script async src="https://www.googletagmanager.com/gtag/js?id={googleAnalyticsId}"></script>
@@ -43,7 +45,6 @@ const googleAnalyticsId = 'G-T1L95Q3ZJX';
  		<meta name="twitter:title" content="Your Title" />
  		<meta name="twitter:description" content="Your description" />
 
-		<title>{title}</title>
 	</head>
 	<body class="font-agdasima">
 		<Header/>

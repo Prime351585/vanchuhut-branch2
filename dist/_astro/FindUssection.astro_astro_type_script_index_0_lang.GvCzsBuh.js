@@ -1,0 +1,1 @@
+import{g as r,S as i}from"./ScrollTrigger.Vy8Lnz_5.js";r.registerPlugin(i);r.from("#findUsTitle",{opacity:0,y:50,duration:1,scrollTrigger:{trigger:"#findUsTitle",start:"top 80%"}});const s=["#addressColumn","#contactColumn","#hoursColumn"];s.forEach((o,t)=>{r.from(o,{opacity:0,x:t%2===0?-50:50,duration:1,delay:.2*(t+1),scrollTrigger:{trigger:o,start:"top 80%"}})});

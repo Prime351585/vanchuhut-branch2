@@ -1,8 +1,9 @@
 ---
+import { Image } from 'astro:assets';
 interface Props{
 title: string;
 description: string;
-image: string;
+image: any;
 date: string;
 buttonLink: string;
 timetoRead:String;
@@ -11,7 +12,7 @@ timetoRead:String;
 const {title, description, image, date,buttonLink,timetoRead} = Astro.props
 ---
 <article class="bg-white shadow-lg rounded-lg overflow-hidden ">
-    <img src={image} alt="Blog Image" class="w-full h-44 object-cover object-center" />
+    <Image format="avif" src={image} alt="Blog Image" class="w-full h-44 object-cover object-center" />
     <div class="p-6 flex flex-col justify-center">
         <a href={buttonLink}>
             <h1 class="font-semibold text-2xl text-primary hover:text-secondary">{title}</h1>

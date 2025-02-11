@@ -2,7 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import FoodSection from '../components/FoodSection.astro'
 import HeroSection from '../components/HeroSection.astro'
-import Image from 'astro/components/Image.astro';
+import {Image} from "astro:assets";
+import dividerImage from "../assets/divider.webp"
 import DeliverySection from '../components/DeliverySection.astro';
 import MenuSection from "../components/MenuSection.astro"
 import VideoSection from "../components/VideoSection.astro"
@@ -10,12 +11,13 @@ import FindUssection from "../components/FindUssection.astro"
 import "../global.css"
 import FoodSlider from '../components/FoodSlider.astro';
 import GoogleReview from '../components/GoogleReview.astro';
+
 ---
 
-<Layout title="Home">
+<Layout title="Vanchu Hut - Best Chinese Restaurant in Pratap Vihar, Ghaziabad | Authentic Chinese Cuisine" description="Discover the best Chinese restaurant in Pratap Vihar, Ghaziabad, at Vanchu Hut. Enjoy authentic Chinese cuisine with family-friendly dining options. Indulge in the top-rated Chinese food in Ghaziabad, just around the corner.">
 	<HeroSection/>
 	<div class=" flex justify-center items-center h-0 w-auto ">
-		<Image id='center-image' src="/divider.webp" alt='chowmin' width={250} height={250} class='z-10 ' >
+		<Image id='center-image' src={dividerImage} format="avif" alt='Chowmin' width={250} height={250} class='z-10 ' >
 	</div>
 	<FoodSection/>
 	<DeliverySection/>

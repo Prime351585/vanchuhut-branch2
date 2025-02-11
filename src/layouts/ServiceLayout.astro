@@ -1,0 +1,41 @@
+---
+import Image from "astro/components/Image.astro";
+import Layout from "./Layout.astro";
+import Button from "../components/Button.astro";
+const {frontmatter} = Astro.props
+const {meta_title,meta_description,image} = frontmatter
+// console.log(image)
+// console.log(frontmatter)
+// console.log(JSON.stringify(frontmatter))
+---
+<Layout title={frontmatter.title} description={meta_description}>
+    <section class=" w-full my-2">
+        <Image src={image.src} alt={image.alt} width={100} height={100} format="avif"  class="h-96 w-full object-cover"/>
+    </section>
+    <div class="prose max-w-none py-10">
+        <slot/>
+    </div>
+    <div class="flex justify-center items-center">
+
+        <Button link="/contact" text={"Contact Us"} classes="my-2 text-white"/>
+    </div>
+<!-- <Image/> -->
+</Layout>
+<style is:global>
+    .prose {
+        @apply mx-auto px-4 sm:px-6 lg:px-8;
+        @apply px-10 sm:px-10 lg:px-24;
+    }
+    .prose h1 {
+        @apply text-4xl font-bold mb-8 text-primary;
+    }
+    .prose h2 {
+        @apply text-3xl font-bold mt-12 mb-6 text-secondary;
+    }
+    .prose h3 {
+        @apply text-2xl font-bold mt-8 mb-4;
+    }
+    .prose p {
+        @apply text-lg text-gray-600;
+    }
+</style>

@@ -1,5 +1,11 @@
 ---
-// ScrollableCards.astro
+import { Image } from "astro:assets";
+import BannerImg1 from "../assets/banner/1.webp";
+import BannerImg2 from "../assets/banner/2.webp";
+import BannerImg3 from "../assets/banner/3.webp";
+import BannerImg5 from "../assets/banner/5.webp";
+import BannerImg4 from "../assets/banner/4.webp";
+
 ---
 
 <div class="w-full py-2 bg-primary">
@@ -11,23 +17,23 @@
                 <div class="flex space-x-6 " id="cardsWrapper">
                     <!-- Deals and Offers -->
                     <div class="flex-none w-72 bg-primary rounded-xl shadow-lg pl-4">
-                                <img src="/banner/1.webp" alt="Momo Madness " class="w-full h-full object-cover rounded-lg"loading="lazy"/>
+                                <Image format="avif" src={BannerImg1} alt="Momo Madness " class="w-full h-full object-cover rounded-lg"loading="lazy"/>
                     </div>
                     <!-- Deals and Offers -->
                     <div class="flex-none w-72 bg-primary rounded-xl shadow-lg">
-                                <img src="/banner/2.webp" alt="A fiery Crunch, A Tasty Hunch" class="w-full h-full object-cover rounded-lg"loading="lazy"/>
+                                <Image format="avif" src={BannerImg2} alt="A fiery Crunch, A Tasty Hunch" class="w-full h-full object-cover rounded-lg"loading="lazy"/>
                     </div>
                     <!-- Deals and Offers -->
                     <div class="flex-none w-72 bg-primary rounded-xl shadow-lg">
-                                <img src="/banner/3.webp" alt="Slurp Savour Smile " class="w-full h-full object-cover rounded-lg"loading="lazy"/>
+                                <Image format="avif" src={BannerImg3} alt="Slurp Savour Smile " class="w-full h-full object-cover rounded-lg"loading="lazy"/>
                     </div>
                     <!-- Deals and Offers -->
                     <div class="flex-none w-72 bg-primary rounded-xl shadow-lg">
-                                <img src="/banner/5.webp" alt="Burger Cheesy Pleasy" class="w-full h-full object-cover rounded-lg"loading="lazy"/>
+                                <Image format="avif" src={BannerImg5} alt="Burger Cheesy Pleasy" class="w-full h-full object-cover rounded-lg"loading="lazy"/>
                     </div>
                     <!-- Deals and Offers -->
                     <div class="flex-none w-72 bg-primary rounded-xl shadow-lg pr-4">
-                                <img src="/banner/4.webp" alt="Call Now +919971135534" class="w-full h-full object-cover rounded-lg"loading="lazy"/>
+                                <Image format="avif" src={BannerImg4} alt="Call Now +919971135534" class="w-full h-full object-cover rounded-lg"loading="lazy"/>
                     </div>
 
         </div>

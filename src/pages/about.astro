@@ -1,7 +1,12 @@
 ---
 // src/pages/about.astro
 import Layout from '../layouts/Layout.astro';
-
+import { Image } from 'astro:assets';
+import Image1 from '../assets/about/noodles.svg';
+import Image2 from '../assets/about/celebration.svg';
+import Image3 from '../assets/about/quality.svg';
+import heroImg from '../assets/LandingImage.jpg';
+import logoImg from "../../public/logo.png";
 interface StorySection {
   year: string;
   title: string;
@@ -14,21 +19,21 @@ const ourStory: StorySection[] = [
   {
     year: "",
     title: "",
-    img:"/about/noodles.svg",
+    img:Image1,
     alt:"Image of a noodle bowl",
     description: "At Vanchu Hut, we bring you the bold and unique flavors of Chinese cuisine, from savory dumplings and sizzling stir-fried noodles to popular dishes like fried rice and crispy spring rolls. We’re proud to be known for our authentic Chinese dishes, prepared with recipes that pay homage to traditional flavors"
   },
   {
     year: "",
     title: "",
-    img:"/about/celebration.svg",
+    img:Image2,
     alt:"Image of a Party Popper",
     description: "Our restaurant is family-friendly, with a comfortable atmosphere ideal for gatherings, small celebrations, or simply enjoying a cozy meal with friends. We’re all about creating a welcoming vibe for everyone who steps through our doors."
   },
   {
     year: "",
     title: "",
-    img:"/about/quality.svg",
+    img:Image3,
     alt:"Image of a Quality Badge",
     description: "Whether you’re a regular or trying us out for the first time, Vanchu Hut is dedicated to quality, from ingredients to service. We aim to be your top choice for Chinese food near Pratap Vihar and beyond."
   }
@@ -53,12 +58,10 @@ const values = [
 ];
 ---
 
-<Layout title="About Us | Vanchu Hut">
-  <meta name="Vanchu Hut - Affordable Chinese Food in Pratap Vihar, Ghaziabad" content="Craving affordable Chinese food in Pratap Vihar? Discover popular Chinese dishes and delicious vegetarian options at Vanchu Hut, one of Ghaziabad's top-rated Chinese restaurants!" />  
+<Layout title="About Us | Vanchu Hut" description="Craving affordable Chinese food in Pratap Vihar? Discover popular Chinese dishes and delicious vegetarian options at Vanchu Hut, one of Ghaziabad's top-rated Chinese restaurants!">
+  <h1 class="hidden">Vanchu Hut - Affordable Chinese Food in Pratap Vihar, Ghaziabad</h1>
     <section class="py-12 bg-white-100 font-agdasima">
-      <!-- <div class="scale-100 w-screen h-[140px] transform -translate-y-12 bg-primary"> </div> -->
-      <img src="/hero4.jpg" class="scale-100 w-screen h-[140px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
-      <!-- <div class="absolute inset-0 bg-black opacity-80 w-screen h-[140px]"></div> -->
+      <Image format="avif" src={heroImg} class="scale-100 w-screen h-[140px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Decorative header - Vanchu Hut Chinese cuisine ambiance"/>
   <!-- Hero Section -->
         
         <!-- Welcome Section -->
@@ -75,8 +78,9 @@ const values = [
             At Vanchu Hut, we understand the importance of quality and flavor. Our chefs use the freshest ingredients to create mouth-watering dishes that reflect the authentic tastes of Chinese cuisine. From savory stir-fries to delectable dim sum, we’ve got something for everyone, including a wide selection of vegetarian Chinese food that has made us a favorite in Ghaziabad.          </p>
         </div>
         <div class="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
-          <img 
-            src="/logo.png" 
+          <Image 
+          format="avif"
+            src={logoImg} 
             alt="About Us, and our values in the resturant in Pratap Vihar Ghaziabad" 
             class="w-full h-full object-cover"
           />
@@ -98,7 +102,7 @@ const values = [
               <div class="text-4xl font-bold text-secondary mb-2">{story.year}</div>
               <h3 class="text-xl font-semibold text-primary">{story.title}</h3>
               <div class="flex items-center justify-center">
-              <img src={story.img} class="w-20 h-20">
+              <Image format="avif" src={story.img} alt={story.alt} class="w-20 h-20" />
               </div>
             </div>
             <div class="w-full md:w-2/3 bg-white p-6 rounded-lg shadow-md">
@@ -129,7 +133,7 @@ const values = [
   </section>
 
   <!-- Call to Action -->
-  <section class="py-16 bg-primary text-white">
+  <section class="py-16 -mb-12 bg-primary text-white">
     <div class="container mx-auto px-4 max-w-7xl text-center">
       <h2 class="text-3xl md:text-4xl font-bold mb-6">
         Join Us for an Authentic Chinese Dining Experience

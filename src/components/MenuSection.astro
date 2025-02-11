@@ -1,5 +1,10 @@
 ---
 import Button from '../components/Button.astro'
+import { Image } from 'astro:assets'
+import chowmin from '../assets/dishes/chowmin.webp'
+import momos from '../assets/dishes/momos.webp'
+import pasta from '../assets/dishes/pasta.webp'
+import burger from '../assets/dishes/burger.webp'
 ---
 
 <div class="bg-white">
@@ -16,21 +21,21 @@ import Button from '../components/Button.astro'
     </div>
     <div class="flex flex-col sm:flex-row justify-center items-center text-center pb-4">
         <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <img src="./dishes/chowmin.webp" alt="Image of a Chowmin Plate,in Pratap Vihar Ghaziabad" class="rounded-lg w-full h-full object-cover"/>
+            <Image format="avif" src={chowmin} alt="Authentic Chinese Chowmein - Fresh noodles stir-fried with vegetables at Vanchu Hut" class="rounded-lg w-full h-full object-cover"/>
 
         </div>
 
         <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out ">
-            <img src="./dishes/momos.webp" alt="Image of a momon ,in Pratap Vihar Ghaziabad" class="rounded-lg w-full h-full object-cover"/>
+            <Image format="avif" src={momos} alt="Steamed Momos - Hand-crafted dumplings with spicy chutney at Vanchu Hut Pratap Vihar" class="rounded-lg w-full h-full object-cover"/>
 
         </div>
 
         <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <img src="./dishes/pasta.webp" alt="Image of a pasta Plate,in Pratap Vihar Ghaziabad" class="rounded-lg w-full h-full object-cover"/>
+            <Image format="avif" src={pasta} alt="Chinese Pasta - Creamy Indo-Chinese fusion pasta with vegetables at Vanchu Hut Pratap Vihar" class="rounded-lg w-full h-full object-cover"/>
 
         </div>
         <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <img src="./dishes/burger.webp" alt="Image of a burger Plate,in Pratap Vihar Ghaziabad" class="rounded-lg w-full h-full object-cover"/>
+            <Image format="avif" src={burger} alt="Chinese Burger - Spicy Asian-style burger with unique sauce at Vanchu Hut Pratap Vihar" class="rounded-lg w-full h-full object-cover"/>
 
         </div>
     </div>

@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import heroImg from '../assets/LandingImage.jpg';
+import { Image } from "astro:assets";
 ---
 
-<Layout title="404">
+<Layout title="404" description="Page not found">
     <section class="py-12 bg-white-100 font-agdasima">
-        <img src="/hero4.jpg" class="scale-100 w-screen h-[140px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+        <Image format="avif" src={heroImg} class="scale-100 w-screen h-[140px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Decorative header - Vanchu Hut Chinese cuisine ambiance"/>
         <div class="relative z-10 flex flex-col items-center justify-center h-[300px] text-black">
             <h1 class="text-4xl font-bold mb-4">404</h1>
             <p class="text-xl mb-6">Oops! The page you are trying to access is currently not available.</p>

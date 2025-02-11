@@ -1,13 +1,23 @@
 ---
 import Layout from "../../layouts/Layout.astro"
 import BlogCard from "../../components/BlogCard.astro"
+import { Image } from "astro:assets"
+import heroImg from "../../assets/LandingImage.jpg"
+import Blog1Img from "../../assets/blogImages/blog1.webp"
+import Blog2Img from "../../assets/blogImages/blog2.webp"
+import Blog3Img from "../../assets/blogImages/blog3.webp"
+import Blog4Img from "../../assets/blogImages/blog4.webp"
+import Blog5Img from "../../assets/blogImages/blog5.webp"
+import Blog6Img from "../../assets/blogImages/blog6.webp"
+import Blog7Img from "../../assets/blogImages/blog7.webp"
+
 const blogCardContent = [{
     
     metaTitle: "Discover the Best Chinese Food at Vanchu Hut – Top Dishes in Pratap Vihar",
     metaDescription: "Vanchu Hut is the best Chinese restaurant in Ghaziabad. We offer a wide range of Chinese dishes, including dumplings, noodles, and more. Our food is made with fresh ingredients and authentic Chinese flavors. Visit us today to enjoy delicious Chinese food!",
-    image: "/blogImages/blog1.webp",
+    image: Blog1Img,
     publishDate: "2024-03-15",
-    buttonlink: "/blogs/blog1",
+    buttonlink: "/blogs/Discover-the-Best-Chinese-Food-at-Vanchu-Hut",
     timetoread: "5 min"
 
 },
@@ -15,54 +25,65 @@ const blogCardContent = [{
     title: "Celebrate Your Special Moments with Authentic Chinese Cuisine at Vanchu Hut",
     metaTitle: "Top Chinese Dishes You Can't Miss at Vanchu Hut – Best Chinese Food in Pratap Vihar",
     metaDescription: "Explore the must-try Chinese dishes at Vanchu Hut. From Hakka Noodles to Honey Chilli Potato, discover the best Chinese food in Pratap Vihar, Ghaziabad.",
-    image: "/blogImages/blog2.webp",
+    image: Blog2Img,
     publishDate: "2024-11-23",
-    buttonlink: "/blogs/blog2",
+    buttonlink: "/blogs/Celebrate-Your-Special-Moments-with-Authentic-Chinese-Cuisine-at-Vanchu-Hut",
     timetoread: "7 min"
 },
 {
     title: "How to Order Chinese Food in Ghaziabad Without Any Hassle",
     metaTitle: "Guide to Ordering Chinese Food in Ghaziabad | Vanchu Hut",
     metaDescription: "Learn how to order Chinese food in Ghaziabad easily. Tips, tricks, and recommendations for the best ordering experience.",
-    image: "/blogImages/blog3.webp",
+    image: Blog3Img,
     publishDate: "2024-12-12",
-    buttonlink: "/blogs/blog3",
+    buttonlink: "/blogs/How-to-Order-Chinese-Food-in-Ghaziabad-Without-Any-Hassle",
     timetoread: "5 min"
 },
 {
     title: "The Secrets Behind Popular Chinese Dishes in Ghaziabad",
     metaTitle: "Popular Chinese Dishes in Ghaziabad | Secret Recipes & Flavors",
     metaDescription: "Discover the secrets behind popular Chinese dishes in Ghaziabad. Learn about authentic flavors and fusion cuisine at Vanchu Hut.",
-    image: "/blogImages/blog4.webp",
+    image: Blog4Img,
     publishDate: "2024-12-24",
-    buttonlink: "/blogs/blog4",
+    buttonlink: "/blogs/The-Secrets-Behind-Popular-Chinese-Dishes-in-Ghaziabad",
     timetoread: "6 min"
 },
 {
     title: "The Role of Ambiance in Dining: Why Vanchu Hut Stands Out in Ghaziabad",
     metaTitle: "Why Vanchu Hut’s Ambiance Makes Dining in Ghaziabad Special",
     metaDescription: "At Vanchu Hut in Ghaziabad, we blend cozy decor, family-friendly seating, and relaxing ambiance with delicious Chinese cuisine. Discover why our atmosphere makes every meal memorable!",
-    image: "/blogImages/blog5.webp",
+    image: Blog5Img,
     publishDate: "2025-01-12",
-    buttonlink: "/blogs/blog5",
+    buttonlink: "/blogs/The-Role-of-Ambiance-in-Dining",
     timetoread: "8 min"
 },
 {
     title: "Dining Out: The Ultimate Stress Reliever and How to Make It Special at Vanchu Hut",
-    metaTitle: "Dining Out: The Ultimate Stress Reliever | Vanchu Hut",
+    metaTitle: "Dining Out: The Ultimate Stress Reliever",
     metaDescription: "Discover how dining out at Vanchu Hut can be the ultimate stress reliever. Enjoy great food, excellent service, and a soothing ambiance.",
-    image: "/blogImages/blog6.webp",
+    image: Blog6Img,
     publishDate: "2025-01-21",
-    buttonlink: "/blogs/blog6",
+    buttonlink: "/blogs/Dining-Out-The-Ultimate-Stress-Reliever",
+    timetoread: "5 min"
+},
+{
+    title: "Love in the Making: The Remarkable Blend of Indian and Chinese Cuisine!",
+    metaTitle: "Love in the Making: The Remarkable Blend of Indian and Chinese Cuisine",
+    metaDescription: "Satiate your curiosity about Chinese food in India and why it's loved so much. Browse through the best Chinese restaurant menu in Ghaziabad at Vanchu Hut.",
+    publishDate: "2025-02-11",
+    image: Blog7Img,
+    buttonlink: "/blogs/Love-in-the-Making",
     timetoread: "5 min"
 },
 
 ]
 ---
-<Layout title='Menu'>
-    <meta name="Vanchu Hut Menu - Best Chinese Restaurant Menu in Ghaziabad" content="Explore Vanchu Hut's menu for the best Chinese food in Ghaziabad! Enjoy delicious takeout, an exquisite buffet, mouth-watering dumplings, and flavorful noodles in Pratap Vihar." />
+<Layout title='Vanchu Hut Menu - Best Chinese Restaurant Menu in Ghaziabad' description="Explore Vanchu Hut's menu for the best Chinese food in Ghaziabad! Enjoy delicious takeout, an exquisite buffet, mouth-watering dumplings, and flavorful noodles in Pratap Vihar.">
+
     <section class=" bg-gray-100 min-h-screen font-agdasima ">
-      <img src="/hero4.jpg" class="scale-100 w-screen h-[168px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+
+      
+        <Image src={heroImg} format="avif" class="scale-100 w-screen h-[168px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Decorative header - Vanchu Hut Chinese cuisine ambiance"/>
       <h1 class="text-primary text-5xl font-bold text-center ">
         Vanchu Hut Blog
     </h1>
@@ -71,7 +92,7 @@ const blogCardContent = [{
     </h2>
     <div class="px-5 grid grid-cols-1 md:grid-cols-3 gap-4">
 
-        {blogCardContent.map((card,index)=>(
+        {blogCardContent.reverse().map((card,index)=>(
             <BlogCard title={card.metaTitle} date={card.publishDate} description={card.metaDescription} image={card.image} buttonLink={card.buttonlink}, timetoRead={card.timetoread}/>
         ))}
     </div>

@@ -1,12 +1,17 @@
 ---
+import { Image } from "astro:assets";
 import Button from "./Button.astro";
-// GoogleReviews.astro
+import GoogleImg from "../assets/socialIcons/google.svg";
+import ReviewImg1 from "../assets/reviewSection/dev.png";
+import ReviewImg2 from "../assets/reviewSection/harshit.png";
+import ReviewImg3 from "../assets/reviewSection/saurabh.png";
+import ReviewImg4 from "../assets/reviewSection/siddharth.png";
 interface Review {
   name: string;
   rating: number;
   date: string;
   content: string;
-  image: string;
+  image: any;
 }
 
 const reviews: Review[] = [
@@ -15,28 +20,28 @@ const reviews: Review[] = [
     rating: 4,
     date: "a year ago",
     content: "They offer very tasty chinese food..with ok ok price and good quantity..and specially there crispy chilly potato and Veg Noodles.😋",
-    image: "/reviewSection/dev.png"  // Replace with actual path
+    image: ReviewImg1  // Replace with actual path
   },
   {
     name: "Dr. Harshit Lohani",
     rating: 4,
     date: "a year ago",
     content: "Good place to have spicy food🌶️ specially with friends. Their main speciality is Chinese food. It's Budget friendly. Most of the time it's filled with college students like me😂.",
-    image: "/reviewSection/harshit.png"
+    image: ReviewImg2
   },
   {
     name: "Saurabh Bhatia",
     rating: 5,
     date: "a year ago",
     content: " Fantastic taste. We tried Paneer chowmeen , spring roll , fried rice. Also packed for family. Taste was very good. Rate also normal.",
-    image: "/reviewSection/saurabh.png"
+    image: ReviewImg3
   },
   {
     name: "Siddarth Nagpal",
     rating: 5,
     date: "a week ago",
     content: "The best restaurant for family and friends in Sector-12. I have been there maybe 100 times...😍😍,Recommended dishes,Manchurian, Fried Rice, Spring Roll, Veg Momo.",
-    image: "/reviewSection/siddharth.png"
+    image: ReviewImg4
   }
 ];
 
@@ -50,7 +55,7 @@ const renderStars = (rating: number) => {
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">What Our Clients Say</h2>
       <div class="flex items-center justify-center gap-2 mb-4">
-        <img src="/socialIcons/google.svg" alt="Google" class="h-8 w-auto" /> 
+        <Image format="avif" src={GoogleImg} alt="Google" class="h-8 w-auto" /> 
         <div class="flex items-center">
           <svg class="w-24 h-5" viewBox="0 0 100 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
             <!-- Filled Star 1 -->
@@ -79,7 +84,8 @@ const renderStars = (rating: number) => {
       {reviews.map((review) => (
         <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
           <div class="flex items-center mb-4">
-            <img 
+            <Image 
+              format="avif"
               src={review.image} 
               alt={review.name}
               class="w-12 h-12 rounded-full object-cover"
@@ -114,7 +120,3 @@ const renderStars = (rating: number) => {
     </div>
   </div>
 </section>
-
-<style>
-  /* Optional: Add any custom styles here */
-</style>

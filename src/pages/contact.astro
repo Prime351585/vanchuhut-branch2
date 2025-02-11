@@ -1,11 +1,13 @@
 ---
+import Button from '../components/Button.astro';
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import heroImg from '../assets/LandingImage.jpg';
 ---
 
-<Layout title="Contact Us - Your Company Name ">
-  <meta name="Contact Us | Vanchu Hut - Family Chinese Restaurant in Pratap Vihar, Ghaziabad" content="Get in touch with Vanchu Hut! Visit us in Pratap Vihar, Ghaziabad, or reach out via phone or email for inquiries about our Chinese cuisine, reservations, and more. We’re here to help!" />
+<Layout title="Contact Us | Vanchu Hut - Family Chinese Restaurant in Pratap Vihar, Ghaziabad" description="Get in touch with Vanchu Hut! Visit us in Pratap Vihar, Ghaziabad, or reach out via phone or email for inquiries about our Chinese cuisine, reservations, and more. We’re here to help!">
     <section class="py-12 bg-white-100 font-agdasima">
-      <img src="/hero4.jpg" class="scale-100 w-screen h-[140px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+      <Image format="avif" src={heroImg} class="scale-100 w-screen h-[140px] transform -translate-y-[101px] md:-translate-y-[60px]  object-cover" alt="Decorative header - Vanchu Hut Chinese cuisine ambiance"/>
         <!-- <div class="absolute inset-0 bg-black opacity-80 w-screen h-[140px]"></div> -->
   <main class="container mx-auto px-4 py-8 lg:pr-20 lg:pl-20">
     <h1 class="text-4xl font-bold mb-6">Contact Us at Vanchu Hut</h1>
@@ -25,7 +27,7 @@ import Layout from '../layouts/Layout.astro';
             <label for="message" class="block mb-1">Message</label>
             <textarea id="message" name="message" rows="4" class="w-full p-2 border rounded" required></textarea>
           </div>
-          <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Send Message</button>
+          <Button text="Send Message" onClick={"mailto:vanchuhut@gmail.com"} >Send Message</Button>
         </form>
       </div>
       <div>
