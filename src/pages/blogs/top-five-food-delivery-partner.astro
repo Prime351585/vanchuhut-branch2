@@ -1,0 +1,282 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../../assets/LandingImage.jpg";
+import BlogImg from "../../assets/blogImages/blog9.png"; // You'll need to replace this with your actual image
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "The 5 Leading Food Delivery Applications in India", href: "#", current: true }
+];
+const blogData = {
+    title: "The 5 Leading Food Delivery Applications in India",
+    metaTitle: "Top 5 Food Delivery Apps in India | Comparison & Reviews",
+    metaDescription: "Explore food delivery apps in India and view their pros, cons, detailed reviews, and pricing. Make a comparison of Zomato, Swiggy, Uber Eats, and others.",
+    image: BlogImg,
+    publishDate: "2025-03-15",
+    introduction: "Ordering food has become a norm in most Indian households. Be it ordering food during a late-night binge or having family dinners, ordering food has changed the food habits of people as they prefer cuisine from reputed restaurants delivered to their location with the ease of a phone call. With the increase in our technology and smartphone usage, food delivery applications have become essential for food lovers and ever-busy professionals as well.",
+    post_intro:"In this blog, we explore the 5 food delivery applications available in India, providing you a detailed analysis of their distinct features, prices, and what each offers so that you may select the one that best meets your requirements.",
+    sections: [
+        {
+            title: "Ranking Methodology",
+            content: "To make unbiased recommendations, we evaluated the apps based on the following criteria: User Ratings from customers and review platforms, Delivery cross-location speed, Selection of local and international delicacies offered, Affordability including delivery fee, subscription costs, and pricing, and Competitive Features like loyalty reward schemes, discounts, and live order visibility. All of the apps discussed here perform well in the areas highlighted, and we did take into account the expectations of Indian consumers when making this list."
+        }
+    ],
+    apps: [
+        {
+            name: "Zomato",
+            description: "Zomato continues to lead in India’s food delivery sector due to the sheer number of restaurants ranging from stalls to luxurious hotels.",
+            pros: [
+                "Vast coverage of restaurants.",
+                "Accurate live order tracking.",
+                "Great privileges with Zomato Gold subscription."
+            ],
+            cons: [
+                "Costs of delivery increase in busy hours."
+            ],
+            pricing: "As usually, the delivery charge is ₹20 but may increase based on the location."
+        },
+        {
+            name: "Swiggy",
+            description: "This app is particularly famous for its speedy delivery services as well as effective partnerships with various regional and international restaurant chains.",
+            pros: [
+                "Swiggy buys groceries in an instant and delivers them with lightning speed, giving birth to Swiggy Instamart.",
+                "Subscription plans Swiggy One offer free deliveries and other special offers.",
+                "Easy payment options such as Paytm and UPI."
+            ],
+            cons: [
+                "Higher prices in peak hours."
+            ],
+            pricing: "Same as Zomato."
+        },
+        {
+            name: "Uber Eats",
+            description: "Uber makes our list due to the fact that it is popular with users for its many appealing discounts. The app is also user-friendly and boasts a wide selection of cuisine.",
+            pros: [
+                "Great deals for discount shoppers.",
+                "In-app ordering while using Uber."
+            ],
+            cons: [
+                "Not available for smaller cities."
+            ],
+            pricing: "Can vary, but is often paired with promo deals."
+        },
+        {
+            name: "Dunzo",
+            description: "While groceries and everyday item deliveries are the primary service of Dunzo, the app is also consistently ranked by users for delivering food from local restaurants.",
+            pros: [
+                "Low delivery fees.",
+                "Wide range of services beyond food delivery."
+            ],
+            cons: [
+                "Limited restaurant options compared to other apps."
+            ],
+            pricing: "Pricing starts from ₹99 with low fees."
+        },
+        {
+            name: "Domino's App",
+            description: "Domino's promises speedy 30-minute delivery and often provides cashback for frequent users. Users looking for exclusive offers can expect special promos available only through the app.",
+            pros: [
+                "Speedy 30-minute delivery.",
+                "Exclusive offers and cashback for frequent users."
+            ],
+            cons: [
+                "Limited to Domino's menu."
+            ],
+            pricing: "Standard fees with specials available for returning customers."
+        }
+    ],
+    additionalSections: [
+        {
+            title: "Comparison Table",
+            content: "Here's a quick comparison of the top food delivery apps in India:",
+            tableData: {
+                headers: ["App", "Unique Feature", "Subscription Plan", "Delivery Fee"],
+                rows: [
+                    ["Zomato", "Zomato Gold", "₹2000 per year", "From ₹20"],
+                    ["Swiggy", "Swiggy Instamart", "₹75 per month", "From ₹20"],
+                    ["Uber Eats", "Heavy Discounts", "Paired with Uber Pass", "Varies"],
+                    ["Dunzo", "Grocery Delivery", "From ₹99", "Low fees"],
+                    ["Domino's", "30-Minute Delivery", "No subscription required", "Standard fee"]
+                ]
+            }
+        },
+        {
+            title: "Relish in Pratap Vihar's Chinese Cuisine at Vanchu Hut",
+            content: "If your love for food goes beyond the confines of your phone, then Vanchu Hut, located in Pratap Vihar, Ghaziabad, is the place to be. This place is well known for its authentic Chinese offerings like crispy chilli potatoes, chow mein, and mouthwatering dumplings. No time to visit? You can order for delivery and relish their dishes at home."
+        },
+        {
+            title:"No time to visit?",
+            content:"You can order for delivery and relish their dishes at home."
+
+        }
+    ],
+    conclusion: {
+        content: "Zomato users in Ghaziabad can now order from Vanchu Hut! For the Chinese dishes lovers within Ghaziabad, Vanchu Hut is now listed on Zomato. Whether you are at work or home, you can order their tasty meals such as crisped chilli potatoes, chow mein, and scrumptious dumplings, with just a few clicks. No need to go through the hassle of cooking—treat yourself to a delightful meal from Vanchu Hut, and they will deliver it to your doorstep anywhere in Ghaziabad. Don't wait—place your order now on Zomato!"
+    }
+};
+---
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    <section class="font-agdasima">
+        <Image src={heroImg} class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px] object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+    </section> 
+    <nav class="flex px-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {breadcrumbs.map((item, index) => (
+                <li class="flex items-center">
+                    {index > 0 && (
+                        <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    )}
+                    {item.current ? (
+                        <span class="text-gray-600" aria-current="page">{item.label}</span>
+                    ) : (
+                        <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                    )}
+                </li>
+            ))}
+        </ol>
+    </nav>
+    
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="relative h-[400px] mb-8 rounded-lg overflow-hidden">
+            <Image
+                format="avif" 
+                src={blogData.image} 
+                alt="Various food delivery apps displayed on a smartphone"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+            <h1 class="text-4xl font-bold text-primary mb-8">{blogData.title}</h1>
+
+            {/* Table of Contents */}
+            <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                <h2 class="text-xl font-semibold mb-4">Table of Contents</h2>
+                <ol class="list-decimal pl-4">
+                    <li>Introduction</li>
+                    <li>Ranking Methodology</li>
+                    <li>Top 5 Food Delivery Apps in India
+                        <ul class="list-disc pl-6 mt-2">
+                            <li>Zomato</li>
+                            <li>Swiggy</li>
+                            <li>Uber Eats</li>
+                            <li>Dunzo</li>
+                            <li>Domino's App</li>
+                        </ul>
+                    </li>
+                    <li>Comparison Table</li>
+                    <li>Relish in Pratap Vihar's Chinese Cuisine at Vanchu Hut</li>
+                </ol>
+            </div>
+
+            {/* Introduction */}
+            <p class="lead text-xl text-gray-700 mb-8">{blogData.introduction}</p>
+            {/* Post Introduction */}
+            <p class="text-gray-700 mb-8">{blogData.post_intro}</p>
+            {/* Main Content */}
+            {blogData.sections.map((section, index) => (
+                <section class="mb-12">
+                    <h2 class="text-2xl font-semibold text-secondary mb-4">
+                        {section.title}
+                    </h2>
+                    <p class="text-gray-700">{section.content}</p>
+                </section>
+            ))}
+
+            {/* Food Delivery Apps Section */}
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-secondary mb-6">Top 5 Food Delivery Apps in India</h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    {blogData.apps.map((app, index) => (
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="font-semibold mb-2">{index + 1}. {app.name}</h3>
+                            <p class="text-gray-600 mb-4">{app.description}</p>
+                            <div class="mb-4">
+                                <h4 class="font-semibold text-gray-700">Pros:</h4>
+                                <ul class="list-disc pl-5 text-gray-600">
+                                    {app.pros.map((pro) => (
+                                        <li>{pro}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <div class="mb-4">
+                                <h4 class="font-semibold text-gray-700">Cons:</h4>
+                                <ul class="list-disc pl-5 text-gray-600">
+                                    {app.cons.map((con) => (
+                                        <li>{con}</li>
+                                    ))}
+                                </ul>
+                            </div>
+                            <p class="text-gray-600"><strong>Pricing:</strong> {app.pricing}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Comparison Table */}
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-secondary mb-4">
+                    {blogData.additionalSections[0].title}
+                </h2>
+                <p class="text-gray-700">{blogData.additionalSections[0].content}</p>
+                <div class="overflow-x-auto mt-6">
+                    <table class="min-w-full bg-white border border-gray-200">
+                        <thead>
+                            <tr>
+                                {blogData.additionalSections[0].tableData?.headers.map((header) => (
+                                    <th class="py-3 px-4 border-b border-gray-200 bg-gray-50 text-left text-sm font-semibold text-gray-600 uppercase tracking-wider">
+                                        {header}
+                                    </th>
+                                ))}
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {blogData.additionalSections[0].tableData?.rows.map((row) => (
+                                <tr>
+                                    {row.map((cell, cellIndex) => (
+                                        <td class="py-4 px-4 border-b border-gray-200 text-sm">
+                                            {cellIndex === 0 ? <span class="font-medium">{cell}</span> : cell}
+                                        </td>
+                                    ))}
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            {/* Vanchu Hut Section */}
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-secondary mb-4">
+                    {blogData.additionalSections[1].title}
+                </h2>
+                <p class="text-gray-700">{blogData.additionalSections[1].content}</p>
+            </section>
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-secondary mb-4">
+                    {blogData.additionalSections[2].title}
+                </h2>
+                <p class="text-gray-700">{blogData.additionalSections[2].content}</p>
+            </section>
+
+            {/* Conclusion */}
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-secondary mb-4">Conclusion</h2>
+                <p class="text-gray-700">{blogData.conclusion.content}</p>
+            </section>
+
+            {/* CTA Section */}
+            <div class="flex justify-center gap-6 my-12">
+                <a href="/menu" class="bg-secondary text-white px-8 py-3 rounded-full hover:bg-secondary/90">
+                    Explore Our Menu
+                </a>
+                <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90">
+                    Visit Us Today
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
