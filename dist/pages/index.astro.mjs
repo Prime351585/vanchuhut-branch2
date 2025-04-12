@@ -1,5 +1,5 @@
 /* empty css                                 */
-import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as renderComponent, b as addAttribute, h as renderScript } from '../chunks/astro/server_DMYH2_8g.mjs';
+import { c as createComponent, r as renderTemplate, m as maybeRenderHead, a as renderComponent, h as renderScript, b as addAttribute } from '../chunks/astro/server_DMYH2_8g.mjs';
 import 'kleur/colors';
 import { $ as $$Layout } from '../chunks/Layout_Bp2nhWV8.mjs';
 import 'clsx';
@@ -7,10 +7,10 @@ import '@astrojs/internal-helpers/path';
 import '@astrojs/internal-helpers/remote';
 import { $ as $$Image, H as HeroImg } from '../chunks/LandingImage_BSjkF7PI.mjs';
 import { $ as $$Button } from '../chunks/Button_Cix492Dv.mjs';
+/* empty css                                 */
 import { d as deliveryImage, m as momos } from '../chunks/chowmin_DFUkTUVz.mjs';
 import { c as chillipotato } from '../chunks/chillipotato_F_zui8of.mjs';
 import { $ as $$FindUssection } from '../chunks/FindUssection_BzNgPeP0.mjs';
-/* empty css                                 */
 export { renderers } from '../renderers.mjs';
 
 const $$FoodSection = createComponent(($$result, $$props, $$slots) => {
@@ -36,6 +36,75 @@ const dividerImage = new Proxy({"src":"/_astro/divider.BKlj4bdN.webp","width":25
 							return target[name];
 						}
 					});
+
+const BannerImg1 = new Proxy({"src":"/_astro/1.DOw1uuNq.webp","width":2880,"height":1620,"format":"webp"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/workspaces/vanchuhut-branch2/src/assets/banner/1.webp";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/workspaces/vanchuhut-branch2/src/assets/banner/1.webp");
+							return target[name];
+						}
+					});
+
+const BannerImg2 = new Proxy({"src":"/_astro/2.M0mv-3dt.webp","width":2880,"height":1620,"format":"webp"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/workspaces/vanchuhut-branch2/src/assets/banner/2.webp";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/workspaces/vanchuhut-branch2/src/assets/banner/2.webp");
+							return target[name];
+						}
+					});
+
+const BannerImg3 = new Proxy({"src":"/_astro/3.D1EyqMt9.webp","width":2880,"height":1620,"format":"webp"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/workspaces/vanchuhut-branch2/src/assets/banner/3.webp";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/workspaces/vanchuhut-branch2/src/assets/banner/3.webp");
+							return target[name];
+						}
+					});
+
+const BannerImg5 = new Proxy({"src":"/_astro/5.C6JlJ82S.webp","width":2880,"height":1620,"format":"webp"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/workspaces/vanchuhut-branch2/src/assets/banner/5.webp";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/workspaces/vanchuhut-branch2/src/assets/banner/5.webp");
+							return target[name];
+						}
+					});
+
+const BannerImg4 = new Proxy({"src":"/_astro/4.chfZJcVd.webp","width":2880,"height":1620,"format":"webp"}, {
+						get(target, name, receiver) {
+							if (name === 'clone') {
+								return structuredClone(target);
+							}
+							if (name === 'fsPath') {
+								return "/workspaces/vanchuhut-branch2/src/assets/banner/4.webp";
+							}
+							if (target[name] !== undefined && globalThis.astroAsset) globalThis.astroAsset?.referencedImages.add("/workspaces/vanchuhut-branch2/src/assets/banner/4.webp");
+							return target[name];
+						}
+					});
+
+const $$DeliverySection = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${maybeRenderHead()}<div class="w-full py-2 bg-primary" data-astro-cid-zuzcxizl> <div class="container mx-auto " data-astro-cid-zuzcxizl> <div class="cards-container relative" data-astro-cid-zuzcxizl> <div class="overflow-x-auto hide-scrollbar" data-astro-cid-zuzcxizl> <div class="flex space-x-6 " id="cardsWrapper" data-astro-cid-zuzcxizl> <!-- Deals and Offers --> <div class="flex-none w-72 bg-primary rounded-xl shadow-lg pl-4" data-astro-cid-zuzcxizl> ${renderComponent($$result, "Image", $$Image, { "format": "avif", "src": BannerImg1, "alt": "Momo Madness ", "class": "w-full h-full object-cover rounded-lg", "loading": "lazy", "data-astro-cid-zuzcxizl": true })} </div> <!-- Deals and Offers --> <div class="flex-none w-72 bg-primary rounded-xl shadow-lg" data-astro-cid-zuzcxizl> ${renderComponent($$result, "Image", $$Image, { "format": "avif", "src": BannerImg2, "alt": "A fiery Crunch, A Tasty Hunch", "class": "w-full h-full object-cover rounded-lg", "loading": "lazy", "data-astro-cid-zuzcxizl": true })} </div> <!-- Deals and Offers --> <div class="flex-none w-72 bg-primary rounded-xl shadow-lg" data-astro-cid-zuzcxizl> ${renderComponent($$result, "Image", $$Image, { "format": "avif", "src": BannerImg3, "alt": "Slurp Savour Smile ", "class": "w-full h-full object-cover rounded-lg", "loading": "lazy", "data-astro-cid-zuzcxizl": true })} </div> <!-- Deals and Offers --> <div class="flex-none w-72 bg-primary rounded-xl shadow-lg" data-astro-cid-zuzcxizl> ${renderComponent($$result, "Image", $$Image, { "format": "avif", "src": BannerImg5, "alt": "Burger Cheesy Pleasy", "class": "w-full h-full object-cover rounded-lg", "loading": "lazy", "data-astro-cid-zuzcxizl": true })} </div> <!-- Deals and Offers --> <div class="flex-none w-72 bg-primary rounded-xl shadow-lg pr-4" data-astro-cid-zuzcxizl> ${renderComponent($$result, "Image", $$Image, { "format": "avif", "src": BannerImg4, "alt": "Call Now +919971135534", "class": "w-full h-full object-cover rounded-lg", "loading": "lazy", "data-astro-cid-zuzcxizl": true })} </div> </div> </div> </div>  ${renderScript($$result, "/workspaces/vanchuhut-branch2/src/components/DeliverySection.astro?astro&type=script&index=0&lang.ts")}</div></div>`;
+}, "/workspaces/vanchuhut-branch2/src/components/DeliverySection.astro", void 0);
 
 const manchurian = new Proxy({"src":"/_astro/manchurian.DRiKPziC.webp","width":7360,"height":4912,"format":"webp"}, {
 						get(target, name, receiver) {
@@ -345,7 +414,7 @@ Learn more about our mission and history on our
 }, "/workspaces/vanchuhut-branch2/src/components/Experience.astro", void 0);
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Vanchu Hut - Best Chinese Restaurant in Pratap Vihar, Ghaziabad | Authentic Chinese Cuisine", "description": "Discover the best Chinese restaurant in Pratap Vihar, Ghaziabad, at Vanchu Hut. Enjoy authentic Chinese cuisine with family-friendly dining options." }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "HeroSection", $$HeroSection, {})} ${maybeRenderHead()}<div class=" flex justify-center items-center h-0 w-auto "> ${renderComponent($$result2, "Image", $$Image, { "id": "center-image", "src": dividerImage, "format": "avif", "alt": "Chowmin", "width": 250, "height": 250, "class": "z-10 " })}</div> ${renderComponent($$result2, "FoodSection", $$FoodSection, {})}  ${renderComponent($$result2, "FoodSlider", $$FoodSlider, {})} ${renderComponent($$result2, "MenuSection", $$MenuSection, {})} ${renderComponent($$result2, "Experience", $$Experience, {})} ${renderComponent($$result2, "VideoSection", $$VideoSection, {})} ${renderComponent($$result2, "DineIn", $$DineIn, {})} ${renderComponent($$result2, "GoogleReview", $$GoogleReview, {})} ${renderComponent($$result2, "FindUssection", $$FindUssection, {})} ` })} ${renderScript($$result, "/workspaces/vanchuhut-branch2/src/pages/index.astro?astro&type=script&index=0&lang.ts")}`;
+  return renderTemplate`${renderComponent($$result, "Layout", $$Layout, { "title": "Vanchu Hut - Best Chinese Restaurant in Pratap Vihar, Ghaziabad | Authentic Chinese Cuisine", "description": "Discover the best Chinese restaurant in Pratap Vihar, Ghaziabad, at Vanchu Hut. Enjoy authentic Chinese cuisine with family-friendly dining options." }, { "default": ($$result2) => renderTemplate` ${renderComponent($$result2, "HeroSection", $$HeroSection, {})} ${maybeRenderHead()}<div class=" flex justify-center items-center h-0 w-auto "> ${renderComponent($$result2, "Image", $$Image, { "id": "center-image", "src": dividerImage, "format": "avif", "alt": "Chowmin", "width": 250, "height": 250, "class": "z-10 " })}</div> ${renderComponent($$result2, "FoodSection", $$FoodSection, {})} ${renderComponent($$result2, "DeliverySection", $$DeliverySection, {})} ${renderComponent($$result2, "FoodSlider", $$FoodSlider, {})} ${renderComponent($$result2, "MenuSection", $$MenuSection, {})} ${renderComponent($$result2, "Experience", $$Experience, {})} ${renderComponent($$result2, "VideoSection", $$VideoSection, {})} ${renderComponent($$result2, "DineIn", $$DineIn, {})} ${renderComponent($$result2, "GoogleReview", $$GoogleReview, {})} ${renderComponent($$result2, "FindUssection", $$FindUssection, {})} ` })} ${renderScript($$result, "/workspaces/vanchuhut-branch2/src/pages/index.astro?astro&type=script&index=0&lang.ts")}`;
 }, "/workspaces/vanchuhut-branch2/src/pages/index.astro", void 0);
 
 const $$file = "/workspaces/vanchuhut-branch2/src/pages/index.astro";
