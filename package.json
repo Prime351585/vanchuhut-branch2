@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "@astrojs/sitemap": "^3.2.1",
-    "@astrojs/tailwind": "^6.0.0",
+    "@astrojs/sitemap": "^3.3.0",
+    "@astrojs/tailwind": "^6.0.2",
     "@photo-sphere-viewer/core": "^5.12.1",
-    "astro": "^5.2.5",
+    "astro": "^5.5.5",
     "gsap": "^3.12.5",
     "sharp": "^0.33.5",
     "tailwindcss": "^3.4.14",

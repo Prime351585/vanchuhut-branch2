@@ -1,1 +1,0 @@
-import{g as e,S as r}from"./ScrollTrigger.Vy8Lnz_5.js";e.registerPlugin(r);e.to("#parallax-image",{yPercent:40,ease:"none",scrollTrigger:{trigger:"#parallax-image",start:"top bottom",end:"bottom top",scrub:!0}});e.to("#center-image",{yPercent:20,ease:"none",scrollTrigger:{trigger:"#center-image",start:"top bottom",end:"bottom top",scrub:!0}});

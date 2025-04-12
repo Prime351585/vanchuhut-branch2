@@ -1,0 +1,257 @@
+---
+// Import necessary components and assets
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+// Define placeholder image paths (replace with actual paths later)
+import heroImg from "../../assets/LandingImage.jpg"; // Keep existing header or use a generic one
+import BlogPairingHeroPlaceholder from "../../assets/blogImages/blog11.webp"; // Placeholder for main blog image
+import TeaPairingPlaceholder from "../../assets/blogImages/blog11(2).webp"; // Placeholder for tea section image
+
+// Define Breadcrumbs for this specific blog post
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "The Art of Pairing", href: "#", current: true } // Updated breadcrumb label
+];
+
+// Structure the blog post content based on the DOCX file
+const blogData = {
+    // Metadata from DOCX
+    title: "The Art of Pairing: Perfect Food and Beverage Combinations for Chinese Palates",
+    metaTitle: "Perfect Food & Drink Pairings for Chinese Cuisine | Vanchu Hut",
+    metaDescription: "Discover the best food in Ghaziabad with Vanchu Hut's expert tips on pairing Chinese cuisine with beverages. Elevate your dining experience today!",
+    
+    // Use placeholder for the main blog image
+    image: BlogPairingHeroPlaceholder, 
+    
+    // Set a relevant publish date
+    publishDate: "2025-04-22", // Example date, adjust as needed
+
+    // Table of Contents items (matches section titles)
+    tocItems: [
+        "Introduction: The Growing Appreciation for Food and Beverage Pairing",
+        "Understanding Chinese Palates: A Deep Dive into Taste Preferences",
+        "Vanchu Hut: A Culinary Journey in Ghaziabad",
+        "Guidelines for Pairing Chinese Cuisine",
+        "Exploring Classic Combinations at Vanchu Hut",
+        "The Role of Tea: Enhancing Chinese Flavours",
+        "Elevate Your Dining Experience"
+    ],
+
+    // Introduction section (adjusted slightly for flow)
+    introduction: "Food is not just about filling our stomachs anymore; it's about the experience and the balance of flavors. The mix of tastes can leave a lasting impression. As people learn more about food and drink pairing, diners are exploring new combinations to enhance their dining experiences. For Chinese cuisine lovers, the richness of flavours and textures opens up a world of pairing possibilities. Whether you love food or are just starting to explore drinks, knowing how to pair them will make every meal special. At Vanchu Hut, one of the best restaurants in Ghaziabad, we are proud to create amazing meals perfectly paired with drinks to enhance their taste. Grab a seat and discover how thoughtful combinations can delight your palate!",
+
+    // Main content sections based on DOCX structure
+    sections: [
+         // Section 0: Introduction (kept separate for template flexibility if needed, but included in tocItems)
+        { 
+            id: "introduction", // ID for ToC link
+            title: "Introduction: The Growing Appreciation for Food and Beverage Pairing",
+            content: "Food is not just about filling our stomachs anymore; it's about the experience and the balance of flavors. The mix of tastes can leave a lasting impression. As people learn more about food and drink pairing, diners are exploring new combinations to enhance their dining experiences. For Chinese cuisine lovers, the richness of flavours and textures opens up a world of pairing possibilities. Whether you love food or are just starting to explore drinks, knowing how to pair them will make every meal special. At Vanchu Hut, one of the best restaurants in Ghaziabad, we are proud to create amazing meals perfectly paired with drinks to enhance their taste. Grab a seat and discover how thoughtful combinations can delight your palate!",
+            subsections: []
+        },
+        {
+            id: "understanding-palates", // ID for ToC link
+            title: "Understanding Chinese Palates: A Deep Dive into Taste Preferences",
+            content: "To pair food and drinks well for a Chinese-inspired meal, you first need to know the basics of Chinese flavors. Chinese cuisine focuses on balancing flavors like umami, sour, salty, sweet, and spicy. It also highlights different textures. The interplay between these elements creates a nuanced dining experience. For instance, dishes like Veg Manchurian combine savoury, slightly tangy, and sweet flavours all in one bite. On the other hand, options like Crispy Chili Potatoes highlight spiciness paired with crunch. Choosing the right drinks can enhance or balance the flavors of a dish, helping to highlight its true essence."
+        },
+        {
+            id: "vanchu-hut-journey", // ID for ToC link
+            title: "Vanchu Hut: A Culinary Journey in Ghaziabad",
+            content: "If you’re searching for the best Chinese food in Ghaziabad, look no further than Vanchu Hut. This popular restaurant is in Pratap Vihar and is known for real Chinese flavors, a family-friendly vibe, and affordable prices. Signature dishes like Special Veg Noodles, Steamed & Fried Dumplings, and Veg Manchurian have made Vanchu Hut a local favourite. Each dish is made to excite and bring together taste buds, giving diners a chance to enjoy Chinese food in a new way. But what truly sets Vanchu Hut apart is the additional effort they put into building a holistic dining experience. Every meal here is more than just food; it’s about bringing people together while savouring expertly crafted flavours."
+        },
+        {
+            id: "pairing-guidelines", // ID for ToC link
+            title: "Guidelines for Pairing Chinese Cuisine",
+            // Include numbered list using Markdown list format within the content string
+            content: `Perfect food and beverage pairings create an uplifting balance. Here’s how you can master pairings when exploring Chinese cuisine at home or dining out at Vanchu Hut.
+1.  **Balance Spice with Cool, Refreshing Beverages:** Spicy dishes like Crispy Chili Potatoes or Manchurian are best paired with a cooling beverage. Opt for cucumber-infused water, iced teas, or lightly sparkling drinks to counteract the heat and refresh your taste buds.
+2.  **Match Sweet Dishes with Subtle Acidity:** Sweet and tangy dishes, like Sweet and Sour Paneer, work magically with dry white wines or citrus-based mocktails. Subtle acidity enhances the dish's sweetness without overpowering it.
+3.  **Pair Dumplings with Green or Jasmine Tea:** The soft textures of dumplings, whether steamed or fried, are brought to life with the earthy, floral aromas of green or jasmine tea. These teas cleanse the palate, leaving you ready to savour the next bite.
+4.  **Pair Stir-Fried Noodles with Refreshing Drinks:** The rich flavors of stir-fried noodles, like Special Veg Noodles, go well with light drinks. These drinks enhance the dish without being too strong.
+5.  **Experiment with Fruit-Based Cocktails:** Serve vegetable-rich dishes like Veg Manchurian with fruity drinks. Mango or lychee mocktails work well to enhance the fresh flavors.`
+        },
+        {
+            id: "classic-combinations", // ID for ToC link
+            title: "Exploring Classic Combinations at Vanchu Hut",
+            // Include bullet points using Markdown list format within the content string
+            content: `Wondering how to perfect this pairing art? Vanchu Hut offers a variety of options perfect for pairing. Check out some recommendations for unbeatable combinations:
+1.   **Crispy Chili Potatoes + Iced Lemon Tea:** The crunch of our signature dish is perfectly balanced with the tangy refreshment of iced lemon tea.
+2.   **Steamed Dumplings + Green Tea:** Pairing the delicate flavours of freshly steamed dumplings with the light, earthy notes of green tea elevates the experience.
+3.   **Special Veg Noodles + Cold Drink:** Enjoy the umami-packed sensation of stir-fried noodles with an easy-going cold drink or light beer to reset your palate between bites.
+
+These combinations thoughtfully curate a medley of flavours that remains memorable and satisfying. Don't just take our word for it. Visit us today and see why we are one of the best restaurants in Ghaziabad!`,
+
+        },
+        {
+            id: "role-of-tea", // ID for ToC link
+            title: "The Role of Tea: Enhancing Chinese Flavours",
+            content: "When it comes to pairing beverages with Chinese food, tea is an undeniable hero. Tea has been enjoyed for centuries. It is a refreshing drink and a palate cleanser. Tea adds subtle flavors to any meal. At Vanchu Hut, you’ll fall in love with the soothing effect of green tea alongside flavourful dishes like dumplings and spring rolls. Jasmine tea enhances dishes by offering floral undertones, acting as the perfect bridge between complex food flavours. For those who love spice, oolong tea provides just enough depth to complement fiery dishes without dulling the spices. Ask your server for tea pairing recommendations during your next visit to make the most of your meal!",
+            // Add placeholder image reference for this section
+            image: TeaPairingPlaceholder, 
+            imageAlt: "Placeholder image showing traditional Chinese tea setup"
+        },
+        {
+            id: "elevate-experience", // ID for ToC link
+            title: "Elevate Your Dining Experience", // Conclusion section
+            content: "Pairing food and beverages is an art worth mastering. It enhances not just the meal but the overall experience, making each bite and sip a celebration of flavour. At Vanchu Hut, we want to create a fun food experience for everyone. Our special pairings show this belief. If you’re ready to elevate your next meal, book your table at Vanchu Hut today or order for at-home delivery. Come and see why we are a top Chinese restaurant in Ghaziabad. We serve great food and create lasting memories."
+        }
+    ],
+    // Define Call to Action links (using standard Vanchu Hut links)
+    cta: {
+        menuLink: "/menu", // Assuming standard menu link
+        reserveLink: "/reserve" // Assuming standard reservation link
+    }
+};
+---
+
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    {/* Optional: Keep or adjust the top hero image */}
+    <section class=" font-agdasima ">
+        <Image src={heroImg} class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px]  object-cover" alt="Header Image showing Vanchu Hut ambiance or relevant theme"/>
+    </section> 
+
+    {/* Breadcrumbs Navigation */}
+    <nav class="flex px-4 mb-6" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {breadcrumbs.map((item, index) => (
+                <li class="flex items-center">
+                    {index > 0 && (
+                        <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    )}
+                    {item.current ? (
+                        <span class="text-gray-600" aria-current="page">{item.label}</span>
+                    ) : (
+                        <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                    )}
+                </li>
+            ))}
+        </ol>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        {/* Main Blog Post Image Placeholder */}
+        <div class="relative h-[400px] mb-8 rounded-lg overflow-hidden shadow-lg">
+            <Image
+                format="webp" 
+                src={blogData.image} 
+                alt={blogData.title}
+                class="w-full h-full object-cover"
+            />
+             {/* You can add an overlay or caption here if desired */}
+        </div>
+
+        <article class="prose prose-lg max-w-none mx-auto px-4 py-8 prose-headings:text-primary prose-h2:text-secondary prose-a:text-accent hover:prose-a:text-accent/80 prose-strong:font-semibold">
+            {/* Blog Post Title */}
+            <h1 class="text-4xl font-bold text-primary mb-4">{blogData.title}</h1>
+             {/* Optional: Publish Date */}
+             <p class="text-sm text-gray-500 mb-8">Published on: {new Date(blogData.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+            {/* Table of Contents (Manually matching blogData.sections) */}
+            <div class="bg-gray-50 p-6 rounded-lg mb-12 border border-gray-200">
+                <h2 class="text-xl font-semibold mb-4 text-secondary">Table of Contents</h2>
+                <ol class="list-decimal pl-5 space-y-2">
+                    {/* Iterate over sections that have an 'id' for the ToC */}
+                    {blogData.sections.map((section) => (
+                         <li>
+                            <a href={`#${section.id}`} class="hover:underline">{section.title}</a>
+                         </li>
+                     ))}
+                </ol>
+            </div>
+
+            {/* Introduction (Rendered separately or as part of the loop if desired) */}
+            {/* <p class="text-gray-700 mb-8 text-lg">{blogData.introduction}</p> */} 
+             {/* NOTE: Introduction content is also in sections[0], decide if you want it duplicated or rendered only once */}
+
+            {/* Main Content Sections */}
+            {blogData.sections.map((section) => (
+                // Use the section 'id' for the anchor link target
+                <section id={section.id} class="mb-12 scroll-mt-20"> 
+                    <h2 class="text-2xl font-semibold text-secondary mb-4">
+                        {section.title}
+                    </h2>
+
+                    {/* Inline Placeholder Image for relevant sections */}
+                    {section.image && (
+                         <div class="my-6 rounded-lg overflow-hidden shadow">
+                            <Image format="webp" src={section.image} alt={section.imageAlt} class="w-full h-auto object-cover"/>
+                         </div>
+                    )}
+
+                    {/* Render section content (will parse Markdown lists) */}
+                     {/* Use astro set:html directive to render markdown correctly if needed, or ensure prose handles it */}
+                     {/* For simplicity here, just placing the content, assuming prose handles basic markdown */}
+                    <div class="text-gray-700 space-y-4" set:html={section.content
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        // Process ordered lists (convert entire list at once)
+                        .replace(/(?:^\d+\.\s+.*$(?:\r?\n|\r)?)+/gm, function(match) {
+                            const items = match.split(/\r?\n|\r/).filter(Boolean);
+                            const listItems = items.map(item => 
+                                `<li>${item.replace(/^\d+\.\s+/, '')}</li>`
+                            ).join('');
+                            return `<ol>${listItems}</ol>`;
+                        })
+                        // Process unordered lists
+                        .replace(/\*(.*?)\*/g, '<li>$1</li>')}></div>
+                    {/* Subsections rendering (if needed for future content) */}
+                    {'subsections' in section && section.subsections && section.subsections.length > 0 && (
+                        <div class="mt-6 space-y-6 pl-4 border-l-4 border-primary/30">
+                            {section.subsections.map((sub:any, subIndex:any) => (
+                                <div id={`${section.id}-sub-${subIndex}`} class="scroll-mt-20"> 
+                                    <h3 class="text-xl font-semibold mb-2 text-primary/90">{sub.title}</h3>
+                                    <div class="text-gray-700 space-y-4" set:html={sub.content.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        .replace(/\*(.*?)\*/g, '<li>$1</li>')
+                        .replace(/^\d+\.\s*(.*?)$/gm, '<ol><li>$1</li></ol>')
+                        .replace(/<\/ol><ol>/g, '')}></div> 
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </section>
+            ))}
+
+            {/* Call to Action Buttons */}
+            <div class="flex flex-col sm:flex-row justify-center gap-6 mt-12 border-t pt-8">
+                <a href={blogData.cta.menuLink} class="bg-secondary text-white px-8 py-3 rounded-full hover:bg-secondary/90 text-center font-semibold text-lg transition duration-300">
+                    View Our Menu
+                </a>
+                <a href={blogData.cta.reserveLink} class="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 text-center font-semibold text-lg transition duration-300">
+                     Reserve a Table
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
+
+<style is:global>
+/* Enhance prose styles for lists if needed */
+.prose ul > li::marker {
+    /* color: theme('colors.primary'); */
+}
+.prose ol > li::marker {
+     /* color: theme('colors.secondary'); */
+}
+/* Ensure basic list styling is applied */
+.prose ul, .prose ol {
+    padding-left: 1.5em; /* Adjust as needed */
+}
+.prose ul {
+    list-style-type: disc;
+}
+.prose ol {
+    list-style-type: decimal;
+}
+.prose li > p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Add smooth scrolling for anchor links */
+html {
+    scroll-behavior: smooth;
+}
+</style>

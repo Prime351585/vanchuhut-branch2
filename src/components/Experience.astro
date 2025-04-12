@@ -1,0 +1,88 @@
+---
+import { Image } from 'astro:assets';
+import restaurantInterior from '../assets/restaurantInterior.jpeg';
+import chefCooking from '../assets/ChefCooking.png';
+---
+
+<section class="bg-white py-20">
+    <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">An Experience at One of the Best Restaurants in Ghaziabad</h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-20 relative">
+            <div class="space-y-6 relative z-10">
+                <div class="w-16 h-1 bg-amber-600 mb-8"></div>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    At Vanchu Hut, we believe that food is more than just a meal; it’s an experience. We cook each dish on our menu with care and serve it with love to excite the senses and bring people together. From sizzling starters to crowd-pleasing mains, we’ve perfected the art of delivering authentic Chinese cuisine in Ghaziabad.
+                </p>
+                <p class="text-lg leading-relaxed text-gray-700">
+                    Our <a class="text-secondary" href="/menu">menu</a> has a great selection of dishes. Enjoy crispy chili potatoes, spiced Manchurian, soft dumplings, and stir-fried noodles. If you are a vegetarian seeking filling options or a foodie wanting strong flavors, there is something for everyone.
+                </p>
+            </div>
+            <div class="rounded-lg overflow-hidden shadow-lg">
+                <Image 
+                    src={restaurantInterior} 
+                    alt="Vanchu Hut Restaurant Interior" 
+                    class="w-full h-[400px] object-cover"
+                    format="avif"
+                />
+            </div>
+        </div>
+
+        <div class="border-t border-b border-gray-100 py-16 mb-16">
+            <h3 class="text-2xl md:text-3xl font-bold mb-12 text-center">Why We're a Favorite in Ghaziabad</h3>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="rounded-lg overflow-hidden shadow-lg order-2 md:order-1">
+                    <Image 
+                        src={chefCooking} 
+                        alt="Our Chef preparing delicious dishes" 
+                        class="w-full h-[450px] object-cover"
+                        format="avif"
+                    />
+                </div>
+                <ul class="space-y-6 text-lg order-1 md:order-2">
+                    <li class="flex items-start">
+                        <span class="text-amber-600 mr-3">•</span>
+                        <div>
+                            <strong class="block text-xl mb-1">Authentic Flavors</strong>
+                            <span class="text-gray-700">We focus on classic Chinese recipes made with fresh, high-quality ingredients. Enjoy a meal that feels like a fun adventure.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-amber-600 mr-3">•</span>
+                        <div>
+                            <strong class="block text-xl mb-1">Menu Variety</strong>
+                            <span class="text-gray-700">Our offerings range from rich aromatic soups to spicy stir-fries, catering to diverse tastes and preferences.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-amber-600 mr-3">•</span>
+                        <div>
+                            <strong class="block text-xl mb-1">Family-Friendly Ambiance</strong>
+                            <span class="text-gray-700">Our welcoming and lively atmosphere makes us the perfect destination for families and friends who want to enjoy a delicious meal together.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-amber-600 mr-3">•</span>
+                        <div>
+                            <strong class="block text-xl mb-1">Affordable Price</strong>
+                            <span class="text-gray-700">At Vanchu Hut, you can indulge in the best food in Ghaziabad without breaking the bank.</span>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-amber-600 mr-3">•</span>
+                        <div>
+                            <strong class="block text-xl mb-1">Local Favorite</strong>
+                            <span class="text-gray-700">We are one of the best restaurants in Ghaziabad. We are known for our quality food, large portions, and friendly service.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="text-center text-lg text-gray-700">
+            Learn more about our mission and history on our 
+            <a href="/about" class="text-amber-600 hover:text-amber-700 font-medium transition-colors duration-200">about page</a>. 
+            Discover why we are a favorite dining spot in Pratap Vihar.
+        </p>
+    </div>
+</section>

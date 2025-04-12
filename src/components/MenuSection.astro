@@ -3,40 +3,54 @@ import Button from '../components/Button.astro'
 import { Image } from 'astro:assets'
 import chowmin from '../assets/dishes/chowmin.webp'
 import momos from '../assets/dishes/momos.webp'
-import pasta from '../assets/dishes/pasta.webp'
-import burger from '../assets/dishes/burger.webp'
+import chillipotato from "../assets/dishes/chillipotato.webp"
+import manchurian from "../assets/dishes/manchurian.webp"
 ---
 
 <div class="bg-white">
     <div class="text-6xl text-center p-10 flex justify-between items-center">
         <div  class="flex-1">
-            Our Top Dishes
+            Unmissable Dishes at Vanchu Hut<br/>
             <div>
                 <h3 class="text-xl">
-                    Explore our menu and you’ll find a selection of popular Chinese dishes that locals love. From our famous dumplings to vegetarian options and the classic chowmein, each dish is made to impress. Looking for a quick meal? Try our takeout options for a delicious Chinese food experience at home!
+                    Our chefs have mastered the art of preparing dishes that not only taste divine but also keep our guests coming back for more. Here are some signature selections you won’t want to miss at one of the best restaurants in Ghaziabad:
+                    Every bite at Vanchu Hut reinforces our reputation as one of the top Chinese restaurants in Ghaziabad.
                 </h3>
         </div>
         </div>
 
     </div>
-    <div class="flex flex-col sm:flex-row justify-center items-center text-center pb-4">
-        <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <Image format="avif" src={chowmin} alt="Authentic Chinese Chowmein - Fresh noodles stir-fried with vegetables at Vanchu Hut" class="rounded-lg w-full h-full object-cover"/>
-
+    <div class="flex flex-col sm:flex-row justify-center items-center text-center pb-4 flex-wrap">
+        <div class="w-[250px] bg-white shadow-lg rounded-lg overflow-hidden m-4 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <Image format="avif" src={chowmin} alt="Authentic Special Veg Noodles  - Fresh noodles stir-fried with vegetables at Vanchu Hut" class="w-full h-[200px] object-cover"/>
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Special Veg Noodles </h3>
+                <p class="text-gray-600 text-sm">Loaded with fresh veggies and seasoned to perfection for that ultimate comfort food experience.</p>
+            </div>
         </div>
 
-        <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out ">
-            <Image format="avif" src={momos} alt="Steamed Momos - Hand-crafted dumplings with spicy chutney at Vanchu Hut Pratap Vihar" class="rounded-lg w-full h-full object-cover"/>
-
+        <div class="w-[250px] bg-white shadow-lg rounded-lg overflow-hidden m-4 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <Image format="avif" src={momos} alt="Steamed & Fried Dumplings  - Hand-crafted dumplings with spicy chutney at Vanchu Hut Pratap Vihar" class="w-full h-[200px] object-cover"/>
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Steamed & Fried Dumplings </h3>
+                <p class="text-gray-600 text-sm">Indulge in these tender, flavorful bites paired with our signature dipping sauces.</p>
+            </div>
         </div>
 
-        <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <Image format="avif" src={pasta} alt="Chinese Pasta - Creamy Indo-Chinese fusion pasta with vegetables at Vanchu Hut Pratap Vihar" class="rounded-lg w-full h-full object-cover"/>
-
+        <div class="w-[250px] bg-white shadow-lg rounded-lg overflow-hidden m-4 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <Image format="avif" src={chillipotato} alt="Crispy Chili Potatoes - Crispy Indo-Chinese fusion chilli potato at Vanchu Hut Pratap Vihar" class="w-full h-[200px] object-cover"/>
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Crispy Chili Potatoes</h3>
+                <p class="text-gray-600 text-sm">A fusion favorite, balancing a delightful crunch with the perfect kick of spice.</p>
+            </div>
         </div>
-        <div class="w-[300px] h-[200px] bg-primary rounded-lg relative m-10 transform hover:scale-105 transition-transform duration-300 ease-in-out">
-            <Image format="avif" src={burger} alt="Chinese Burger - Spicy Asian-style burger with unique sauce at Vanchu Hut Pratap Vihar" class="rounded-lg w-full h-full object-cover"/>
 
+        <div class="w-[250px] bg-white shadow-lg rounded-lg overflow-hidden m-4 transform hover:scale-105 transition-transform duration-300 ease-in-out">
+            <Image format="avif" src={manchurian} alt="Veg Manchurian - Spicy Asian-style Veg Manchurian with unique sauce at Vanchu Hut Pratap Vihar" class="w-full h-[200px] object-cover"/>
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Veg Manchurian</h3>
+                <p class="text-gray-600 text-sm">A quintessential Chinese classic, perfect as a main dish or a crowd-pleasing side.</p>
+            </div>
         </div>
     </div>
     <div class="flex justify-center items-center pb-10">

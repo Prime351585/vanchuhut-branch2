@@ -8,9 +8,11 @@ import DeliverySection from '../components/DeliverySection.astro';
 import MenuSection from "../components/MenuSection.astro"
 import VideoSection from "../components/VideoSection.astro"
 import FindUssection from "../components/FindUssection.astro"
+import DineIn from "../components/DineIn.astro"
 import "../global.css"
 import FoodSlider from '../components/FoodSlider.astro';
 import GoogleReview from '../components/GoogleReview.astro';
+import Experience from '../components/Experience.astro';
 
 ---
 
@@ -20,10 +22,13 @@ import GoogleReview from '../components/GoogleReview.astro';
 		<Image id='center-image' src={dividerImage} format="avif" alt='Chowmin' width={250} height={250} class='z-10 ' >
 	</div>
 	<FoodSection/>
+    
 	<DeliverySection/>
     <FoodSlider/>
 	<MenuSection/>
+    <Experience/>
     <VideoSection/>
+    <DineIn/>
     <GoogleReview/>
 	<FindUssection/>
 </Layout>
@@ -46,7 +51,7 @@ import GoogleReview from '../components/GoogleReview.astro';
     });
 
     gsap.to("#center-image", {
-        yPercent: 20, // Adjust this value to control the animation
+        yPercent: 0, // Adjust this value to control the animation
         ease: "none",
         scrollTrigger: {
             trigger: "#center-image",
