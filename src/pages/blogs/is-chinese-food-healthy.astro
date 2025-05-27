@@ -1,0 +1,204 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../../assets/LandingImage.jpg";
+import BlogImg from "../../assets/blogImages/blog13.webp";
+
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Is Chinese Food Healthy?", href: "#", current: true }
+];
+
+const blogData = {
+    title: "Is Chinese Food Healthy? What You Need to Know",
+    metaTitle: "Is Chinese Food Healthy? Nutrition, Tips & Smart Choices | Vanchu Hut",
+    metaDescription: "Curious about Chinese food's healthiness? Learn about its nutritional aspects, healthy options, and how to make smarter choices when enjoying your favorite dishes.",
+    image: BlogImg,
+    publishDate: "2025-05-27",
+    introduction: `Chinese food is a favorite for millions worldwide, known for its bold flavors, rich ingredients, and diverse dishes. However, a common question is: <strong>Is Chinese food healthy?</strong> The answer isn't straightforward. While many Chinese dishes at <a href="/menu" class="text-primary underline hover:text-primary/80">Vanchu Hut</a> can be nutritious and healthy, some may contain unhealthy ingredients, excessive fats, and high sodium. In this article, we’ll explore the health aspects of Chinese food, highlight healthier options, and offer tips for making better choices.`,
+    introduction_content:"Chinese cuisine is highly diverse, with dishes ranging from stir-fries and soups to dumplings and noodles. It uses a wide variety of ingredients like rice, vegetables, meat, tofu, and seafood, many of which are rich in vitamins, minerals, and protein. However, the way a dish is prepared—whether steamed, stir-fried, or deep-fried—can greatly affect its nutritional value.",
+    main_content_title: "Understanding the Nutritional Aspects of Chinese Food",
+    ingredients: [
+        { name: "Vegetables", examples: "Bok choy, spinach, broccoli, mushrooms, bell peppers" },
+        { name: "Proteins", examples: "Chicken, pork, beef, shrimp, tofu" },
+        { name: "Carbohydrates", examples: "Rice, noodles, dumplings" },
+        { name: "Sauces", examples: "Soy sauce, hoisin sauce, oyster sauce, sweet and sour sauce, chili paste" }
+    ],
+    healthy_aspects: [
+        {
+            title: "Rich in Vegetables and Nutrients",
+            content: `Many traditional Chinese dishes are packed with vegetables, which are an excellent source of fiber, vitamins, and minerals. Dishes like vegetable stir-fries, hot and sour soup, and bok choy with garlic can be great choices to load up on greens and other nutrients while keeping calories in check.<br>
+            <ul>
+                <li><strong>Fiber:</strong> Vegetables like cabbage, broccoli, and spinach are high in fiber, promoting digestive health and preventing constipation.</li>
+                <li><strong>Vitamins and Antioxidants:</strong> Ingredients like carrots, bell peppers, and mushrooms are full of antioxidants and vitamins like A and C, which help to strengthen the immune system.</li>
+            </ul>`
+        },
+        {
+            title: "Lean Protein Options",
+            content: `Chinese cuisine offers a variety of lean protein sources like chicken, tofu, and fish, which are lower in fat compared to red meats. Tofu, in particular, is a great plant-based protein rich in iron and calcium.`
+        },
+        {
+            title: "Steamed Dishes",
+            content: `Steaming is a healthier cooking method that preserves the nutrients in food without adding extra fats or oils. Many traditional Chinese dishes such as dim sum, steamed fish, or steamed vegetables offer a low-calorie and nutrient-packed meal.<br>
+            <ul>
+                <li><strong>Steamed Dumplings:</strong> If you opt for steamed rather than fried, dumplings are a tasty and relatively healthy snack or meal option.</li>
+                <li><strong>Steamed Fish:</strong> Fish is a rich source of omega-3 fatty acids, which are excellent for heart health.</li>
+            </ul>`
+        }
+    ],
+    unhealthy_aspects: [
+        {
+            title: "High Sodium Content",
+            content: "One of the biggest concerns with Chinese food is its high sodium content, primarily due to soy sauce, salted broth, and various sauces. Excessive sodium intake can lead to high blood pressure and increase the risk of heart disease."
+        },
+        {
+            title: "Fried Dishes",
+            content: "Fried Chinese food, such as egg rolls, fried rice, and sweet and sour chicken, can be high in unhealthy trans fats and calories. Deep-frying increases the fat content, making these dishes less healthy."
+        },
+        {
+            title: "Portion Sizes and Hidden Calories",
+            content: "When dining at Chinese restaurants, portion sizes can be huge, especially when it comes to noodles, rice, and entrees. These large servings can lead to overeating and an excess of calories. Additionally, the use of heavy oils and sugary sauces can make dishes more calorie-dense than they appear."
+        }
+    ],
+    healthy_tips: [
+        {
+            title: "Choose Steamed or Stir-Fried Options",
+            content: "Opt for steamed or stir-fried dishes that use less oil. Stir-fried vegetables or lean proteins with garlic and ginger are excellent choices that are packed with flavor and nutrients."
+        },
+        {
+            title: "Go for Brown Rice or Noodles",
+            content: "Brown rice is a healthier alternative to white rice, providing more fiber and nutrients. Similarly, whole-wheat noodles can offer a more nutritious base for your meal compared to traditional white noodles."
+        },
+        {
+            title: "Request Sauces on the Side",
+            content: "Ask for sauces on the side so you can control the amount of soy sauce, sweet and sour sauce, or other sugary sauces used in your dish. This can drastically reduce your sodium and sugar intake."
+        },
+        {
+            title: "Watch Portion Sizes",
+            content: "If the portions are large, consider sharing with others or ask for a takeaway box and save half of your meal for later. This helps control both calorie intake and food waste."
+        }
+    ],
+    conclusion: {
+        content: `Chinese food can be both healthy and indulgent, depending on your choices. Opting for steamed dishes, lean proteins, and plenty of vegetables while avoiding fried foods and heavy sauces can make Chinese food a nutritious option. Being mindful of portion sizes and asking for modifications like low-sodium sauces will further help you make healthier decisions.`
+    }
+};
+---
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    <section class="font-agdasima">
+        <Image src={heroImg} class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px] object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+    </section> 
+    <nav class="flex px-4 mb-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {breadcrumbs.map((item, index) => (
+                <li class="flex items-center">
+                    {index > 0 && (
+                        <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    )}
+                    {item.current ? (
+                        <span class="text-gray-600" aria-current="page">{item.label}</span>
+                    ) : (
+                        <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                    )}
+                </li>
+            ))}
+        </ol>
+    </nav>
+    
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="relative h-[300px] md:h-[400px] mb-8 rounded-lg overflow-hidden shadow-lg">
+            <Image
+                format="webp" 
+                src={blogData.image} 
+                alt="Showcasing healthy Chinese dishes available at Vanchu Hut"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-6 text-center md:text-left">{blogData.title}</h1>
+            
+           <p class="text-sm text-gray-500 mb-6 text-center md:text-left">Published on: {new Date(blogData.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+            <div class="bg-gray-50 p-6 rounded-lg mb-8 shadow">
+                <h2 class="text-xl font-semibold mb-4 text-secondary">Table of Contents</h2>
+                <ol class="list-decimal pl-5 space-y-1">
+                    <li><a href="#introduction" class="text-primary hover:underline">Introduction</a></li>
+                    <li><a href="#ingredients" class="text-primary hover:underline">Common Ingredients in Chinese Cuisine</a></li>
+                    <li><a href="#healthy-aspects" class="text-primary hover:underline">Healthy Aspects</a></li>
+                    <li><a href="#unhealthy-aspects" class="text-primary hover:underline">Unhealthy Aspects</a></li>
+                    <li><a href="#healthy-tips" class="text-primary hover:underline">Tips for Healthier Choices</a></li>
+                    <li><a href="#conclusion" class="text-primary hover:underline">Conclusion</a></li>
+                </ol>
+            </div>
+
+            <section id="introduction" class="mb-10">
+                <p class="lead text-lg md:text-xl text-gray-700" set:html={blogData.introduction}></p>
+                <p class="lead text-lg md:text-xl text-gray-700" set:html={blogData.introduction_content}></p>
+            </section>
+
+            <section id="ingredients" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">What are the Common Ingredients in Chinese Cuisine?</h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    {blogData.ingredients.map((item) => (
+                        <li>
+                            <strong>{item.name}:</strong> {item.examples}
+                        </li>
+                    ))}
+                </ul>
+            </section>
+
+            <section id="healthy-aspects" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">What Are the Healthy Aspects of Chinese Food?</h2>
+                <div class="space-y-6">
+                    {blogData.healthy_aspects.map((aspect) => (
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary mb-2">{aspect.title}</h3>
+                            <p class="text-gray-700" set:html={aspect.content}></p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section id="unhealthy-aspects" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">What are the Unhealthy Aspects of Chinese Food?</h2>
+                <div class="space-y-6">
+                    {blogData.unhealthy_aspects.map((aspect) => (
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary mb-2">{aspect.title}</h3>
+                            <p class="text-gray-700">{aspect.content}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section id="healthy-tips" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">Healthier Chinese Food Choices</h2>
+                <div class="space-y-6">
+                    {blogData.healthy_tips.map((tip) => (
+                        <div>
+                            <h3 class="text-xl font-semibold text-primary mb-2">{tip.title}</h3>
+                            <p class="text-gray-700">{tip.content}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section id="conclusion" class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">Conclusion</h2>
+                <p class="text-gray-700 text-base md:text-lg" set:html={blogData.conclusion.content}></p>
+            </section>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 my-12">
+                <a href="/menu" class="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Explore Our Menu
+                </a>
+                <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Visit Us Today
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
