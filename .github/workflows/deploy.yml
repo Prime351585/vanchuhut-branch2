@@ -31,4 +31,4 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./dist  # Changed from ./site to ./dist (Astro's default)
-        publish_branch: production  # Change this to whatever branch name you want
+        publish_branch: production  # Change this to to whatever branch name you want
