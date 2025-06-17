@@ -1,0 +1,204 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../../assets/LandingImage.jpg";
+import BlogImg from "../../assets/blogImages/blog15.jpg";
+
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Indian vs Authentic Chinese", href: "#", current: true }
+];
+
+const blogData = {
+    title: "What is the Difference Between Indian-Chinese and Authentic Chinese Dishes",
+    metaTitle: "Indian-Chinese vs Authentic Chinese Food: Key Differences | Vanchu Hut",
+    metaDescription: "Find the key differences between Indian-Chinese and authentic Chinese dishes. Explore variations in ingredients, cooking styles, flavor profiles, and popular recipes in this flavorful comparison.",
+    image: BlogImg,
+    publishDate: "2025-06-17",
+    introduction: `The difference between Indian-Chinese and authentic Chinese dishes goes beyond taste—it's a reflection of culture, history, and local preferences. While both cuisines share roots in Chinese cooking traditions, <a href="/menu" class="text-primary underline hover:text-primary/80">Indian-Chinese</a> is a uniquely adapted version shaped by Indian spices, ingredients, and taste buds. In this article, we'll break down how these two styles differ in their origins, ingredients, cooking techniques, and overall dining experience.`,
+    origins: {
+        title: "Origins and Cultural Influence",
+        content: "Authentic Chinese cuisine is centuries old, shaped by regional practices from Sichuan's fiery flavors to Cantonese light, fresh dishes. On the other hand, Indian-Chinese cuisine was born in Kolkata, introduced by Chinese immigrants, particularly the Hakka community. Over time, the food evolved to cater to Indian tastes, giving birth to fusion dishes that are now staples in Indian restaurants across the country."
+    },
+    ingredients: {
+        title: "Key Ingredient Differences",
+        content: "Chinese cooking relies on fresh vegetables, tofu, soy sauce, rice vinegar, ginger, sesame oil, and Sichuan peppercorns for complex umami flavors. In contrast, Indian-Chinese uses bolder ingredients: green chilies, garlic, ginger, cornstarch, chili-garlic paste, and a combination of soy and hot sauces. MSG, while commonly used in Chinese cooking, is often replaced or omitted in Indian kitchens."
+    },
+    cooking_techniques: {
+        title: "Cooking Techniques",
+        content: "Traditional Chinese techniques emphasize quick stir-frying, steaming, braising, and minimal use of spices to preserve ingredient integrity. Indian-Chinese dishes, however, lean into deep-frying and wok-tossing with generous spice blends. Cornflour is often used to thicken sauces or add a crispy coating, while Indian-style tempering adds extra heat and aroma to the dish."
+    },
+    flavor_profiles: {
+        title: "Flavor Profiles and Taste",
+        content: "Authentic Chinese food is balanced, often slightly sweet, salty, sour, or umami. It's delicate and nuanced, varying by region—Sichuan is spicy and numbing, while Cantonese is subtle and sweet. Indian-Chinese, however, is punchy, bold, and spice-heavy. Think hot, tangy gravies with a generous dose of green chilies and garlic. It's designed to hit the palate fast and hard—perfect for spice lovers."
+    },
+    popular_dishes: {
+        title: "Popular Dishes: A Quick Comparison",
+        authentic_chinese: [
+            {
+                name: "Mapo Tofu",
+                description: "A Sichuan dish featuring tofu in a spicy bean paste sauce."
+            },
+            {
+                name: "Dumplings",
+                description: "Steamed or pan-fried with subtle, balanced fillings."
+            },
+            {
+                name: "Peking Duck",
+                description: "Roasted duck with crispy skin, eaten with pancakes and hoisin sauce."
+            }
+        ],
+        indian_chinese: [
+            {
+                name: "Gobi Manchurian",
+                description: "Deep-fried cauliflower tossed in spicy, tangy sauce."
+            },
+            {
+                name: "Hakka Noodles",
+                description: "Stir-fried noodles with soy, vinegar, and green chilies."
+            },
+            {
+                name: "Chicken Lollipop",
+                description: "Frenched chicken wings deep-fried and served with fiery sauces."
+            }
+        ]
+    },
+    dining_experience: {
+        title: "Presentation and Dining Experience",
+        content: "Chinese meals are typically served with multiple shared dishes, often with rice or noodles as a staple. Meals emphasize variety, color, and balance. Indian-Chinese, however, leans toward single-plate servings, heavy sauces, and vibrant colors. It's also common in street food setups, where flavor intensity and quick service take priority over presentation."
+    },
+    why_difference: {
+        title: "Why the Difference Matters",
+        content: "Understanding the difference between Indian-Chinese and authentic Chinese dishes allows us to appreciate how cuisine evolves across borders. Indian-Chinese reflects the creativity of immigrants adapting to new cultures, while authentic Chinese preserves deep-rooted culinary traditions. Both have their charm, and exploring them enhances our appreciation for global gastronomy."
+    },
+    conclusion: {
+        content: "The difference between Indian-Chinese and authentic Chinese dishes lies in their ingredients, cooking styles, and cultural roots. While one celebrates tradition, the other thrives on innovation and fusion. Whether you prefer the subtle richness of traditional Chinese food or the fiery excitement of Indian-Chinese, both cuisines offer a delicious journey worth savoring."
+    }
+};
+---
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    <section class="font-agdasima">
+        <Image src={heroImg} class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px] object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+    </section> 
+    <nav class="flex px-4 mb-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {breadcrumbs.map((item, index) => (
+                <li class="flex items-center">
+                    {index > 0 && (
+                        <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    )}
+                    {item.current ? (
+                        <span class="text-gray-600" aria-current="page">{item.label}</span>
+                    ) : (
+                        <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                    )}
+                </li>
+            ))}
+        </ol>
+    </nav>
+    
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="relative h-[300px] md:h-[400px] mb-8 rounded-lg overflow-hidden shadow-lg">
+            <Image
+                format="webp" 
+                src={blogData.image} 
+                alt="Comparison of Indian-Chinese and authentic Chinese dishes"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-6 text-center md:text-left">{blogData.title}</h1>
+            
+            <p class="text-sm text-gray-500 mb-6 text-center md:text-left">Published on: {new Date(blogData.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+            <div class="bg-gray-50 p-6 rounded-lg mb-8 shadow">
+                <h2 class="text-xl font-semibold mb-4 text-secondary">Table of Contents</h2>
+                <ol class="list-decimal pl-5 space-y-1">
+                    <li><a href="#introduction" class="text-primary hover:underline">Introduction</a></li>
+                    <li><a href="#origins" class="text-primary hover:underline">Origins and Cultural Influence</a></li>
+                    <li><a href="#ingredients" class="text-primary hover:underline">Key Ingredient Differences</a></li>
+                    <li><a href="#techniques" class="text-primary hover:underline">Cooking Techniques</a></li>
+                    <li><a href="#flavors" class="text-primary hover:underline">Flavor Profiles</a></li>
+                    <li><a href="#dishes" class="text-primary hover:underline">Popular Dishes Comparison</a></li>
+                    <li><a href="#dining" class="text-primary hover:underline">Dining Experience</a></li>
+                    <li><a href="#why" class="text-primary hover:underline">Why the Difference Matters</a></li>
+                    <li><a href="#conclusion" class="text-primary hover:underline">Conclusion</a></li>
+                </ol>
+            </div>
+
+            <section id="introduction" class="mb-10">
+                <p class="lead text-lg md:text-xl text-gray-700" set:html={blogData.introduction}></p>
+            </section>
+
+            <section id="origins" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.origins.title}</h2>
+                <p class="text-gray-700">{blogData.origins.content}</p>
+            </section>
+
+            <section id="ingredients" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.ingredients.title}</h2>
+                <p class="text-gray-700">{blogData.ingredients.content}</p>
+            </section>
+
+            <section id="techniques" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.cooking_techniques.title}</h2>
+                <p class="text-gray-700">{blogData.cooking_techniques.content}</p>
+            </section>
+
+            <section id="flavors" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.flavor_profiles.title}</h2>
+                <p class="text-gray-700">{blogData.flavor_profiles.content}</p>
+            </section>
+
+            <section id="dishes" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.popular_dishes.title}</h2>
+                
+                <h3 class="text-xl font-semibold text-primary mb-3">Authentic Chinese:</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-6">
+                    {blogData.popular_dishes.authentic_chinese.map((dish) => (
+                        <li class="text-gray-700">
+                            <strong>{dish.name}</strong> – {dish.description}
+                        </li>
+                    ))}
+                </ul>
+
+                <h3 class="text-xl font-semibold text-primary mb-3">Indian-Chinese:</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    {blogData.popular_dishes.indian_chinese.map((dish) => (
+                        <li class="text-gray-700">
+                            <strong>{dish.name}</strong> – {dish.description}
+                        </li>
+                    ))}
+                </ul>
+            </section>
+
+            <section id="dining" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.dining_experience.title}</h2>
+                <p class="text-gray-700">{blogData.dining_experience.content}</p>
+            </section>
+
+            <section id="why" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.why_difference.title}</h2>
+                <p class="text-gray-700">{blogData.why_difference.content}</p>
+            </section>
+
+            <section id="conclusion" class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">Conclusion</h2>
+                <p class="text-gray-700 text-base md:text-lg">{blogData.conclusion.content}</p>
+            </section>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 my-12">
+                <a href="/menu" class="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Explore Our Menu
+                </a>
+                <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Visit Us Today
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
