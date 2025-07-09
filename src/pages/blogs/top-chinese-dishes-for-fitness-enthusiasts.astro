@@ -1,0 +1,262 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../../assets/LandingImage.jpg";
+import BlogImg from "../../assets/blogImages/blog16.png";
+
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Top Chinese Dishes for Fitness Enthusiasts", href: "#", current: true }
+];
+
+const blogData = {
+    title: "Top Chinese Dishes for Fitness Enthusiasts: Healthy Options That Fuel Your Body",
+    metaTitle: "Best Chinese Dishes for Fitness Enthusiasts | Healthy Options Guide",
+    metaDescription: "Find the best Chinese dishes for fitness lovers! Healthy, protein-packed, low-fat meals that fuel your body—plus smart tips for ordering right Chinese food.",
+    image: BlogImg,
+    publishDate: "2025-07-09",
+    introduction: `When people think of Chinese food, greasy noodles and heavy sauces may come to mind. But Chinese cuisine offers much more—especially for health-conscious diners. With the right selections, you can enjoy meals that are not only flavorful but also support your fitness goals at <a href="/menu" class="text-primary underline hover:text-primary/80">Vanchu Hut</a>.`,
+    introduction_content: "In this article, we'll explore the top Chinese dishes for fitness enthusiasts, explain their nutritional benefits, and share tips on how to order smart—whether you're dining out or eating at home.",
+    why_chinese: {
+        title: "Why Chinese Food Can Be Great for Fitness",
+        content: "Looking for a nutritious cuisine that doesn't compromise on taste? Traditional Chinese cooking emphasizes balance, fresh ingredients, and cooking techniques like steaming and stir-frying—all of which align well with clean eating and active lifestyles.",
+        benefits: [
+            "Lean proteins such as chicken, tofu, and egg help with muscle repair and growth.",
+            "Steamed and lightly stir-fried dishes are low in fat and calories.",
+            "Anti-inflammatory ingredients like ginger, garlic, and mushrooms support recovery.",
+            "Fiber-rich vegetables aid digestion and keep you full longer"
+        ]
+    },
+    best_dishes: [
+        {
+            name: "Steamed Chicken with Broccoli",
+            benefits: [
+                "Rich in lean protein and fiber",
+                "Low in sodium and saturated fat",
+                "Excellent for post-workout meals"
+            ]
+        },
+        {
+            name: "Tofu & Vegetable Stir-Fry (with Light Soy Sauce)",
+            benefits: [
+                "Great plant-based protein source",
+                "Loaded with antioxidants and essential vitamins",
+                "Ask for minimal oil or steamed tofu to keep it clean"
+            ]
+        },
+        {
+            name: "Steamed Dumplings (Veg or Chicken)",
+            benefits: [
+                "Low in calories, high in flavor",
+                "Choose whole wheat wrappers if available",
+                "Ideal for a light snack or protein-rich side"
+            ]
+        },
+        {
+            name: "Hot and Sour Soup",
+            benefits: [
+                "Low-calorie appetizer that's filling and flavorful",
+                "Includes metabolism-boosting ingredients like tofu, mushrooms, and chili"
+            ]
+        },
+        {
+            name: "Brown Rice with Stir-Fried Greens",
+            benefits: [
+                "Whole grain carbs = sustained energy",
+                "Leafy greens like bok choy and spinach are high in iron, calcium, and fiber"
+            ]
+        },
+        {
+            name: "Kung Pao Chicken (Modified)",
+            benefits: [
+                "Request grilled chicken with less sauce and peanuts",
+                "Balanced meal with protein, veggies, and healthy fats"
+            ]
+        },
+        {
+            name: "Egg Foo Young (Low Oil)",
+            benefits: [
+                "Chinese-style protein-packed omelet",
+                "Excellent for breakfast or a light dinner"
+            ]
+        }
+    ],
+    dishes_to_avoid: {
+        title: "What to Avoid: Chinese Dishes That May Derail Your Fitness Goals",
+        content: "While many Chinese meals can support clean eating, some are best avoided—or modified.",
+        items: [
+            "Deep-Fried Options: Spring rolls, fried wontons, crispy noodles",
+            "Heavy Sauces: General Tso's Chicken, Sweet & Sour Pork, Honey Chilli Potatoes",
+            "Refined Carbs: White rice and fried noodles",
+            "Excessive Salt: MSG and high-sodium soy sauces"
+        ]
+    },
+    ordering_tips: {
+        title: "Smart Tips for Ordering Healthy Chinese Food",
+        content: "Whether you're ordering takeout or dining at a chinese restaurant, here's how to make smart, fitness-friendly choices:",
+        tips: [
+            "Choose steamed, grilled, or stir-fried with minimal oil",
+            "Request whole grains like brown rice",
+            "Opt for light sauces or have them on the side",
+            "Prioritize vegetable-rich dishes",
+            "Replace sugary beverages with green tea"
+        ]
+    },
+    superfoods: {
+        title: "Superfoods in Chinese Cuisine That Boost Your Fitness",
+        content: "Chinese recipes often feature nutrient-dense ingredients that fuel your workouts and recovery.",
+        foods: [
+            { name: "Tofu", benefits: "Complete plant protein; rich in calcium" },
+            { name: "Bok Choy", benefits: "High in vitamin C, iron, and fiber" },
+            { name: "Garlic & Ginger", benefits: "Natural immune boosters and anti-inflammatory" },
+            { name: "Eggs", benefits: "Rich in protein and healthy fats" },
+            { name: "Mushrooms", benefits: "Low-calorie with immune-enhancing properties" },
+            { name: "Chilies", benefits: "Help burn calories with metabolism-boosting effects" }
+        ]
+    },
+    conclusion: {
+        content: "Chinese cuisine can absolutely fit into your fitness-focused lifestyle. With the right ingredients and smart ordering strategies, you don't have to sacrifice flavor for nutrition. From steamed dumplings to brown rice stir-fry, the best Chinese dishes for fitness enthusiasts offer protein, fiber, and taste in every bite."
+    },
+    call_to_action: {
+        title: "Ready to Try Fitness-Friendly Chinese Dishes in Ghaziabad?",
+        content: "At Vanchu Hut, we serve fresh, flavorful, and nutritious Chinese food that supports your wellness goals. Whether you're dining in or ordering at home, explore our menu for dishes like steamed chicken, hot and sour soup, and our special veg noodles."
+    }
+};
+---
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    <section class="font-agdasima">
+        <Image src={heroImg} class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px] object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+    </section> 
+    <nav class="flex px-4 mb-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {breadcrumbs.map((item, index) => (
+                <li class="flex items-center">
+                    {index > 0 && (
+                        <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    )}
+                    {item.current ? (
+                        <span class="text-gray-600" aria-current="page">{item.label}</span>
+                    ) : (
+                        <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                    )}
+                </li>
+            ))}
+        </ol>
+    </nav>
+    
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="relative h-[300px] md:h-[400px] mb-8 rounded-lg overflow-hidden shadow-lg">
+            <Image
+                format="avif" 
+                src={blogData.image} 
+                alt="Healthy Chinese dishes perfect for fitness enthusiasts"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-6 text-center md:text-left">{blogData.title}</h1>
+            
+            <p class="text-sm text-gray-500 mb-6 text-center md:text-left">Published on: {new Date(blogData.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+            <div class="bg-gray-50 p-6 rounded-lg mb-8 shadow">
+                <h2 class="text-xl font-semibold mb-4 text-secondary">Table of Contents</h2>
+                <ol class="list-decimal pl-5 space-y-1">
+                    <li><a href="#introduction" class="text-primary hover:underline">Introduction</a></li>
+                    <li><a href="#why-chinese" class="text-primary hover:underline">Why Chinese Food for Fitness</a></li>
+                    <li><a href="#best-dishes" class="text-primary hover:underline">7 Best Chinese Dishes</a></li>
+                    <li><a href="#avoid" class="text-primary hover:underline">What to Avoid</a></li>
+                    <li><a href="#tips" class="text-primary hover:underline">Smart Ordering Tips</a></li>
+                    <li><a href="#superfoods" class="text-primary hover:underline">Superfoods in Chinese Cuisine</a></li>
+                    <li><a href="#conclusion" class="text-primary hover:underline">Conclusion</a></li>
+                </ol>
+            </div>
+
+            <section id="introduction" class="mb-10">
+                <p class="lead text-lg md:text-xl text-gray-700" set:html={blogData.introduction}></p>
+                <p class="text-gray-700">{blogData.introduction_content}</p>
+            </section>
+
+            <section id="why-chinese" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.why_chinese.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.why_chinese.content}</p>
+                <h3 class="text-xl font-semibold text-primary mb-3">Fitness Benefits of Chinese Cuisine:</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    {blogData.why_chinese.benefits.map((benefit) => (
+                        <li class="text-gray-700">{benefit}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <section id="best-dishes" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">7 Best Chinese Dishes for Fitness Enthusiasts</h2>
+                <div class="space-y-6">
+                    {blogData.best_dishes.map((dish, index) => (
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h3 class="text-xl font-semibold text-primary mb-2">{index + 1}. {dish.name}</h3>
+                            <ul class="list-disc pl-6 space-y-1">
+                                {dish.benefits.map((benefit) => (
+                                    <li class="text-gray-700">{benefit}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <section id="avoid" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.dishes_to_avoid.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.dishes_to_avoid.content}</p>
+                <h3 class="text-xl font-semibold text-primary mb-3">Watch Out For:</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    {blogData.dishes_to_avoid.items.map((item) => (
+                        <li class="text-gray-700">{item}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <section id="tips" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.ordering_tips.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.ordering_tips.content}</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    {blogData.ordering_tips.tips.map((tip) => (
+                        <li class="text-gray-700">{tip}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <section id="superfoods" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.superfoods.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.superfoods.content}</p>
+                <h3 class="text-xl font-semibold text-primary mb-3">Key Ingredients to Look For:</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    {blogData.superfoods.foods.map((food) => (
+                        <li class="text-gray-700"><strong>{food.name}</strong> – {food.benefits}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <section id="conclusion" class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">Conclusion</h2>
+                <p class="text-gray-700 text-base md:text-lg">{blogData.conclusion.content}</p>
+                
+                <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-primary mb-3">{blogData.call_to_action.title}</h3>
+                    <p class="text-gray-700">{blogData.call_to_action.content}</p>
+                </div>
+            </section>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 my-12">
+                <a href="/menu" class="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Explore Our Menu
+                </a>
+                <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Visit Us Today
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
