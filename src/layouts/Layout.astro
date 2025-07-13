@@ -9,6 +9,9 @@ const { title,description } = Astro.props;
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro'
 const googleAnalyticsId = 'G-T1L95Q3ZJX';
+
+// Create dynamic canonical URL
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://vanchuhut.in');
 ---
 
 <!doctype html>
@@ -19,7 +22,7 @@ const googleAnalyticsId = 'G-T1L95Q3ZJX';
 		<meta name="description" content={description}/>
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="canonical" href="https://vanchuhut.in">
+		<link rel="canonical" href={canonicalURL.toString()}>
 		<meta name="generator" content={Astro.generator} />
 		<link rel="sitemap" href="/sitemap-index.xml" />
 
