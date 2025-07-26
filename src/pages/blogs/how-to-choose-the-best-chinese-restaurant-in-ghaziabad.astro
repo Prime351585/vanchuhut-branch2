@@ -1,0 +1,273 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../../assets/LandingImage.jpg";
+import BlogImg from "../../assets/blogImages/blog17.jpeg";
+
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Best Chinese Restaurant in Ghaziabad", href: "#", current: true }
+];
+
+const blogData = {
+    title: "How to Choose the Best Chinese Restaurant in Ghaziabad for a Perfect Family Dinner",
+    metaTitle: "Best Chinese Restaurant in Ghaziabad for Family Dinner | Vanchu Hut",
+    metaDescription: "Planning a family dinner out in Ghaziabad? Discover expert tips to help you choose the right Chinese restaurant that blends taste, ambiance, and value for an unforgettable dining experience.",
+    image: BlogImg,
+    publishDate: "2025-07-26",
+    introduction: `Looking to enjoy a delightful family dinner with flavorful Chinese cuisine in Ghaziabad? You're in the right place. Chinese food is beloved by families across the city for its bold flavors, wide variety, and shareable dishes. But with so many options, choosing the right restaurant can feel overwhelming.`,
+    overview: {
+        content: "This comprehensive guide will help you pick the best Chinese restaurant in Ghaziabad that suits your family's preferences, budget, and expectations. Whether you're planning a weekend outing or a special celebration, we'll walk you through every step—ensuring a satisfying and stress-free experience."
+    },
+    food_preferences: {
+        title: "1. Consider Your Family's Food Preferences",
+        content: "Start by understanding what your family likes and needs when dining out.",
+        points: [
+            "Do some prefer vegetarian or vegan options?",
+            "Are kids sensitive to spice levels?",
+            "Does anyone have food allergies (gluten, nuts, shellfish)?"
+        ],
+        note: "A good restaurant will offer flexible <a href='/menu' class='text-primary underline hover:text-primary/80'>menu</a> options and accommodate specific dietary needs. Look for spots with kid-friendly portions, customizable spice levels, and a variety of vegetarian Chinese dishes."
+    },
+    location: {
+        title: "2. Choose a Convenient Location",
+        content: "Location plays a huge role in how relaxing your dinner will be. Pick a restaurant that's:",
+        points: [
+            "Centrally located or close to your home",
+            "Easily accessible by car or public transport",
+            "Located in safe, well-lit areas with ample parking"
+        ],
+        note: "Popular dining spots like Vanchu Hut offer many excellent options."
+    },
+    authenticity: {
+        title: "3. Prioritize Authenticity in Cuisine",
+        content: "Not all Chinese food is truly Chinese. If you want authentic flavors:",
+        points: [
+            "Look for restaurants that serve Sichuan, Cantonese, Hakka, or Schezwan cuisines",
+            "Ask about the chef's background or if the restaurant emphasizes traditional preparation methods",
+            "Look for use of wok cooking, homemade sauces, and fresh ingredients"
+        ],
+        note: "Pro Tip: Well-rated restaurant like Vanchu Hut is known for their authenticity."
+    },
+    reviews: {
+        title: "4. Check Online Reviews and Ratings",
+        content: "Before you dine, check platforms like:",
+        points: [
+            "Zomato",
+            "Google Reviews",
+            "TripAdvisor"
+        ],
+        note: "Focus on customer reviews that mention food quality, hygiene, staff behavior, and family-friendly environment. Prioritize places with consistently high ratings and recent positive feedback."
+    },
+    ambiance: {
+        title: "5. Evaluate Ambiance and Family-Friendliness",
+        content: "A welcoming ambiance makes all the difference. Look for:",
+        points: [
+            "Clean, well-lit interiors",
+            "Comfortable seating arrangements for groups",
+            "Kid-friendly amenities like high chairs",
+            "Quiet or semi-private areas for relaxed conversation"
+        ],
+        note: "Restaurants that feature open kitchens or live counters can be entertaining for children and add to the overall experience."
+    },
+    menu_pricing: {
+        title: "6. Review the Menu and Pricing",
+        content: "A great Chinese restaurant should offer a balance of:",
+        points: [
+            "Popular starters (spring rolls, wontons, soups)",
+            "Mains like Manchurian, noodles, rice, and dumplings",
+            "Family combo platters or set menus for sharing",
+            "Fair pricing with generous portion sizes"
+        ]
+    },
+    hygiene: {
+        title: "7. Confirm Hygiene and Safety Standards",
+        content: "Never compromise on hygiene:",
+        points: [
+            "Ensure the restaurant is FSSAI certified",
+            "Check if the kitchen is open or partially visible",
+            "Read reviews specifically mentioning cleanliness and food safety"
+        ],
+        note: "Restaurants with consistent sanitation practices often showcase them in branding or décor (e.g., hand sanitizers, gloves, clean counters)."
+    },
+    local_recommendations: {
+        title: "8. Ask Locals or Follow Social Recommendations",
+        content: "Sometimes the most loved restaurants are the ones you won't find at the top of search results.",
+        points: [
+            "Ask friends, colleagues, or neighbors about their favorite Chinese places.",
+            "Join local Facebook food groups, check Instagram food bloggers in Ghaziabad, or use hashtags like #GhaziabadEats."
+        ],
+        note: "You might uncover a local gem that offers amazing food and value."
+    },
+    conclusion: {
+        content: "Selecting the right Chinese restaurant in Ghaziabad involves more than just scanning a menu. From authentic flavors and menu diversity to hygiene, ambiance, and customer reviews—every factor plays a role in crafting an enjoyable family experience."
+    },
+    call_to_action: {
+        content: "Ready to plan your next dinner outing? Bookmark this guide, shortlist your top restaurants, and make that reservation today. If you've already found a favorite Chinese spot in Ghaziabad, share your recommendations in the comments or tag us on social media!"
+    }
+};
+---
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    <section class="font-agdasima">
+        <Image src={heroImg} class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px] object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+    </section> 
+    <nav class="flex px-4 mb-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {breadcrumbs.map((item, index) => (
+                <li class="flex items-center">
+                    {index > 0 && (
+                        <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    )}
+                    {item.current ? (
+                        <span class="text-gray-600" aria-current="page">{item.label}</span>
+                    ) : (
+                        <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                    )}
+                </li>
+            ))}
+        </ol>
+    </nav>
+    
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="relative h-[300px] md:h-[400px] mb-8 rounded-lg overflow-hidden shadow-lg">
+            <Image
+                format="webp" 
+                src={blogData.image} 
+                alt="Family dining at a Chinese restaurant in Ghaziabad"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-6 text-center md:text-left">{blogData.title}</h1>
+            
+            <p class="text-sm text-gray-500 mb-6 text-center md:text-left">Published on: {new Date(blogData.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+            <div class="bg-gray-50 p-6 rounded-lg mb-8 shadow">
+                <h2 class="text-xl font-semibold mb-4 text-secondary">Table of Contents</h2>
+                <ol class="list-decimal pl-5 space-y-1">
+                    <li><a href="#introduction" class="text-primary hover:underline">Introduction</a></li>
+                    <li><a href="#food-preferences" class="text-primary hover:underline">Consider Your Family's Food Preferences</a></li>
+                    <li><a href="#location" class="text-primary hover:underline">Choose a Convenient Location</a></li>
+                    <li><a href="#authenticity" class="text-primary hover:underline">Prioritize Authenticity in Cuisine</a></li>
+                    <li><a href="#reviews" class="text-primary hover:underline">Check Online Reviews and Ratings</a></li>
+                    <li><a href="#ambiance" class="text-primary hover:underline">Evaluate Ambiance and Family-Friendliness</a></li>
+                    <li><a href="#menu-pricing" class="text-primary hover:underline">Review the Menu and Pricing</a></li>
+                    <li><a href="#hygiene" class="text-primary hover:underline">Confirm Hygiene and Safety Standards</a></li>
+                    <li><a href="#local-recommendations" class="text-primary hover:underline">Ask Locals or Follow Social Recommendations</a></li>
+                    <li><a href="#conclusion" class="text-primary hover:underline">Conclusion</a></li>
+                </ol>
+            </div>
+
+            <section id="introduction" class="mb-10">
+                <p class="lead text-lg md:text-xl text-gray-700">{blogData.introduction}</p>
+                <p class="text-gray-700 mt-4">{blogData.overview.content}</p>
+            </section>
+
+            <section id="food-preferences" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.food_preferences.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.food_preferences.content}</p>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    {blogData.food_preferences.points.map((point) => (
+                        <li class="text-gray-700">{point}</li>
+                    ))}
+                </ul>
+                <p class="text-gray-700" set:html={blogData.food_preferences.note} />
+            </section>
+
+            <section id="location" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.location.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.location.content}</p>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    {blogData.location.points.map((point) => (
+                        <li class="text-gray-700">{point}</li>
+                    ))}
+                </ul>
+                <p class="text-gray-700" set:html={blogData.location.note}></p>
+            </section>
+
+            <section id="authenticity" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.authenticity.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.authenticity.content}</p>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    {blogData.authenticity.points.map((point) => (
+                        <li class="text-gray-700">{point}</li>
+                    ))}
+                </ul>
+                <p class="text-gray-700"><strong>Pro Tip:</strong> {blogData.authenticity.note}</p>
+            </section>
+
+            <section id="reviews" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.reviews.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.reviews.content}</p>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    {blogData.reviews.points.map((point) => (
+                        <li class="text-gray-700">{point}</li>
+                    ))}
+                </ul>
+                <p class="text-gray-700">{blogData.reviews.note}</p>
+            </section>
+
+            <section id="ambiance" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.ambiance.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.ambiance.content}</p>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    {blogData.ambiance.points.map((point) => (
+                        <li class="text-gray-700">{point}</li>
+                    ))}
+                </ul>
+                <p class="text-gray-700">{blogData.ambiance.note}</p>
+            </section>
+
+            <section id="menu-pricing" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.menu_pricing.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.menu_pricing.content}</p>
+                <ul class="list-disc pl-6 space-y-2">
+                    {blogData.menu_pricing.points.map((point) => (
+                        <li class="text-gray-700">{point}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <section id="hygiene" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.hygiene.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.hygiene.content}</p>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    {blogData.hygiene.points.map((point) => (
+                        <li class="text-gray-700">{point}</li>
+                    ))}
+                </ul>
+                <p class="text-gray-700">{blogData.hygiene.note}</p>
+            </section>
+
+            <section id="local-recommendations" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.local_recommendations.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.local_recommendations.content}</p>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    {blogData.local_recommendations.points.map((point) => (
+                        <li class="text-gray-700">{point}</li>
+                    ))}
+                </ul>
+                <p class="text-gray-700">{blogData.local_recommendations.note}</p>
+            </section>
+
+            <section id="conclusion" class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">Conclusion</h2>
+                <p class="text-gray-700 text-base md:text-lg mb-6">{blogData.conclusion.content}</p>
+                <p class="text-gray-700 text-base md:text-lg">{blogData.call_to_action.content}</p>
+            </section>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 my-12">
+                <a href="/menu" class="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Explore Our Menu
+                </a>
+                <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Visit Us Today
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
