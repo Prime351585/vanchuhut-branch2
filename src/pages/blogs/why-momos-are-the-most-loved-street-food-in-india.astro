@@ -1,0 +1,279 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../../assets/LandingImage.jpg";
+import BlogImg from "../../assets/blogImages/blog19.png";
+
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Why Momos Are the Most Loved Street Food in India", href: "#", current: true }
+];
+
+const blogData = {
+    title: "Why Momos Are the Most Loved Street Food in India?",
+    metaTitle: "Why Momos Are India's Most Loved Street Food | Vanchu Hut Pratap Vihar",
+    metaDescription: "Why do Indians love momos so much? Explore their origins, flavors, and cultural appeal—plus taste the best ones at Vanchu Hut in Pratap Vihar",
+    image: BlogImg,
+    publishDate: "2025-08-25",
+    introduction: `Steaming hot dumplings, bursting with flavor and paired with a fiery chutney that excites your taste buds—that's the irresistible charm of momos in India. Once a humble regional specialty, momos have now taken center stage as a beloved street food across the country, finding a place in bustling markets, food stalls, and even premium Chinese restaurants. From students grabbing a quick bite to office-goers and foodies seeking comfort food, momos have captured hearts nationwide.`,
+    history: {
+        title: "From the Himalayas to Every Indian City – The History of Momos",
+        content: "Momos trace their origins to Tibet and Nepal, where these dumplings were a staple for centuries. They made their way into India through Sikkim, Darjeeling, and Arunachal Pradesh, carried by travelers, traders, and migrants.",
+        note: "Initially enjoyed in hill towns, momos soon spread to urban centers, adapting to local tastes. Today, you can find them everywhere—from roadside stalls in Delhi to trendy cafés in Mumbai."
+    },
+    varieties: {
+        title: "Momo Varieties That Win Every Heart",
+        classic: {
+            title: "Classic Favorites:",
+            items: [
+                "Veg Momos – Fresh cabbage, carrot, onion, and spices",
+                "Chicken Momos – Juicy, protein-packed, and flavorful",
+                "Paneer Momos – Creamy vegetarian indulgence"
+            ]
+        },
+        modern: {
+            title: "Modern Twists:",
+            items: [
+                "Tandoori Momos – Smoky, charred, and served with creamy dips",
+                "Cheese Momos – Gooey and indulgent",
+                "Afghani Momos – Mild, creamy, and rich in flavor",
+                "Fried & Pan-Fried Momos – Crispy outside, soft inside"
+            ]
+        },
+        note: "Innovation has kept the craze alive, with unique options like chocolate momos and rainbow momos trending on social media."
+    },
+    dominance: {
+        title: "Why Momos Dominate Indian Street Food Culture",
+        content: "Momos have become India's go-to street snack for several reasons:",
+        points: [
+            "Affordable Indulgence – Filling and budget-friendly",
+            "Customizable for All Diets – Vegan, vegetarian, and non-vegetarian versions",
+            "Perfect On-the-Go Snack – Ideal for busy urban lifestyles",
+            "Irresistible Flavor Combo – Soft dough, savory filling, and spicy chutney"
+        ],
+        note: "Food delivery surveys consistently rank momos among India's top-ordered street foods, proving their widespread appeal."
+    },
+    cultural_connection: {
+        title: "The Social & Cultural Connection of Momos",
+        content: "Momos are more than just food—they're a social experience. Students hang out at momo stalls after class, colleagues grab a plate during office breaks, and families enjoy them as an evening snack.",
+        note: "Local momo vendors often become community favorites, known for their signature recipes or secret chutneys. Street food festivals across India always feature momos as a star attraction."
+    },
+    health: {
+        title: "Are Momos Healthy? The Nutritional Side",
+        content: "Steamed momos are relatively low in fat compared to fried ones. Fillings packed with vegetables or lean meats add nutritional value, and using whole wheat wrappers increases fiber.",
+        tips_title: "Tips for Healthier Momo Eating:",
+        tips: [
+            "Choose steamed over fried",
+            "Opt for veggie or lean meat fillings",
+            "Pair with fresh salads instead of heavy sauces"
+        ]
+    },
+    social_media: {
+        title: "Momos in the Age of Instagram & Viral Food Trends",
+        content: "Social media has supercharged the momo craze. Food influencers post drool-worthy shots, and quirky variations like fire momos or dessert momos go viral overnight. On Instagram and YouTube, momo recipe videos often rack up millions of views, attracting younger audiences."
+    },
+    vanchu_hut: {
+        title: "Where to Find the Best Momos in India",
+        content: "If you're searching for the best momos in India, your hunt ends at Vanchu Hut in Pratap Vihar. Known for our freshly hand-crafted dumplings and signature spicy chutney, we've made momo lovers return time and again.",
+        description: "At Vanchu Hut, we prepare each momo with care, using high-quality ingredients to deliver authentic flavor in every bite. Whether you love steamed momos for their soft, delicate texture or crave the crispy crunch of fried momos, our menu has something for every taste.",
+        varieties: [
+            "Veg Momos – Light, flavorful, and packed with fresh vegetables",
+            "Paneer Momos – A creamy, rich twist for vegetarians",
+            "Fried Momos – Golden-brown perfection with a satisfying crunch"
+        ],
+        closing: "Pair them with our signature chutney for the ultimate street food experience—right here in Ghaziabad, without the hassle of traveling far.",
+        cta: "Visit us today at Vanchu Hut, Pratap Vihar, and see why our guests call us the go-to spot for the best momos in town. You can also order online for delivery and enjoy your favorite momos in the comfort of your home."
+    },
+    conclusion: {
+        content: "Momos aren't just a snack—they're a comfort food, a cultural bridge, and a flavor-packed indulgence. From bustling city streets to peaceful hill stations, they remain a symbol of how food can bring people together."
+    },
+    faqs: [
+        {
+            question: "What is the origin of momos?",
+            answer: "Momos originated in Tibet and Nepal, later spreading to India through Himalayan states."
+        },
+        {
+            question: "Are momos healthy?",
+            answer: "Steamed momos with vegetable or lean meat fillings are healthier than fried versions."
+        },
+        {
+            question: "Which city has the best momos in India?",
+            answer: "Delhi offers variety, while Darjeeling and Gangtok serve authentic Himalayan flavors."
+        },
+        {
+            question: "What are tandoori momos?",
+            answer: "Momos grilled in a clay oven, giving a smoky, charred taste."
+        },
+        {
+            question: "Can momos be made at home?",
+            answer: "Yes, using dough, fillings, and a steamer. Many online recipes guide the process."
+        }
+    ]
+};
+---
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    <section class="font-agdasima">
+        <Image src={heroImg} class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px] object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+    </section> 
+    <nav class="flex px-4 mb-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {breadcrumbs.map((item, index) => (
+                <li class="flex items-center">
+                    {index > 0 && (
+                        <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    )}
+                    {item.current ? (
+                        <span class="text-gray-600" aria-current="page">{item.label}</span>
+                    ) : (
+                        <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                    )}
+                </li>
+            ))}
+        </ol>
+    </nav>
+    
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="relative h-[300px] md:h-[400px] mb-8 rounded-lg overflow-hidden shadow-lg">
+            <Image
+                format="webp" 
+                src={blogData.image} 
+                alt="Why Momos Are the Most Loved Street Food in India"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-6 text-center md:text-left">{blogData.title}</h1>
+            
+            <p class="text-sm text-gray-500 mb-6 text-center md:text-left">Published on: {new Date(blogData.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+            <div class="bg-gray-50 p-6 rounded-lg mb-8 shadow">
+                <h2 class="text-xl font-semibold mb-4 text-secondary">Table of Contents</h2>
+                <ol class="list-decimal pl-5 space-y-1">
+                    <li><a href="#introduction" class="text-primary hover:underline">Introduction</a></li>
+                    <li><a href="#history" class="text-primary hover:underline">From the Himalayas to Every Indian City</a></li>
+                    <li><a href="#varieties" class="text-primary hover:underline">Momo Varieties That Win Every Heart</a></li>
+                    <li><a href="#dominance" class="text-primary hover:underline">Why Momos Dominate Indian Street Food Culture</a></li>
+                    <li><a href="#cultural-connection" class="text-primary hover:underline">The Social & Cultural Connection</a></li>
+                    <li><a href="#health" class="text-primary hover:underline">Are Momos Healthy?</a></li>
+                    <li><a href="#social-media" class="text-primary hover:underline">Momos in the Age of Instagram</a></li>
+                    <li><a href="#vanchu-hut" class="text-primary hover:underline">Where to Find the Best Momos</a></li>
+                    <li><a href="#conclusion" class="text-primary hover:underline">Conclusion</a></li>
+                    <li><a href="#faqs" class="text-primary hover:underline">FAQs</a></li>
+                </ol>
+            </div>
+
+            <section id="introduction" class="mb-10">
+                <p class="lead text-lg md:text-xl text-gray-700">{blogData.introduction}</p>
+            </section>
+
+            <section id="history" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.history.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.history.content}</p>
+                <p class="text-gray-700">{blogData.history.note}</p>
+            </section>
+
+            <section id="varieties" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.varieties.title}</h2>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary mb-6">
+                    <h3 class="text-xl font-semibold text-primary mb-3">{blogData.varieties.classic.title}</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        {blogData.varieties.classic.items.map((item) => (
+                            <li class="text-gray-700">{item}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-secondary mb-6">
+                    <h3 class="text-xl font-semibold text-secondary mb-3">{blogData.varieties.modern.title}</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        {blogData.varieties.modern.items.map((item) => (
+                            <li class="text-gray-700">{item}</li>
+                        ))}
+                    </ul>
+                </div>
+
+                <p class="text-gray-700 italic">{blogData.varieties.note}</p>
+            </section>
+
+            <section id="dominance" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.dominance.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.dominance.content}</p>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    {blogData.dominance.points.map((point) => (
+                        <li class="text-gray-700">{point}</li>
+                    ))}
+                </ul>
+                <p class="text-gray-700">{blogData.dominance.note}</p>
+            </section>
+
+            <section id="cultural-connection" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.cultural_connection.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.cultural_connection.content}</p>
+                <p class="text-gray-700">{blogData.cultural_connection.note}</p>
+            </section>
+
+            <section id="health" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.health.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.health.content}</p>
+                <h3 class="text-lg font-semibold text-primary mb-3">{blogData.health.tips_title}</h3>
+                <ul class="list-disc pl-6 space-y-2">
+                    {blogData.health.tips.map((tip) => (
+                        <li class="text-gray-700">{tip}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <section id="social-media" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.social_media.title}</h2>
+                <p class="text-gray-700">{blogData.social_media.content}</p>
+            </section>
+
+            <section id="vanchu-hut" class="mb-10 bg-gradient-to-r from-primary/10 to-secondary/10 p-6 rounded-lg">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.vanchu_hut.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.vanchu_hut.content}</p>
+                <p class="text-gray-700 mb-4">{blogData.vanchu_hut.description}</p>
+                
+                <h3 class="text-lg font-semibold text-primary mb-3">Our popular momo varieties include:</h3>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    {blogData.vanchu_hut.varieties.map((variety) => (
+                        <li class="text-gray-700">{variety}</li>
+                    ))}
+                </ul>
+                
+                <p class="text-gray-700 mb-4">{blogData.vanchu_hut.closing}</p>
+                <p class="text-gray-700 font-semibold">{blogData.vanchu_hut.cta}</p>
+            </section>
+
+            <section id="conclusion" class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">Conclusion</h2>
+                <p class="text-gray-700 text-base md:text-lg">{blogData.conclusion.content}</p>
+            </section>
+
+            <section id="faqs" class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-6">Frequently Asked Questions About Why Momos Are the Most Loved Street Food in India</h2>
+                <div class="space-y-6">
+                    {blogData.faqs.map((faq, index) => (
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h3 class="text-lg font-semibold text-primary mb-3">Q{index + 1}: {faq.question}</h3>
+                            <p class="text-gray-700"><strong>A:</strong> {faq.answer}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 my-12">
+                <a href="/menu" class="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Try Our Momos
+                </a>
+                <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Visit Vanchu Hut
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
