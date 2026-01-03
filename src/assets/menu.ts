@@ -21,8 +21,8 @@ const dishes = [
     "type": "veg",
     "image":chillipotato,
     "price": {
-      "half": 80,
-      "full": 130
+      "half": 90,
+      "full": 140
     }
     
   },
@@ -32,8 +32,8 @@ const dishes = [
     "category": "Snacks/starters",
     "type": "veg",
     "price": {
-      "half": 90,
-      "full": 140
+      "half": 100,
+      "full": 150
     }
   },
   {
@@ -42,8 +42,8 @@ const dishes = [
     "category": "Snacks/starters",
     "type": "veg",
     "price": {
-      "half": 100,
-      "full": 160
+      "half": 110,
+      "full": 170
     }
   },
   {
@@ -53,7 +53,7 @@ const dishes = [
     "type": "veg",
     "price": {
       "half": "-",
-      "full": 100
+      "full": 120
     }
   },
   {
@@ -63,7 +63,7 @@ const dishes = [
     "type": "veg",
     "price": {
       "half": "-",
-      "full": 130
+      "full": 140
     }
   },
   {
@@ -72,8 +72,8 @@ const dishes = [
     "category": "Snacks/starters",
     "type": "veg",
     "price": {
-      "half": 70,
-      "full": 120
+      "half": 80,
+      "full": 130
     }
   },
   {
@@ -82,8 +82,8 @@ const dishes = [
     "category": "Snacks/starters",
     "type": "veg",
     "price": {
-      "half": 90,
-      "full": 130
+      "half": 100,
+      "full": 140
     }
   },
   {
@@ -93,7 +93,7 @@ const dishes = [
     "type": "veg",
     "price": {
       "half": 120,
-      "full": 180
+      "full": 200
     }
   },
   {
@@ -102,8 +102,8 @@ const dishes = [
     "category": "Snacks/starters",
     "type": "veg",
     "price": {
-      "half": 160,
-      "full": 250
+      "half": 180,
+      "full": 280
     }
   },
   {
@@ -112,8 +112,8 @@ const dishes = [
     "category": "Snacks/starters",
     "type": "veg",
     "price": {
-      "half": 160,
-      "full": 250
+      "half": 180,
+      "full": 280
     }
   },
   {
@@ -123,7 +123,7 @@ const dishes = [
     "type": "veg",
     "price": {
       "half": "-",
-      "full": 220
+      "full": 240
     }
   },
   {
@@ -133,7 +133,7 @@ const dishes = [
     "type": "veg",
     "price": {
       "half": "-",
-      "full": 220
+      "full": 240
     }
   },
   {
@@ -145,7 +145,7 @@ const dishes = [
 
     "price": {
       "half": "-",
-      "full": 180
+      "full": 2080
     }
   },
   {
@@ -155,7 +155,7 @@ const dishes = [
     "type": "veg",
     "price": {
       "half": "-",
-      "full": 180
+      "full": 200
     }
   },
   {
@@ -167,7 +167,7 @@ const dishes = [
 
     "price": {
       "half": 50,
-      "full": 80
+      "full": 90
     }
   },
   {
@@ -177,7 +177,7 @@ const dishes = [
     "type": "veg",
     "price": {
       "half": 60,
-      "full": 90
+      "full": 100
     }
   },
   {
@@ -187,7 +187,7 @@ const dishes = [
     "type": "veg",
     "price": {
       "half": "-",
-      "full": 150
+      "full": 160
     }
   },
   {
@@ -197,9 +197,30 @@ const dishes = [
     "type": "veg",
     "price": {
       "half": "-",
-      "full": 160
+      "full": 170
     }
   },
+  {
+    "id": 96,
+    "name": "Chilli Gravy Momos",
+    "category": "Momos",
+    "type": "veg",
+    "price": {
+      "half": "-",
+      "full": 150
+    }
+  },
+  {
+    "id": 97,
+    "name": "Chilli Gravy Paneer Momos",
+    "category": "Momos",
+    "type": "veg",
+    "price": {
+      "half": "-",
+      "full": 170
+    }
+  },
+
 
 {
     "id": 19,
@@ -210,7 +231,7 @@ const dishes = [
 
     "price": {
         "half": "-",
-        "full": 110
+        "full": 120
       }
 },
 {
@@ -220,7 +241,7 @@ const dishes = [
     "type": "veg",
     "price": {
         "half": "-",
-        "full": 110
+        "full": 120
       }
 },
 {
@@ -230,7 +251,7 @@ const dishes = [
     "type": "veg",
     "price": {
         "half": "-",
-        "full": 110
+        "full": 120
       }
 },
 {
@@ -240,7 +261,7 @@ const dishes = [
     "type": "veg",
     "price": {
         "half": "-",
-        "full": 130
+        "full": 140
       }
 },
 {
@@ -250,7 +271,7 @@ const dishes = [
     "type": "veg",
     "price": {
         "half": "-",
-        "full": 150
+        "full": 160
       }
 },
 
@@ -263,7 +284,7 @@ const dishes = [
 
   "price": {
     "half": "-",
-    "full": 160
+    "full": 180
   }
 },
 {
@@ -273,7 +294,7 @@ const dishes = [
   "type": "veg",
   "price": {
     "half": "-",
-    "full": 180
+    "full": 200
   }
 },
 {
@@ -284,8 +305,8 @@ const dishes = [
   "image":chowmin,
 
   "price": {
-    "half": 90,
-    "full": 130
+    "half": 100,
+    "full": 150
   }
 },
 {
@@ -294,8 +315,8 @@ const dishes = [
   "category": "Chowmein",
   "type": "veg",
   "price": {
-    "half": 100,
-    "full": 150
+    "half": 120,
+    "full": 170
   }
 },
 {
@@ -304,8 +325,8 @@ const dishes = [
   "category": "Chowmein",
   "type": "veg",
   "price": {
-    "half": 100,
-    "full": 140
+    "half": 110,
+    "full": 150
   }
 },
 {
@@ -314,8 +335,8 @@ const dishes = [
   "category": "Chowmein",
   "type": "veg",
   "price": {
-    "half": 100,
-    "full": 160
+    "half": 120,
+    "full": 180
   }
 },
 {
@@ -325,7 +346,7 @@ const dishes = [
   "type": "veg",
   "price": {
     "half": 130,
-    "full": 200
+    "full": 220
   }
 },
 {
@@ -334,8 +355,8 @@ const dishes = [
   "category": "Chowmein",
   "type": "veg",
   "price": {
-    "half": 130,
-    "full": 200
+    "half": 140,
+    "full": 220
   }
 },
 {
@@ -346,8 +367,8 @@ const dishes = [
 
   "type": "veg",
   "price": {
-    "half": 90,
-    "full": 140
+    "half": 100,
+    "full": 150
   }
 },
 {
@@ -356,8 +377,8 @@ const dishes = [
   "category": "Rice",
   "type": "veg",
   "price": {
-    "half": 100,
-    "full": 150
+    "half": 110,
+    "full": 160
   }
 },
 {
@@ -366,8 +387,8 @@ const dishes = [
   "category": "Rice",
   "type": "veg",
   "price": {
-    "half": 100,
-    "full": 150
+    "half": 110,
+    "full": 160
   }
 },
 {
@@ -376,8 +397,8 @@ const dishes = [
   "category": "Rice",
   "type": "veg",
   "price": {
-    "half": 110,
-    "full": 160
+    "half": 120,
+    "full": 170
   }
 },
 {
@@ -386,8 +407,8 @@ const dishes = [
   "category": "Rice",
   "type": "veg",
   "price": {
-    "half": 120,
-    "full": 180
+    "half": 130,
+    "full": 200
   }
 },
 {
@@ -398,8 +419,8 @@ const dishes = [
   "image":gravy,
 
   "price": {
-    "half": 140,
-    "full": 220
+    "half": 150,
+    "full": 230
   }
 },
 {
@@ -408,8 +429,8 @@ const dishes = [
   "category": "Gravy",
   "type": "veg",
   "price": {
-    "half": 180,
-    "full": 280
+    "half": 200,
+    "full": 300
   }
 },
 {
@@ -418,8 +439,8 @@ const dishes = [
   "category": "Gravy",
   "type": "veg",
   "price": {
-    "half": 180,
-    "full": 280
+    "half": 200,
+    "full": 300
   }
 },
 {
@@ -428,8 +449,8 @@ const dishes = [
   "category": "Gravy",
   "type": "veg",
   "price": {
-    "half": 170,
-    "full": 260
+    "half": 180,
+    "full": 280
   }
 },
 {
@@ -440,8 +461,8 @@ const dishes = [
 
   "type": "veg",
   "price": {
-      "half": 70,
-      "full": 120
+      "half": 80,
+      "full": 130
   }
 },
 {
@@ -450,8 +471,8 @@ const dishes = [
   "category": "Macaroni",
   "type": "veg",
   "price": {
-      "half": 90,
-      "full": 140
+      "half": 100,
+      "full": 150
   }
 },
 {
@@ -460,8 +481,8 @@ const dishes = [
   "category": "Macaroni",
   "type": "veg",
   "price": {
-      "half": 80,
-      "full": 130
+      "half": 90,
+      "full": 140
   }
 },
 {
@@ -470,8 +491,8 @@ const dishes = [
   "category": "Macaroni",
   "type": "veg",
   "price": {
-      "half": 100,
-      "full": 170
+      "half": 110,
+      "full": 180
   }
 },
 {
@@ -482,8 +503,8 @@ const dishes = [
 
   "type": "veg",
   "price": {
-      "half": 100,
-      "full": 150
+      "half": 110,
+      "full": 160
   }
 },
 {
@@ -492,8 +513,8 @@ const dishes = [
   "category": "Pasta",
   "type": "veg",
   "price": {
-      "half": 120,
-      "full": 200
+      "half": 130,
+      "full": 220
   }
 },
 {
@@ -502,8 +523,8 @@ const dishes = [
   "category": "Pasta",
   "type": "veg",
   "price": {
-      "half": 130,
-      "full": 220
+      "half": 140,
+      "full": 240
   }
 },
 {
@@ -525,7 +546,7 @@ const dishes = [
   "type": "veg",
   "price": {
       "half": "-",
-      "full": 70
+      "full": 80
   }
 },
 {
@@ -538,7 +559,7 @@ const dishes = [
   "description": "Manchurian Rice + 2 Momos Fried",
   "price": {
       "half": "-",
-      "full": 250
+      "full": 260
   }
 },
 {
@@ -549,7 +570,7 @@ const dishes = [
   "description": "1 Spring Roll + Chowmein + 4 Momos Fried",
   "price": {
       "half": "-",
-      "full": 200
+      "full": 220
   },
 },
 {
@@ -560,7 +581,7 @@ const dishes = [
   "description": "Veg. Burger + French Fries + Cold Drinks",
   "price": {
       "half": "-",
-      "full": 120
+      "full": 140
   },
 },
 
@@ -572,7 +593,7 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": "-",
-  "full": 130
+  "full": 140
 }
 },
 {
@@ -581,8 +602,8 @@ const dishes = [
 "category": "Snacks/starters",
 "type": "non-veg",
 "price": {
-  "half": 180,
-  "full": 300
+  "half": 200,
+  "full": 320
 }
 },
 {
@@ -591,8 +612,8 @@ const dishes = [
 "category": "Snacks/starters",
 "type": "non-veg",
 "price": {
-  "half": 180,
-  "full": 300
+  "half": 200,
+  "full": 320
 }
 },
 {
@@ -601,8 +622,8 @@ const dishes = [
 "category": "Snacks/starters",
 "type": "non-veg",
 "price": {
-  "half": 200,
-  "full": 320
+  "half": 220,
+  "full": 340
 }
 },
 {
@@ -611,8 +632,8 @@ const dishes = [
 "category": "Snacks/starters",
 "type": "non-veg",
 "price": {
-  "half": 200,
-  "full": 320
+  "half": 220,
+  "full": 340
 }
 },
 {
@@ -621,8 +642,18 @@ const dishes = [
 "category": "Snacks/starters",
 "type": "non-veg",
 "price": {
-  "half": 200,
-  "full": 320
+  "half": 220,
+  "full": 340
+}
+},
+{
+"id": 85,
+"name": "Vanchu Hut Special Chicken",
+"category": "Snacks/starters",
+"type": "non-veg",
+"price": {
+  "half": 220,
+  "full": 340
 }
 },
 {
@@ -631,8 +662,8 @@ const dishes = [
 "category": "Snacks/starters",
 "type": "non-veg",
 "price": {
-  "half": 220,
-  "full": 350
+  "half": 230,
+  "full": 380
 }
 }
 ,
@@ -643,7 +674,7 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": 60,
-  "full": 90
+  "full": 100
 }
 },
 {
@@ -653,12 +684,23 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": 60,
-  "full": 90
+  "full": 100
 }
 },
 {
 "id": 61,
 "name": "Chicken Kurkure Momos",
+"category": "Momos",
+"type": "non-veg",
+"price": {
+  "half": "-",
+  "full": 180
+}
+}
+,
+{
+"id": 98,
+"name": "Chill Gravy Chicken Momos",
 "category": "Momos",
 "type": "non-veg",
 "price": {
@@ -674,7 +716,7 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": "-",
-  "full": 130
+  "full": 140
 }
 },
 {
@@ -684,7 +726,7 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": "-",
-  "full": 130
+  "full": 140
 }
 },
 {
@@ -694,7 +736,7 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": "-",
-  "full": 130
+  "full": 140
 }
 },
 {
@@ -704,7 +746,7 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": "-",
-  "full": 150
+  "full": 160
 }
 },
 {
@@ -714,7 +756,7 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": "-",
-  "full": 170
+  "full": 180
 }
 }
 ,
@@ -725,7 +767,7 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": "-",
-  "full": 150
+  "full": 160
 }
 },
 {
@@ -735,7 +777,7 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": "-",
-  "full": 170
+  "full": 180
 }
 },
 {
@@ -745,7 +787,7 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": "-",
-  "full": 180
+  "full": 200
 }
 },
 {
@@ -755,7 +797,7 @@ const dishes = [
 "type": "non-veg",
 "price": {
   "half": "-",
-  "full": 200
+  "full": 220
 }
 }
 ,
@@ -766,8 +808,8 @@ const dishes = [
 "category": "Chowmein",
 "type": "non-veg",
 "price": {
-  "half": 100,
-  "full": 160
+  "half": 110,
+  "full": 170
 }
 },
 {
@@ -776,8 +818,8 @@ const dishes = [
 "category": "Chowmein",
 "type": "non-veg",
 "price": {
-  "half": 100,
-  "full": 160
+  "half": 110,
+  "full": 170
 }
 },
 {
@@ -786,8 +828,8 @@ const dishes = [
 "category": "Chowmein",
 "type": "non-veg",
 "price": {
-  "half": 120,
-  "full": 180
+  "half": 130,
+  "full": 190
 }
 },
 {
@@ -796,8 +838,8 @@ const dishes = [
 "category": "Chowmein",
 "type": "non-veg",
 "price": {
-  "half": 120,
-  "full": 180
+  "half": 130,
+  "full": 190
 }
 },
 {
@@ -806,8 +848,8 @@ const dishes = [
 "category": "Chowmein",
 "type": "non-veg",
 "price": {
-  "half": 130,
-  "full": 190
+  "half": 140,
+  "full": 220
 }
 },
 {
@@ -816,8 +858,8 @@ const dishes = [
 "category": "Chowmein",
 "type": "non-veg",
 "price": {
-  "half": 140,
-  "full": 200
+  "half": 150,
+  "full": 220
 }
 }
 ,
@@ -828,8 +870,8 @@ const dishes = [
 "category": "Rice",
 "type": "non-veg",
 "price": {
-  "half": 100,
-  "full": 160
+  "half": 110,
+  "full": 170
 }
 },
 {
@@ -838,8 +880,8 @@ const dishes = [
 "category": "Rice",
 "type": "non-veg",
 "price": {
-  "half": 100,
-  "full": 160
+  "half": 110,
+  "full": 170
 }
 },
 {
@@ -848,8 +890,8 @@ const dishes = [
 "category": "Rice",
 "type": "non-veg",
 "price": {
-  "half": 120,
-  "full": 180
+  "half": 130,
+  "full": 190
 }
 },
 {
@@ -858,8 +900,8 @@ const dishes = [
 "category": "Rice",
 "type": "non-veg",
 "price": {
-  "half": 120,
-  "full": 180
+  "half": 140,
+  "full": 200
 }
 },
 {
@@ -868,8 +910,8 @@ const dishes = [
 "category": "Rice",
 "type": "non-veg",
 "price": {
-  "half": 140,
-  "full": 200
+  "half": 150,
+  "full": 220
 }
 }
 ,
@@ -880,8 +922,8 @@ const dishes = [
 "category": "Gravy",
 "type": "non-veg",
 "price": {
-  "half": 200,
-  "full": 320
+  "half": 210,
+  "full": 330
 }
 },
 {
@@ -890,8 +932,8 @@ const dishes = [
 "category": "Gravy",
 "type": "non-veg",
 "price": {
-  "half": 200,
-  "full": 320
+  "half": 210,
+  "full": 330
 }
 },
 {
@@ -900,21 +942,10 @@ const dishes = [
 "category": "Gravy",
 "type": "non-veg",
 "price": {
-  "half": 200,
-  "full": 320
+  "half": 220,
+  "full": 340
 }
 },
-{
-"id": 85,
-"name": "Vanchu Hut Special Chicken",
-"category": "Gravy",
-"type": "non-veg",
-"price": {
-  "half": 200,
-  "full": 320
-}
-}
-,
 
 {
   "id": 86,
@@ -922,8 +953,8 @@ const dishes = [
   "category": "Macaroni",
   "type": "non-veg",
   "price": {
-    "half": 80,
-    "full": 130
+    "half": 90,
+    "full": 140
   }
 },
 {
@@ -932,8 +963,8 @@ const dishes = [
   "category": "Macaroni",
   "type": "non-veg",
   "price": {
-    "half": 90,
-    "full": 150
+    "half": 100,
+    "full": 160
   }
 },
 {
@@ -942,8 +973,8 @@ const dishes = [
   "category": "Macaroni",
   "type": "non-veg",
   "price": {
-    "half": 90,
-    "full": 150
+    "half": 100,
+    "full": 160
   }
 },
 {
@@ -952,8 +983,8 @@ const dishes = [
   "category": "Macaroni",
   "type": "non-veg",
   "price": {
-    "half": 110,
-    "full": 180
+    "half": 120,
+    "full": 190
   }
 }
 ,
@@ -988,7 +1019,7 @@ const dishes = [
   "description": "Chicken Manchurian Rice + 2 Momos Fried",
   "price": {
     "half": "-",
-    "full": 350
+    "full": 370
   }
 }
 ,
@@ -1001,7 +1032,7 @@ const dishes = [
   "description": "1 Chicken Spring Roll + Chowmein + 4 Fried Momos",
   "price": {
     "half": "-",
-    "full": 230
+    "full": 250
   }
 },
 {
@@ -1012,7 +1043,7 @@ const dishes = [
   "description": "Chicken Burger + French Fries + Cold Drink",
   "price": {
     "half": "-",
-    "full": 150
+    "full": 160
   }
 }
 
