@@ -145,7 +145,7 @@ const dishes = [
 
     "price": {
       "half": "-",
-      "full": 2080
+      "full": 200
     }
   },
   {

@@ -1,0 +1,297 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../../assets/LandingImage.jpg";
+import BlogImg from "../../assets/blogImages/blog28.webp";
+
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Gravy vs Dry Manchurian", href: "#", current: true }
+];
+
+const blogData = {
+    title: "Gravy vs Dry Manchurian: What's the Difference & Which One Should You Choose?",
+    metaTitle: "Gravy vs Dry Manchurian: What's the Difference & Which One to Choose?",
+    metaDescription: "Discover the difference between gravy and dry Manchurian. Learn which one to choose and enjoy authentic Indo-Chinese flavors at Vanchu Hut, Ghaziabad.",
+    image: BlogImg,
+    publishDate: "2025-01-17",
+    introduction: "Manchurian is one of the most loved Indo-Chinese dishes in India, enjoyed by families, friends, and food lovers across generations. Whether it's a weekend dinner or a casual outing, Manchurian almost always finds a place on the table. But one question often comes up when ordering: Gravy or Dry Manchurian – which is better?",
+    quick_answer: "Dry Manchurian is crispy and lightly coated with sauce, usually served as a starter. Gravy Manchurian is saucy, soft, and served as a main course with rice or noodles.",
+    intro_note: "If you've ever found yourself debating between the two at a Chinese restaurant in Ghaziabad, this guide will help you understand the difference and choose the perfect option for your meal.",
+    manchurian_overview: {
+        title: "What Is Manchurian? A Quick Overview",
+        content: "Manchurian is a popular Indo-Chinese dish created by blending Chinese cooking techniques with bold Indian flavors. It typically consists of vegetable balls made from cabbage, carrots, and spices, deep-fried until crisp and then tossed in a savory sauce made with garlic, soy sauce, chili sauce, and spring onions.",
+        note: "Over time, Manchurian has evolved into two popular styles: Dry Manchurian and Gravy Manchurian—each offering a unique taste and dining experience."
+    },
+    dry_manchurian: {
+        title: "What Is Dry Manchurian?",
+        intro: "Dry Manchurian is known for its crispy texture and bold flavor. The fried Manchurian balls are lightly coated in a thick sauce that clings to the surface rather than pooling at the bottom.",
+        texture: {
+            title: "1. Texture, Taste & Cooking Style",
+            content: "Dry Manchurian is crisp on the outside with a flavorful, slightly spicy coating. The sauce is minimal but intense, making every bite punchy and satisfying."
+        },
+        serving: {
+            title: "2. When Is Dry Manchurian Best Served?",
+            content: "This version is usually served as a starter or snack, making it ideal for sharing. It's a popular choice for families and groups who want to enjoy something spicy and crispy before the main course."
+        }
+    },
+    gravy_manchurian: {
+        title: "What Is Gravy Manchurian?",
+        intro: "Gravy Manchurian, on the other hand, is all about comfort and richness. The Manchurian balls are served in a generous amount of flavorful gravy made with garlic, ginger, soy sauce, and Indo-Chinese spices.",
+        sauce: {
+            title: "1. Rich Sauce & Comfort Food Appeal",
+            content: "The thick, aromatic gravy softens the Manchurian balls slightly, creating a juicy and satisfying dish that feels more filling."
+        },
+        pairing: {
+            title: "2. Ideal Meal Pairings",
+            content: "Gravy Manchurian is best enjoyed as a main course, paired with Veg Fried Rice, Hakka Noodles, or Chowmein—perfect for a complete, hearty meal."
+        }
+    },
+    key_differences: {
+        title: "Gravy vs Dry Manchurian: Key Differences",
+        texture: {
+            title: "Texture",
+            dry: "Crispy and coated",
+            gravy: "Soft, saucy, and juicy"
+        },
+        flavor: {
+            title: "Flavor",
+            dry: "Spicy, bold, and intense",
+            gravy: "Balanced, savory, and comforting"
+        },
+        serving: {
+            title: "Serving Style",
+            dry: "Starter or appetizer",
+            gravy: "Main course with rice or noodles"
+        }
+    },
+    which_to_choose: {
+        title: "Which One Should You Choose?",
+        gravy_choice: "If you're dining with family or friends and planning a full meal, Gravy Manchurian is a better choice. It pairs well with other dishes and keeps everyone satisfied.",
+        dry_choice: "If you're in the mood for something crispy and flavorful to start your meal, Dry Manchurian is the perfect pick.",
+        note: "Many guests at Vanchu Hut in Pratap Vihar, Ghaziabad enjoy ordering both—dry Manchurian as a starter and gravy Manchurian with noodles or rice for the main course."
+    },
+    variations: {
+        title: "Popular Manchurian Variations You'll Love",
+        intro: "Beyond the classic Veg Manchurian, many Chinese restaurants also offer:",
+        items: [
+            "Paneer Manchurian",
+            "Mushroom Manchurian",
+            "Soya Manchurian",
+            "Indo-Chinese fusion styles"
+        ],
+        note: "Each variation brings a unique twist while keeping the signature Manchurian flavor intact."
+    },
+    vanchu_hut: {
+        title: "How Vanchu Hut Serves the Best of Both",
+        content: "At Vanchu Hut – Your Favorite Chinese Restaurant in Ghaziabad, Manchurian is prepared using fresh vegetables, balanced spices, and authentic Indo-Chinese sauces. Whether you choose gravy or dry, the focus remains on quality, flavor, and consistency.",
+        note: "With a cozy, family-friendly ambiance, affordable pricing, and convenient dine-in, takeaway, and delivery options, Vanchu Hut ensures every Manchurian dish delivers a memorable experience."
+    },
+    conclusion: {
+        content: "When it comes to Gravy vs Dry Manchurian, there's no wrong choice—only delicious ones. Dry Manchurian satisfies your craving for crunch and spice, while gravy Manchurian offers warmth and comfort in every bite.",
+        cta: "The best way to decide? Try both and discover your favorite at Vanchu Hut, where authentic Indo-Chinese flavors meet great hospitality in the heart of Ghaziabad."
+    },
+    faqs: [
+        {
+            question: "What is the main difference between gravy and dry Manchurian?",
+            answer: "The main difference is the sauce quantity and texture. Dry Manchurian is lightly coated and crispy, while gravy Manchurian is served in a rich, flavorful sauce and is usually eaten as a main course."
+        },
+        {
+            question: "Which Manchurian is better as a starter?",
+            answer: "Dry Manchurian is best as a starter because of its crispy texture and bold flavor, making it ideal for sharing before the main course."
+        },
+        {
+            question: "Is gravy Manchurian eaten with rice or noodles?",
+            answer: "Yes, gravy Manchurian pairs perfectly with Veg Fried Rice, Hakka Noodles, or Chowmein and is commonly enjoyed as a complete meal."
+        },
+        {
+            question: "Is Manchurian spicy?",
+            answer: "Manchurian can be mildly spicy to moderately spicy. Most family-friendly Chinese restaurants, including Vanchu Hut in Ghaziabad, can adjust spice levels based on preference."
+        },
+        {
+            question: "Which Manchurian do families usually prefer?",
+            answer: "Families and groups often prefer gravy Manchurian because it is filling, balanced in flavor, and pairs well with other Indo-Chinese dishes."
+        }
+    ]
+};
+---
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    <section class="font-agdasima">
+        <Image src={heroImg} class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px] object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+    </section> 
+    <nav class="flex px-4 mb-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {breadcrumbs.map((item, index) => (
+                <li class="flex items-center">
+                    {index > 0 && (
+                        <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    )}
+                    {item.current ? (
+                        <span class="text-gray-600" aria-current="page">{item.label}</span>
+                    ) : (
+                        <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                    )}
+                </li>
+            ))}
+        </ol>
+    </nav>
+    
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="relative h-[300px] md:h-[400px] mb-8 rounded-lg overflow-hidden shadow-lg">
+            <Image
+                format="webp" 
+                src={blogData.image} 
+                alt="Gravy vs Dry Manchurian - Understand the difference"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-6 text-center md:text-left">{blogData.title}</h1>
+            
+            <p class="text-sm text-gray-500 mb-6 text-center md:text-left">Published on: {new Date(blogData.publishDate).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+
+            <div class="bg-gray-50 p-6 rounded-lg mb-8 shadow">
+                <h2 class="text-xl font-semibold mb-4 text-secondary">Table of Contents</h2>
+                <ol class="list-decimal pl-5 space-y-1">
+                    <li><a href="#introduction" class="text-primary hover:underline">Introduction</a></li>
+                    <li><a href="#manchurian-overview" class="text-primary hover:underline">What Is Manchurian? A Quick Overview</a></li>
+                    <li><a href="#dry-manchurian" class="text-primary hover:underline">What Is Dry Manchurian?</a></li>
+                    <li><a href="#gravy-manchurian" class="text-primary hover:underline">What Is Gravy Manchurian?</a></li>
+                    <li><a href="#key-differences" class="text-primary hover:underline">Gravy vs Dry Manchurian: Key Differences</a></li>
+                    <li><a href="#which-to-choose" class="text-primary hover:underline">Which One Should You Choose?</a></li>
+                    <li><a href="#variations" class="text-primary hover:underline">Popular Manchurian Variations You'll Love</a></li>
+                    <li><a href="#vanchu-hut" class="text-primary hover:underline">How Vanchu Hut Serves the Best of Both</a></li>
+                    <li><a href="#conclusion" class="text-primary hover:underline">Conclusion</a></li>
+                    <li><a href="#faqs" class="text-primary hover:underline">FAQs</a></li>
+                </ol>
+            </div>
+
+            <section id="introduction" class="mb-10">
+                <p class="lead text-lg md:text-xl text-gray-700 mb-4">{blogData.introduction}</p>
+                <p class="lead text-lg md:text-xl text-gray-700 font-semibold mb-4">{blogData.quick_answer}</p>
+                <p class="lead text-lg md:text-xl text-gray-700">{blogData.intro_note}</p>
+            </section>
+
+            <section id="manchurian-overview" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.manchurian_overview.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.manchurian_overview.content}</p>
+                <p class="text-gray-700">{blogData.manchurian_overview.note}</p>
+            </section>
+
+            <section id="dry-manchurian" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.dry_manchurian.title}</h2>
+                <p class="text-gray-700 mb-6">{blogData.dry_manchurian.intro}</p>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary mb-4">
+                    <h3 class="text-xl font-semibold text-primary mb-3">{blogData.dry_manchurian.texture.title}</h3>
+                    <p class="text-gray-700">{blogData.dry_manchurian.texture.content}</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary">
+                    <h3 class="text-xl font-semibold text-primary mb-3">{blogData.dry_manchurian.serving.title}</h3>
+                    <p class="text-gray-700">{blogData.dry_manchurian.serving.content}</p>
+                </div>
+            </section>
+
+            <section id="gravy-manchurian" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.gravy_manchurian.title}</h2>
+                <p class="text-gray-700 mb-6">{blogData.gravy_manchurian.intro}</p>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-secondary mb-4">
+                    <h3 class="text-xl font-semibold text-secondary mb-3">{blogData.gravy_manchurian.sauce.title}</h3>
+                    <p class="text-gray-700">{blogData.gravy_manchurian.sauce.content}</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-secondary">
+                    <h3 class="text-xl font-semibold text-secondary mb-3">{blogData.gravy_manchurian.pairing.title}</h3>
+                    <p class="text-gray-700">{blogData.gravy_manchurian.pairing.content}</p>
+                </div>
+            </section>
+
+            <section id="key-differences" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-6">{blogData.key_differences.title}</h2>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <h3 class="text-xl font-semibold text-primary mb-3">{blogData.key_differences.texture.title}</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li class="text-gray-700"><strong>Dry Manchurian:</strong> {blogData.key_differences.texture.dry}</li>
+                            <li class="text-gray-700"><strong>Gravy Manchurian:</strong> {blogData.key_differences.texture.gravy}</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <h3 class="text-xl font-semibold text-primary mb-3">{blogData.key_differences.flavor.title}</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li class="text-gray-700"><strong>Dry:</strong> {blogData.key_differences.flavor.dry}</li>
+                            <li class="text-gray-700"><strong>Gravy:</strong> {blogData.key_differences.flavor.gravy}</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-lg shadow">
+                        <h3 class="text-xl font-semibold text-primary mb-3">{blogData.key_differences.serving.title}</h3>
+                        <ul class="list-disc pl-6 space-y-2">
+                            <li class="text-gray-700"><strong>Dry:</strong> {blogData.key_differences.serving.dry}</li>
+                            <li class="text-gray-700"><strong>Gravy:</strong> {blogData.key_differences.serving.gravy}</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="which-to-choose" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.which_to_choose.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.which_to_choose.gravy_choice}</p>
+                <p class="text-gray-700 mb-4">{blogData.which_to_choose.dry_choice}</p>
+                <p class="text-gray-700">{blogData.which_to_choose.note}</p>
+            </section>
+
+            <section id="variations" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.variations.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.variations.intro}</p>
+                <ul class="list-disc pl-6 space-y-2 mb-4">
+                    {blogData.variations.items.map((item) => (
+                        <li class="text-gray-700">{item}</li>
+                    ))}
+                </ul>
+                <p class="text-gray-700">{blogData.variations.note}</p>
+            </section>
+
+            <section id="vanchu-hut" class="mb-10 bg-gradient-to-r from-primary/10 to-secondary/10 p-6 rounded-lg">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.vanchu_hut.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.vanchu_hut.content}</p>
+                <p class="text-gray-700">{blogData.vanchu_hut.note}</p>
+            </section>
+
+            <section id="conclusion" class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">Conclusion</h2>
+                <p class="text-gray-700 text-base md:text-lg mb-4">{blogData.conclusion.content}</p>
+                <p class="text-gray-700 text-base md:text-lg">{blogData.conclusion.cta}</p>
+            </section>
+
+            <section id="faqs" class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-6">FAQs Related to Difference Between Gravy and Dry Manchurian</h2>
+                <div class="space-y-6">
+                    {blogData.faqs.map((faq, index) => (
+                        <div class="bg-gray-50 p-6 rounded-lg shadow">
+                            <h3 class="text-lg font-semibold text-primary mb-3">{faq.question}</h3>
+                            <p class="text-gray-700">{faq.answer}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 my-12">
+                <a href="/menu" class="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Explore Our Menu
+                </a>
+                <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Visit Us Today
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
