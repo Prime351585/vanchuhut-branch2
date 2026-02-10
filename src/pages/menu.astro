@@ -4,6 +4,8 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import heroImg from '../assets/LandingImage.jpg'; 
 // Get unique categories and organize dishes by category and subcategory
+
+
 // const { dishes } = menuData;
 const categories = [...new Set(dishes.map(dish => dish.category))];
 
@@ -22,13 +24,38 @@ const organizedDishes = categories.reduce((acc: { [key: string]: any }, category
   return acc;
 }, {});
 
+
 // Get a sample image for each category
 const categoryImages = categories.reduce((acc: { [key: string]: any }, category) => {
   acc[category] = dishes.find(dish => dish.category === category)?.image || heroImg;
   return acc;
 }, {});
+
+const menuSchema = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Vanchu Hut Menu",
+  "hasMenuSection": Object.keys(organizedDishes).map(category => ({
+    "@type": "MenuSection",
+    "name": category,
+    "itemListElement": organizedDishes[category].dishes.map((dish: { name: any; type: string; price: { half: any; }; }) => ({
+      "@type": "MenuItem",
+      "name": dish.name,
+      "suitableForDiet": dish.type === 'veg' ? "https://schema.org/VegetarianDiet" : undefined,
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "price": dish.price.half
+      }
+    }))
+  }))
+};
+
+const jsonLd = JSON.stringify(menuSchema);
+
 import Button from '../components/Button.astro';
 ---
+<script type="application/ld+json" set:html={jsonLd} />
 
 <Layout title='Vanchu Hut Menu - Best Chinese Restaurant Menu in Ghaziabad' description="Explore Vanchu Hut's menu for the best Chinese food in Ghaziabad! Enjoy delicious takeout, an exquisite buffet, and flavorful noodles in Pratap Vihar." >
   <h1 class="hidden">Vanchu Hut Menu - Best Chinese Restaurant Menu in Ghaziabad</h1>

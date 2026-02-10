@@ -15,7 +15,53 @@ import GoogleReview from '../components/GoogleReview.astro';
 import Experience from '../components/Experience.astro';
 
 ---
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "VANCHU HUT",
+  "image": "https://vanchuhut.in/_astro/DineIn.DTOb2J6X_1nEAwW.avif",
+  "@id": "https://vanchuhut.in/#restaurant",
+  "url": "https://vanchuhut.in/",
+  "telephone": "+91 9971135534",
+  "priceRange": "₹500",
+  "servesCuisine": "Chinese",
+  "hasMenu": "https://vanchuhut.in/menu/",
+  "acceptsReservations": "false",
+  "sameAs": [
+    "https://www.facebook.com/vanchuhut",
+    "https://www.instagram.com/vanchuhut"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4",
+    "ratingCount": "756"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Santosh Medical Intersection, Block H, Pratap Vihar",
+    "addressLocality": "Ghaziabad",
+    "addressRegion": "Uttar Pradesh",
+    "postalCode": "201009",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.647540,
+    "longitude": 77.411249
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+      ],
+      "opens": "12:00",
+      "closes": "22:00"
+    }
+  ]
+}
+</script>
 <Layout title="Vanchu Hut - Best Chinese Restaurant in Pratap Vihar, Ghaziabad | Authentic Chinese Cuisine" description="Discover the best Chinese restaurant in Pratap Vihar, Ghaziabad, at Vanchu Hut. Enjoy authentic Chinese cuisine with family-friendly dining options.">
 	<HeroSection/>
 	<div class=" flex justify-center items-center h-0 w-auto ">
