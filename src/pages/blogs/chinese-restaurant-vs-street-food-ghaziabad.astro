@@ -1,0 +1,156 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../../assets/LandingImage.jpg";
+import BlogImg from "../../assets/blogImages/Blog30.jpg";
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Chinese Restaurant vs Street Food", href: "#", current: true }
+];
+const blogData = {
+    title: "Chinese Restaurant vs Street Food: What's Better for Dining Out in Ghaziabad?",
+    metaTitle: "Chinese Restaurant vs Street Food in Ghaziabad | Vanchu Hut",
+    metaDescription: "Street food or a Chinese restaurant in Ghaziabad? Discover the key differences in hygiene, taste, ambiance, and value to make the right dining choice.",
+    image: BlogImg,
+    publishDate: "2026-02-13",
+    introduction: "We've all been there. You finish a long day at work or college, and suddenly you're craving hot noodles or crispy Manchurian. Now the big question comes up — should you grab quick street food from a roadside stall or enjoy a proper meal at a Chinese restaurant? If you live in India, especially near Ghaziabad, this decision becomes even more common. Let's explore what truly works best for you.",
+    sections: [
+        {
+            title: "The Popularity of Street Food in Ghaziabad",
+            content: "Street food has always been a favorite among students and young professionals. It's quick, affordable, and easily accessible. From spicy chowmein to crispy chili potatoes and steaming momos, roadside vendors offer flavors that are bold and satisfying.",
+            points: [],
+            ending: "For many people, street food feels exciting. You stand around with friends, enjoy the lively atmosphere, and get your food within minutes. It's budget-friendly and perfect when you're in a hurry."
+        },
+        {
+            title: "The Restaurant Experience",
+            content: "However, dining at a Chinese restaurant offers something more. It's not just about eating — it's about the overall experience. A proper Chinese restaurant provides clean seating, a comfortable environment, and a relaxed atmosphere where families can sit and enjoy their meals together.",
+            points: [],
+            ending: "When you visit a well-established place like Vanchu Hut in Pratap Vihar, you notice the difference immediately. The ambiance is cozy and welcoming, making it ideal for family dinners, small celebrations, or even casual meetups with friends."
+        },
+        {
+            title: "Hygiene & Food Safety",
+            content: "One of the biggest differences between street food and restaurant dining is hygiene. While many street vendors try their best, maintaining consistent cleanliness in an open environment can be challenging.",
+            points: [],
+            ending: "Restaurants operate in controlled kitchens where food is prepared using fresh ingredients and proper safety standards. For families with children or individuals who prioritize health, this becomes a key factor. You want your meal to be delicious, but also safe and hygienic."
+        },
+        {
+            title: "Taste & Authenticity",
+            content: "Street food often focuses on strong, spicy flavors tailored to local preferences. It's delicious and satisfying in its own way. However, restaurants aim for balanced, consistent flavors that stay true to authentic Chinese and Indo-Chinese cuisine.",
+            points: [
+                "Special Veg Noodles",
+                "Steamed & Fried Dumplings",
+                "Crispy Chili Potatoes",
+                "Veg Manchurian"
+            ],
+            ending: "Dishes like these taste richer when prepared with high-quality ingredients and refined recipes. At Vanchu Hut, the focus is on combining classic techniques with fresh ingredients to deliver a memorable dining experience every time."
+        },
+        {
+            title: "Pricing",
+            content: "Street food is generally cheaper upfront. But when you consider portion sizes, service quality, hygiene, and ambiance, restaurants often offer better overall value. You're not just paying for food — you're investing in comfort, cleanliness, and a complete experience.",
+            points: [],
+            ending: ""
+        },
+        {
+            title: "Convenience",
+            content: "Street food is mostly limited to on-the-spot eating. Restaurants, on the other hand, provide multiple options. Whether you want to dine in with your family, order takeaway for a movie night, or get food delivered to your home, a restaurant offers flexibility.",
+            points: [],
+            ending: "At Vanchu Hut, customers can enjoy their meals in a welcoming setting or order convenient takeaway and delivery, ensuring the same fresh and flavorful experience at home."
+        },
+        {
+            title: "So, What's Better for You?",
+            content: "If you're looking for a quick bite on a tight budget, street food might satisfy your craving. But if you value hygiene, comfort, authentic flavors, and a family-friendly environment, a trusted Chinese restaurant is the better choice.",
+            points: [],
+            ending: "Many food lovers in Ghaziabad now prefer restaurants that combine quality, affordability, and excellent service. In Pratap Vihar, Vanchu Hut has built a strong reputation for offering flavorful Indo-Chinese dishes in a clean, cozy setting. The next time you're deciding where to dine out, think about what matters most to you — speed or experience?"
+        }
+    ],
+    conclusion: "Ultimately, the best dining choice is the one that matches your mood, your company, and your expectations. And when it comes to quality Chinese food in Ghaziabad, choosing a reliable restaurant can turn an ordinary meal into a memorable one."
+};
+---
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    <section class=" font-agdasima ">
+        <Image src={heroImg} class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px]  object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+    </section>
+    <nav class="flex px-4 " aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {breadcrumbs.map((item, index) => (
+                <li class="flex items-center">
+                    {index > 0 && (
+                        <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    )}
+                    {item.current ? (
+                        <span class="text-gray-600" aria-current="page">{item.label}</span>
+                    ) : (
+                        <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                    )}
+                </li>
+            ))}
+        </ol>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="relative h-[400px] mb-8 rounded-lg overflow-hidden">
+            <Image
+                format="avif"
+                src={blogData.image}
+                alt="Chinese restaurant vs street food in Ghaziabad"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+            <h1 class="text-4xl font-bold text-primary mb-8">{blogData.title}</h1>
+
+            <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                <h2 class="text-xl font-semibold mb-4">Table of Contents</h2>
+                <ol class="list-decimal pl-4">
+                    <li>Introduction</li>
+                    <li>The Popularity of Street Food in Ghaziabad</li>
+                    <li>The Restaurant Experience</li>
+                    <li>Hygiene & Food Safety</li>
+                    <li>Taste & Authenticity</li>
+                    <li>Pricing</li>
+                    <li>Convenience</li>
+                    <li>So, What's Better for You?</li>
+                    <li>Conclusion</li>
+                </ol>
+            </div>
+
+            <h2 class="text-2xl font-semibold text-secondary mb-4">Introduction</h2>
+            <p class="text-gray-700 mb-8">{blogData.introduction}</p>
+
+            {blogData.sections.map((section) => (
+                <section class="mb-12">
+                    <h2 class="text-2xl font-semibold text-secondary mb-4">{section.title}</h2>
+                    <p class="text-gray-700 mb-4">{section.content}</p>
+                    {section.points.length > 0 && (
+                        <ul class="list-disc pl-6 space-y-2 mb-4">
+                            {section.points.map((point) => (
+                                <li class="text-gray-700">{point}</li>
+                            ))}
+                        </ul>
+                    )}
+                    {section.ending && (
+                        <p class="text-gray-700">{section.ending}</p>
+                    )}
+                </section>
+            ))}
+
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-secondary mb-4">Conclusion</h2>
+                <p class="text-gray-700">{blogData.conclusion}</p>
+            </section>
+
+            <div class="flex justify-center gap-6 my-12">
+                <a href="https://www.google.com/maps?um=1&ie=UTF-8&fb=1&gl=in&sa=X&geocode=KeP005kt8Qw5MU-V7RII_Vk9&daddr=Santosh+Medical+Intersection,+Block+H,+Pratap+Vihar,+Ghaziabad,+Uttar+Pradesh+201009" class="bg-secondary text-white px-8 py-3 rounded-full hover:bg-secondary/90">
+                    Visit Us Today
+                </a>
+                <a href="/menu" class="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90">
+                    Explore Our Menu
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
