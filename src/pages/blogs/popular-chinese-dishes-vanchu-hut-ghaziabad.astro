@@ -1,0 +1,197 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../../assets/LandingImage.jpg";
+import BlogImg from "../../assets/blogImages/Blog32.webp";
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Top 10 Popular Chinese Dishes", href: "#", current: true }
+];
+const blogData = {
+    title: "Top 10 Popular Chinese Dishes at Vanchu Hut",
+    metaTitle: "Top 10 Popular Chinese Dishes at Vanchu Hut Ghaziabad | Pratap Vihar",
+    metaDescription: "Discover the top 10 popular Chinese dishes at Vanchu Hut in Pratap Vihar, Ghaziabad. From chilli potato and momos to chowmein and Manchurian, explore customer favorites.",
+    image: BlogImg,
+    publishDate: "2026-03-11",
+    introduction: "If you're craving bold flavors, satisfying portions, and a meal that hits differently every single time — Vanchu Hut in Pratap Vihar, Ghaziabad is the place to be. Whether you're a student on a budget, a family planning a night out, or an office professional looking for quick comfort food, Vanchu Hut's Indo-Chinese menu has something for everyone. Not sure where to start? We've got you covered. Here are the top 10 most popular Chinese dishes that keep our guests coming back for more.",
+    dishes: [
+        {
+            number: "1",
+            title: "Chilli Potato",
+            content: "A crowd favourite and an absolute must-try. Crispy potato wedges tossed in a fiery, tangy sauce — this is the dish that starts every table at Vanchu Hut. It's bold, it's addictive, and it disappears fast."
+        },
+        {
+            number: "2",
+            title: "Momos",
+            content: "Soft, steamed or fried dumplings filled with perfectly spiced vegetables or chicken. Our momos are served fresh with a house-special dip that adds the perfect kick. Once you try them, you'll understand why they're always the first to run out."
+        },
+        {
+            number: "3",
+            title: "Veg / Chicken Chowmein",
+            content: "A classic for a reason. Our stir-fried noodles are cooked on high flame with crunchy vegetables and a savory Indo-Chinese sauce. Whether you go veg or chicken, this dish delivers every single time."
+        },
+        {
+            number: "4",
+            title: "Fried Rice (Veg & Non-Veg)",
+            content: "Light, flavorful, and incredibly satisfying. Our fried rice is wok-tossed with fresh ingredients, making it the perfect standalone dish or a hearty side to your favourite gravy."
+        },
+        {
+            number: "5",
+            title: "Manchurian (Dry & Gravy)",
+            content: "Soft, golden-fried balls of goodness smothered in a rich Manchurian sauce. Choose dry for a snack or gravy-style to pair with rice or noodles. Either way, it's comfort food at its finest."
+        },
+        {
+            number: "6",
+            title: "Soup (Sweet Corn & Hot & Sour)",
+            content: "Before the main course hits, a piping hot bowl of our Sweet Corn or Hot & Sour soup sets the perfect mood. It's warming, wholesome, and made fresh to order every time."
+        },
+        {
+            number: "7",
+            title: "Chopsuey",
+            content: "A delightful combination of crispy noodles topped with a rich, mixed vegetable or chicken gravy. The contrast of textures makes every bite unique — it's one of those dishes you didn't know you needed until you have it."
+        },
+        {
+            number: "8",
+            title: "Chaap",
+            content: "A Vanchu Hut specialty that vegetarians absolutely swear by. Our soya chaap — marinated and grilled or tossed in bold sauces — is meaty in texture and massive in flavour."
+        },
+        {
+            number: "9",
+            title: "Pasta & Macaroni",
+            content: "Our Indo-Chinese-style pasta and macaroni dishes are a hit with younger diners and families. Creamy, cheesy, and packed with flavours — they're a comforting twist on an everyday favourite."
+        },
+        {
+            number: "10",
+            title: "Combo Meals",
+            content: "Can't decide? Let our combo meals do the thinking for you. Thoughtfully curated pairings of starters, mains, and sides that give you the full Vanchu Hut experience at an unbeatable value."
+        }
+    ],
+    whyChooseUs: {
+        title: "Why Vanchu Hut Is Ghaziabad's Favourite Chinese Spot",
+        content: "Located at the Santosh Medical Intersection in Pratap Vihar, Vanchu Hut isn't just a restaurant — it's a go-to comfort spot for the entire neighbourhood. The food is fresh, the portions are generous, and the prices are honest. Whether you're dining in, ordering takeaway, or planning a family outing, every dish is crafted with care and served with warmth."
+    },
+    faqs: [
+        {
+            question: "What is the most popular dish at Vanchu Hut?",
+            answer: "Chilli Potato and Momos are consistently the top-ordered dishes at Vanchu Hut, loved by diners of all ages for their bold flavors and satisfying portions."
+        },
+        {
+            question: "Does Vanchu Hut offer both vegetarian and non-vegetarian options?",
+            answer: "Yes! Vanchu Hut has a wide selection of both veg and non-veg dishes, from Veg Manchurian and Chaap to Chicken Chowmein and Chicken Fried Rice, so there's something for every preference."
+        },
+        {
+            question: "Can I order online or take away from Vanchu Hut?",
+            answer: "Absolutely. Vanchu Hut offers convenient takeaway and online ordering options so you can enjoy your favourite dishes from the comfort of your home. Check the menu at vanchuhut.in/menu for details."
+        },
+        {
+            question: "Where is Vanchu Hut located in Ghaziabad?",
+            answer: "Vanchu Hut is located at Santosh Medical Intersection, Block H, Pratap Vihar, Ghaziabad, Uttar Pradesh 201009. You can also reach them at +91 9971135534."
+        },
+        {
+            question: "Is Vanchu Hut good for family dining?",
+            answer: "Yes, Vanchu Hut is a family-friendly restaurant with a varied menu that suits all tastes and age groups, including kid-friendly options like pasta, macaroni, and combo meals at great value."
+        }
+    ]
+};
+---
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    <section class="font-agdasima">
+        <Image src={heroImg} class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px] object-cover" alt="Header Image, shows picture of Various Chinese Food on a Table"/>
+    </section>
+    <nav class="flex px-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {breadcrumbs.map((item, index) => (
+                <li class="flex items-center">
+                    {index > 0 && (
+                        <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    )}
+                    {item.current ? (
+                        <span class="text-gray-600" aria-current="page">{item.label}</span>
+                    ) : (
+                        <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                    )}
+                </li>
+            ))}
+        </ol>
+    </nav>
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="relative h-[400px] mb-8 rounded-lg overflow-hidden">
+            <Image
+                format="avif"
+                src={blogData.image}
+                alt="Top 10 Popular Chinese Dishes at Vanchu Hut Ghaziabad"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+            <h1 class="text-4xl font-bold text-primary mb-8">{blogData.title}</h1>
+
+            {/* Table of Contents */}
+            <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                <h2 class="text-xl font-semibold mb-4">Table of Contents</h2>
+                <ol class="list-decimal pl-4 space-y-1">
+                    {blogData.dishes.map((dish) => (
+                        <li>{dish.title}</li>
+                    ))}
+                    <li>{blogData.whyChooseUs.title}</li>
+                    <li>FAQs</li>
+                </ol>
+            </div>
+
+            {/* Introduction */}
+            <p class="text-gray-700 mb-8">{blogData.introduction}</p>
+
+            {/* Dishes */}
+            {blogData.dishes.map((dish) => (
+                <section class="mb-10">
+                    <h2 class="text-2xl font-semibold text-secondary mb-4">
+                        {dish.number}. {dish.title}
+                    </h2>
+                    <p class="text-gray-700">{dish.content}</p>
+                </section>
+            ))}
+
+            {/* Why Choose Us Section */}
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-secondary mb-4">
+                    {blogData.whyChooseUs.title}
+                </h2>
+                <p class="text-gray-700">{blogData.whyChooseUs.content}</p>
+                <p class="text-gray-700 mt-4">
+                    Ready to order? Explore the full menu at{" "}
+                    <a href="/menu" class="text-primary hover:text-primary/80 underline">vanchuhut.in/menu</a>{" "}
+                    and find your new favourite dish today.
+                </p>
+            </section>
+
+            {/* FAQs Section */}
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-secondary mb-6">
+                    FAQs Related to Top 10 Popular Chinese Dishes at Vanchu Hut
+                </h2>
+                <div class="space-y-6">
+                    {blogData.faqs.map((faq, index) => (
+                        <div class="bg-gray-50 p-5 rounded-lg">
+                            <h3 class="text-lg font-semibold mb-2">{index + 1}. {faq.question}</h3>
+                            <p class="text-gray-700">{faq.answer}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Call to Action */}
+            <div class="flex justify-center gap-6 mt-12">
+                <a href="/menu" class="bg-secondary text-white px-8 py-3 rounded-full hover:bg-secondary/90">
+                    View Our Menu
+                </a>
+                <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90">
+                    Contact Us
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
