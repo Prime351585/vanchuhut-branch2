@@ -1,0 +1,233 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../../assets/LandingImage.jpg";
+import BlogImg from "../../assets/blogImages/Blog33.webp";
+
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Healthy Vegetarian Chinese Food Choices", href: "#", current: true }
+];
+
+const blogData = {
+    title: "Healthy Chinese Food Choices for Vegetarians",
+    metaTitle: "Healthy Chinese Food Choices for Vegetarians | Vanchu Hut",
+    metaDescription:
+        "Discover healthy Chinese food choices for vegetarians, including tofu stir-fry, vegetable dim sum, soups, and nutritious veggie dishes perfect for a balanced meal.",
+    image: BlogImg,
+    publishDate: "2026-03-24",
+    introduction:
+        "Chinese cuisine is one of the most vibrant and diverse food cultures in the world, and the good news for vegetarians is that it offers a treasure trove of healthy, flavourful options. Whether you are following a plant-based lifestyle, cutting back on meat, or simply exploring lighter meals, Chinese food has something delicious for you. At Vanchu Hut, we believe that eating healthy should never mean sacrificing taste.",
+    introClosing:
+        "Our menu is crafted to give every vegetarian diner an authentic and wholesome Chinese dining experience.",
+    whyVegetarianFriendly: {
+        title: "Why Chinese Cuisine Is Great for Vegetarians",
+        content:
+            "Traditional Chinese cooking has long celebrated vegetables, tofu, legumes, and grains as core ingredients. Many classic dishes are naturally plant-based, using fresh produce, aromatic spices, and light cooking techniques like steaming, stir-frying, and braising.",
+        note:
+            "These methods preserve nutrients while keeping calories in check, making Chinese food an ideal choice for health-conscious vegetarians."
+    },
+    healthyChoices: [
+        {
+            title: "Steamed Vegetable Dim Sum",
+            content:
+                "Lightly steamed and filled with cabbage, mushrooms, and carrots, these dumplings are low in fat and rich in fibre. They make a perfect starter without adding unnecessary calories."
+        },
+        {
+            title: "Tofu Stir-Fry",
+            content:
+                "Tofu is a powerhouse of plant-based protein. When stir-fried with colourful vegetables and a light sauce, it becomes a wholesome main course that keeps you energised and satisfied."
+        },
+        {
+            title: "Mixed Vegetable Soup (Hot and Sour or Clear Broth)",
+            content:
+                "A warm bowl of vegetable soup is both comforting and nourishing. Hot and sour soup, made with mushrooms, tofu, and bamboo shoots, is a low-calorie option packed with antioxidants."
+        },
+        {
+            title: "Chilli Garlic Baby Corn",
+            content:
+                "Baby corn is high in fibre and low in calories. Tossed with garlic and mild spices, this dish is a crispy, flavourful option that fits perfectly into a balanced vegetarian diet."
+        },
+        {
+            title: "Kung Pao Cauliflower",
+            content:
+                "A vegetarian twist on a Chinese classic, cauliflower replaces chicken in this spicy, tangy dish. Cauliflower is rich in vitamins C and K, making this both a tasty and nutritious choice."
+        },
+        {
+            title: "Mushroom Fried Rice",
+            content:
+                "Using earthy mushrooms, spring onions, and lightly seasoned rice, this dish is a hearty yet healthy option. Opt for brown rice if available for added fibre and minerals."
+        }
+    ],
+    healthyTips: [
+        "Choose steamed or stir-fried dishes over deep-fried options.",
+        "Request sauces on the side to control sodium and sugar intake.",
+        "Load up on vegetable-based dishes and soups before moving to rice or noodles.",
+        "Pair your meal with green tea for added antioxidants and a lighter finish."
+    ],
+    menuSection: {
+        title: "Explore Our Vegetarian-Friendly Menu at Vanchu Hut",
+        content:
+            "At Vanchu Hut, we are passionate about bringing you authentic Chinese flavours with a healthy twist. Our vegetarian menu is thoughtfully designed to include fresh ingredients, balanced nutrition, and bold tastes.",
+        note:
+            "Whether you are dining in or ordering online, you can explore our full range of healthy Chinese food choices for vegetarians at <a href='/menu' class='text-primary underline hover:text-primary/80'>vanchuhut.in/menu</a>. From wholesome soups to protein-rich tofu dishes, there is something for every palate and every health goal."
+    },
+    conclusion:
+        "Eating well does not mean missing out on flavour. With the right choices, Chinese cuisine can be one of the healthiest and most satisfying dining experiences for vegetarians. Come visit us and discover a menu that truly cares for your health and your taste buds.",
+    faqs: [
+        {
+            question: "1. What are the healthiest Chinese food choices for vegetarians?",
+            answer:
+                "The healthiest options include steamed vegetable dim sum, tofu stir-fry, hot and sour soup, chilli garlic baby corn, and mixed vegetable dishes. These are low in calories, high in nutrients, and prepared using light cooking methods."
+        },
+        {
+            question: "2. Is Chinese food suitable for a vegetarian diet?",
+            answer:
+                "Yes, Chinese cuisine is very vegetarian-friendly. Many traditional dishes are plant-based, featuring tofu, vegetables, mushrooms, and legumes. Restaurants like Vanchu Hut offer dedicated vegetarian menus with a wide variety of healthy and flavourful choices."
+        },
+        {
+            question: "3. Is tofu a healthy protein source in Chinese food?",
+            answer:
+                "Absolutely. Tofu is an excellent plant-based protein rich in amino acids, calcium, and iron. When prepared with light sauces and vegetables, it is one of the most nutritious and filling options in Chinese cuisine for vegetarians."
+        },
+        {
+            question: "4. How can I make my Chinese meal healthier?",
+            answer:
+                "You can make your Chinese meal healthier by choosing steamed or stir-fried dishes, avoiding deep-fried items, asking for sauces on the side, and opting for vegetable-based soups as starters. Swapping white rice for brown rice is also a great way to boost fibre intake."
+        },
+        {
+            question: "5. Does Vanchu Hut offer healthy vegetarian Chinese food?",
+            answer:
+                "Yes! Vanchu Hut offers a thoughtfully curated vegetarian menu with authentic Chinese dishes made from fresh, wholesome ingredients. Visit our menu page at vanchuhut.in/menu to explore all our healthy vegetarian options."
+        }
+    ]
+};
+---
+
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    <section class="font-agdasima">
+        <Image src={heroImg} class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px] object-cover" alt="Header Image, shows picture of various Chinese food on a table" />
+    </section>
+    <nav class="flex px-4 mb-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {
+                breadcrumbs.map((item, index) => (
+                    <li class="flex items-center">
+                        {index > 0 && (
+                            <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                        )}
+                        {item.current ? (
+                            <span class="text-gray-600" aria-current="page">{item.label}</span>
+                        ) : (
+                            <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                        )}
+                    </li>
+                ))
+            }
+        </ol>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="relative h-[300px] md:h-[400px] mb-8 rounded-lg overflow-hidden shadow-lg">
+            <Image
+                format="webp"
+                src={blogData.image}
+                alt="Healthy vegetarian Chinese dishes at Vanchu Hut"
+                class="w-full h-full object-cover"
+            />
+        </div>
+
+        <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-primary mb-6 text-center md:text-left">{blogData.title}</h1>
+
+            <p class="text-sm text-gray-500 mb-6 text-center md:text-left">
+                Published on: {new Date(blogData.publishDate).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+            </p>
+
+            <div class="bg-gray-50 p-6 rounded-lg mb-8 shadow">
+                <h2 class="text-xl font-semibold mb-4 text-secondary">Table of Contents</h2>
+                <ol class="list-decimal pl-5 space-y-1">
+                    <li><a href="#introduction" class="text-primary hover:underline">Introduction</a></li>
+                    <li><a href="#why-chinese-cuisine" class="text-primary hover:underline">Why Chinese Cuisine Is Great for Vegetarians</a></li>
+                    <li><a href="#healthy-choices" class="text-primary hover:underline">Top Healthy Vegetarian Chinese Food Choices</a></li>
+                    <li><a href="#smart-tips" class="text-primary hover:underline">Smart Tips for Eating Healthy at a Chinese Restaurant</a></li>
+                    <li><a href="#menu" class="text-primary hover:underline">Explore Our Vegetarian-Friendly Menu</a></li>
+                    <li><a href="#faqs" class="text-primary hover:underline">FAQs</a></li>
+                </ol>
+            </div>
+
+            <section id="introduction" class="mb-10">
+                <p class="lead text-lg md:text-xl text-gray-700">{blogData.introduction}</p>
+                <p class="text-gray-700 mt-4">{blogData.introClosing}</p>
+            </section>
+
+            <section id="why-chinese-cuisine" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.whyVegetarianFriendly.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.whyVegetarianFriendly.content}</p>
+                <p class="text-gray-700">{blogData.whyVegetarianFriendly.note}</p>
+            </section>
+
+            <section id="healthy-choices" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">Top Healthy Vegetarian Chinese Food Choices</h2>
+                <div class="space-y-6">
+                    {
+                        blogData.healthyChoices.map((item) => (
+                            <div>
+                                <h3 class="text-xl font-semibold text-primary mb-2">{item.title}</h3>
+                                <p class="text-gray-700">{item.content}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <section id="smart-tips" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">Smart Tips for Eating Healthy at a Chinese Restaurant</h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    {
+                        blogData.healthyTips.map((tip) => (
+                            <li class="text-gray-700">{tip}</li>
+                        ))
+                    }
+                </ul>
+            </section>
+
+            <section id="menu" class="mb-10">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">{blogData.menuSection.title}</h2>
+                <p class="text-gray-700 mb-4">{blogData.menuSection.content}</p>
+                <p class="text-gray-700" set:html={blogData.menuSection.note}></p>
+            </section>
+
+            <section class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-4">Conclusion</h2>
+                <p class="text-gray-700 text-base md:text-lg">{blogData.conclusion}</p>
+            </section>
+
+            <section id="faqs" class="mb-12">
+                <h2 class="text-2xl md:text-3xl font-semibold text-secondary mb-6">FAQs Related to Healthy Chinese Food Choices for Vegetarians</h2>
+                <div class="space-y-6">
+                    {
+                        blogData.faqs.map((faq) => (
+                            <div class="bg-gray-50 p-5 rounded-lg shadow-sm">
+                                <h3 class="text-lg font-semibold text-primary mb-2">{faq.question}</h3>
+                                <p class="text-gray-700">{faq.answer}</p>
+                            </div>
+                        ))
+                    }
+                </div>
+            </section>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 my-12">
+                <a href="/menu" class="bg-secondary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-secondary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Explore Our Menu
+                </a>
+                <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors duration-300 shadow-md hover:shadow-lg">
+                    Visit Us Today
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
