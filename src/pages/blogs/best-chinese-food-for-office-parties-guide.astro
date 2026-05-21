@@ -1,0 +1,240 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImg from "../../assets/LandingImage.jpg";
+import BlogImg from "../../assets/blogImages/Blog37.webp";
+
+type BlogSection = {
+    title: string;
+    content: string;
+    subsections?: { title: string; content: string }[];
+};
+
+type BlogFaq = {
+    q: string;
+    a: string;
+};
+
+type BlogData = {
+    title: string;
+    metaTitle: string;
+    metaDescription: string;
+    image: typeof BlogImg;
+    publishDate: string;
+    introduction: string;
+    sections: BlogSection[];
+    conclusion: string;
+    faqs: BlogFaq[];
+};
+
+const breadcrumbs = [
+    { label: "Home", href: "/" },
+    { label: "Blogs", href: "/blogs" },
+    { label: "Best Chinese Food for Office Parties", href: "#", current: true }
+];
+
+const blogData: BlogData = {
+    title: "Best Chinese Food for Office Parties: What to Order, How to Plan, and Why It Always Works",
+    metaTitle: "Best Chinese Food for Office Parties: What to Order, How to Plan, and Why It Always Works",
+    metaDescription:
+        "Discover the best Chinese food for office parties with this complete guide to menu planning, dish combinations, vegetarian options, quantities, and catering tips for teams, meetings, birthdays, and workplace celebrations.",
+    image: BlogImg,
+    publishDate: "2026-05-21",
+    introduction:
+        "Planning food for an office party sounds easy until you start balancing dietary preferences, group size, budget, and timing. Chinese food solves that problem because it is shareable, scalable, crowd-pleasing, and naturally varied. This guide covers what to order, how much to order, and how to plan a workplace spread that actually works.",
+    sections: [
+        {
+            title: "Why Chinese Food Works So Well for Office Parties",
+            content:
+                "Chinese cuisine is built for sharing. Multiple dishes sit at the center of the table, everyone tastes a bit of everything, and the meal creates conversation instead of slowing it down. That makes it ideal for office events where the goal is to keep people relaxed, included, and well-fed. It also covers vegetarian and non-vegetarian preferences naturally, scales easily for 10 or 50 guests, and delivers strong flavor without feeling expensive."
+        },
+        {
+            title: "What Should You Order First?",
+            content:
+                "Start with items that are easy to share and easy to eat while people arrive. Starters set the tone, soups keep the pace comfortable, and a good main course anchors the meal.",
+            subsections: [
+                {
+                    title: "Best starters",
+                    content:
+                        "Momos are the safest office-party star because they work in veg and non-veg versions, need no cutlery, and disappear fast. Spring Rolls are portable and universally liked. Crispy Chili Potato brings heat and energy to the table. Chaap gives vegetarians a more filling option that feels substantial instead of token."
+                },
+                {
+                    title: "Best soups",
+                    content:
+                        "Sweet Corn Soup and Hot and Sour Soup are the best pair for a mixed group. One is mild and comforting, the other is tangy and savory. Together they keep the meal balanced and give early arrivals something warm to start with."
+                },
+                {
+                    title: "Best mains",
+                    content:
+                        "For noodles, Hakka Noodles and Special Veg Noodles are the most reliable base. For rice, pair Veg Fried Rice with Schezwan Fried Rice if you want mild and spicy contrast. Veg Manchurian Gravy is the connective dish that works over noodles, alongside rice, or as a shared saucy side. Chopsuey is a strong add-on when the group wants something a little different."
+                }
+            ]
+        },
+        {
+            title: "How Much Should You Order?",
+            content:
+                "For 10-15 people, plan 3 starters, 1 large soup or 2 small soups, 2 noodle portions, 1-2 rice portions, and 1-2 gravy dishes. For 20-30 people, increase that to 5-6 starters, 2 soups, 3-4 noodle portions, 2-3 rice portions, 2 gravies, and one extra dish like Chopsuey. As a rough rule, aim for 1.5 portions per person for a full meal and 1 portion per person for a snack-style event."
+        },
+        {
+            title: "How Do You Handle Mixed Vegetarian and Non-Vegetarian Teams?",
+            content:
+                "The simplest approach is to keep most of the spread vegetarian and add a few non-veg items where they matter most. Make the starter spread mostly veg, keep soups fully vegetarian, and run parallel mains where needed. That way, roughly 70% of the order stays vegetarian while non-vegetarian guests still get real options.",
+            subsections: [
+                {
+                    title: "A good ratio to follow",
+                    content:
+                        "Use vegetarian items as the backbone: veg momos, spring rolls, chili potato, veg noodles, veg fried rice, and veg manchurian. Add one or two non-veg starters or noodle options if the office crowd expects them."
+                },
+                {
+                    title: "What to avoid",
+                    content:
+                        "Do not build the whole order around one spicy profile or one fried texture. An office spread works best when it has contrast: crispy and soft, mild and bold, soup and dry items, noodles and rice."
+                }
+            ]
+        },
+        {
+            title: "What Should You Order for Different Office Events?",
+            content:
+                "The same menu does not fit every workplace event. Casual team celebrations work best with finger foods and fewer mains. Formal lunches need a fuller structure. Birthdays and work anniversaries should stay simple and fast.",
+            subsections: [
+                {
+                    title: "Casual Friday celebration",
+                    content:
+                        "Go heavy on momos, spring rolls, chili potato, and manchow soup, then add a couple of noodle and gravy portions."
+                },
+                {
+                    title: "Formal office lunch",
+                    content:
+                        "Use a complete spread: soup first, then starters, then noodles, rice, and a sauced dish like manchurian or chopsuey."
+                },
+                {
+                    title: "Quick birthday or anniversary treat",
+                    content:
+                        "Keep it compact: momos, spring rolls, chili potato, one noodle dish, one rice dish, and one gravy. That is enough to feel generous without over-ordering."
+                }
+            ]
+        },
+        {
+            title: "How Should You Organize Delivery and Timing?",
+            content:
+                "Order close to serving time so noodles, fried rice, and starters stay fresh. For bigger groups, pre-order in advance and set up a shared serving station instead of individual plates. Keep extra soup on hand, and use covered containers so the food stays hot long enough to serve everyone comfortably."
+        }
+    ],
+    conclusion:
+        "Chinese food is one of the smartest choices for office parties because it is flexible, affordable, and easy to scale. It works for mixed diets, different budgets, and different event formats without becoming complicated. If you want a workplace meal that feels generous and easy to share, this is the safest and most reliable direction.",
+    faqs: [
+        {
+            q: "Should I order both noodles and rice for an office party?",
+            a: "For a larger group, yes. For a smaller group, one staple plus one saucy side is usually enough."
+        },
+        {
+            q: "Is soup necessary?",
+            a: "Not mandatory, but it improves the meal balance and helps pace the starters and mains."
+        },
+        {
+            q: "What is the easiest crowd-pleasing order?",
+            a: "Momos, spring rolls, sweet corn soup, Hakka noodles, veg fried rice, and veg manchurian are the safest all-around picks."
+        },
+        {
+            q: "How do I handle vegetarian and non-vegetarian guests together?",
+            a: "Keep the core of the order vegetarian and add a few non-veg items where they are most requested."
+        },
+        {
+            q: "Can this work for small team birthdays too?",
+            a: "Yes. A small but balanced order works very well for birthday and anniversary treats."
+        }
+    ]
+};
+---
+
+<Layout title={blogData.metaTitle} description={blogData.metaDescription}>
+    <section class="font-agdasima">
+        <Image
+            src={heroImg}
+            class="scale-100 w-screen h-[168px] transform -translate-y-[100px] md:-translate-y-[60px] object-cover"
+            alt="Header Image, shows picture of Various Chinese Food on a Table"
+        />
+    </section>
+
+    <nav class="flex px-4" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+            {breadcrumbs.map((item, index) => (
+                <li class="flex items-center">
+                    {index > 0 && (
+                        <svg class="w-4 h-4 text-gray-400 mx-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                    )}
+                    {item.current ? (
+                        <span class="text-gray-600" aria-current="page">{item.label}</span>
+                    ) : (
+                        <a href={item.href} class="text-primary hover:text-primary/80">{item.label}</a>
+                    )}
+                </li>
+            ))}
+        </ol>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <div class="relative h-[400px] mb-8 rounded-lg overflow-hidden">
+            <Image format="avif" src={blogData.image} alt="Best Chinese food for office parties" class="w-full h-full object-cover" />
+        </div>
+
+        <article class="prose prose-lg max-w-4xl mx-auto px-4 py-8">
+            <h1 class="text-4xl font-bold text-primary mb-8">{blogData.title}</h1>
+
+            <div class="bg-gray-50 p-6 rounded-lg mb-8">
+                <h2 class="text-xl font-semibold mb-4">Table of Contents</h2>
+                <ol class="list-decimal pl-4 space-y-1">
+                    {blogData.sections.map((section) => (
+                        <li>{section.title}</li>
+                    ))}
+                    <li>Conclusion</li>
+                    <li>FAQs</li>
+                </ol>
+            </div>
+
+            <p class="text-gray-700 mb-8">{blogData.introduction}</p>
+
+            {blogData.sections.map((section) => (
+                <section class="mb-12">
+                    <h2 class="text-2xl font-semibold text-secondary mb-4">{section.title}</h2>
+                    {section.content && <p class="text-gray-700 mb-4">{section.content}</p>}
+                    {section.subsections && (
+                        <div class="space-y-6 pl-4">
+                            {section.subsections.map((subsection) => (
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2">{subsection.title}</h3>
+                                    <p class="text-gray-700">{subsection.content}</p>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+                </section>
+            ))}
+
+            <section class="bg-primary/10 p-6 rounded-lg mb-12">
+                <h2 class="text-2xl font-semibold mb-4">Conclusion</h2>
+                <p class="text-gray-700 whitespace-pre-line">{blogData.conclusion}</p>
+            </section>
+
+            <section class="mb-12">
+                <h2 class="text-2xl font-semibold text-secondary mb-4">FAQs</h2>
+                <ul class="list-disc pl-6 space-y-2">
+                    {blogData.faqs.map((faq) => (
+                        <li class="text-gray-700"><strong>{faq.q}</strong><br />{faq.a}</li>
+                    ))}
+                </ul>
+            </section>
+
+            <div class="flex justify-center gap-6 mt-12">
+                <a href="/menu" class="bg-secondary text-white px-8 py-3 rounded-full hover:bg-secondary/90">
+                    View Our Menu
+                </a>
+                <a href="/contact" class="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90">
+                    Contact Us
+                </a>
+            </div>
+        </article>
+    </main>
+</Layout>
