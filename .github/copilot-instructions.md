@@ -15,7 +15,7 @@ When a user asks you to upload a blog to a website, **first collect**:
 
 ## Creating the blog file
 
-1. Open **2–3 existing** files in `src/pages/blogs/` (excluding `index.astro`) and mirror their **exact** component structure (this site typically uses a `blogData` object, sections, FAQs, etc.). Templates vary by topic—pick the closest structural match.
+1. Open **1–2 existing** files in `src/pages/blogs/` (excluding `index.astro`) and mirror their **exact** component structure (this site typically uses a `blogData` object, sections, FAQs, etc.). Templates vary by topic—pick the closest structural match.
 2. **Do not invent, rephrase, reformat, or summarize** the user’s supplied text—map it into the same fields/sections the template uses.
 3. **Time to read**: set `timetoread` (and any in-page equivalent) from word count at **~200 words per minute**, formatted like siblings (e.g. `"6 min"`).
 4. **Image**: save under `src/assets/blogImages/`; filename as provided or **lowercase-hyphenated**; import and assign per sibling files.
